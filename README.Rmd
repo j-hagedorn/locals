@@ -19,12 +19,14 @@ This repository contains scripts for reading, transforming and combining dataset
 
 # Datasets
 
-The list of datasets are tracked in the `.csv` file located in the data folder, with more specific documentation found below as issues are identified.
+The list of datasets are tracked in the `.csv` file located in the data folder, with more specific documentation found below as issues are identified.  Please push a commit marking the `status` field in the 
 
 ```{r echo=FALSE}
 df %>%
-  mutate(datalink = paste0("[",dataset,"](",url,")")) %>%
-  select(topic,datalink,publisher) %>%
+  mutate(
+    datalink = paste0("[",dataset,"](",docs,")")
+  ) %>%
+  select(topic,datalink,publisher,county,tract,address) %>%
   arrange(topic) %>%
   knitr::kable()
 ```
@@ -34,15 +36,13 @@ df %>%
 
 This list includes datasets which are available at one or more of the following levels of aggregation:
 
-- Address (allows for geocoding and attribution of location to census tract)
+- Address (*allows for geocoding and attribution of location to census tract*)
 - Census Tract
 - County
 
-These 
+These lower levels of aggregation can be rolled up to state level using FIPS codes.
 
-# Data Files
-
-## COVID Cases
+# Datasets
 
 ## Census Variables
 
@@ -69,6 +69,8 @@ This is derived from Census Data and includes, according to the [documentation](
 - Household Composition &Disability 
 - Minority Status & Language 
 - Housing Type & Transportation  
+
+## COVID Cases
 
 ## Bureau of Labor and Statistics
 
