@@ -1,5 +1,5 @@
 topic,dataset,publisher,docs,county,tract,block_group,address,api,api_client,zip,open_dl,complete
-COVID-19,COVID-19 Cases/Deaths by US County,New York Times,https://github.com/nytimes/covid-19-data,x,,,,,,,https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv,FALSE
+COVID-19,COVID-19 Cases/Deaths by US County,New York Times,https://github.com/nytimes/covid-19-data,https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv,,,,,,,https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv,FALSE
 COVID-19,COVID-19 County Projections,Columbia University,https://github.com/SenPei-CU/COVID-19_US_Projection,x,,,,,,https://github.com/SenPei-CU/COVID-19_US_Projection/blob/master/Projection_50%25transmissibility.csv.zip,,FALSE
 Social,Social Vulnerability Index,CDC,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,https://svi.cdc.gov/data-and-tools-download.html,https://svi.cdc.gov/data-and-tools-download.html,,,,https://dev.socrata.com/foundry/data.cdc.gov/48va-t53r,,,FALSE
 Health,County Health Rankings,U Wisc,https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures,https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020.csv,,,,,,,https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020.csv,FALSE
@@ -16,8 +16,8 @@ Social,Eviction Lab,Princeton U,https://evictionlab.org/get-the-data/,x,x,x,,,,,
 Food,Food Environment Atlas,USDA,https://www.ers.usda.gov/data-products/food-environment-atlas/data-access-and-documentation-downloads.aspx#.VEXQQPnF-mE,x,,,,,,,,FALSE
 Health,500 Cities: Census Tract-level Data,CDC,https://www.opendatanetwork.com/dataset/chronicdata.cdc.gov/kucs-wizg,,x,,,,,,,FALSE
 Provider,NPPES,CMS,https://download.cms.gov/nppes/NPI_Files.html,,,,x,,,x,,FALSE
-Opportunity,Neighborhood Atlas,U Wisc,https://www.neighborhoodatlas.medicine.wisc.edu/login,,x,x,,,,x,,FALSE
-Opportunity,Opportunity Insights Data,Opportunity Insights,https://opportunityinsights.org/data/,x,x,,,,,,x,FALSE
+Opportunity,Neighborhood Atlas,U Wisc,https://www.neighborhoodatlas.medicine.wisc.edu/login,x,x,x,,,,x,,FALSE
+Opportunity,"All Outcomes by Census Tract, Race, Gender and Parental Income Percentile",Opportunity Insights,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,https://opportunityinsights.org/wp-content/uploads/2018/10/county_outcomes.zip,https://opportunityinsights.org/wp-content/uploads/2018/10/tract_outcomes.zip,,,,,,x,FALSE
 Healthcare,Geographic Variation Public Use File,CMS,https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Geographic-Variation/GV_PUF,x,,,,,,,,FALSE
 Economic,Location Affordability Index,Office of the Secretary of Transportation,https://catalog.data.gov/dataset/location-affordability-index-all-census-counties,,,x,,,,,,FALSE
 Economic,Low-Income Housing Tax Credit,HUD,https://www.huduser.gov/portal/datasets/qct.html,,x,,,,,x,,FALSE
