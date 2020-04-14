@@ -1,0 +1,93 @@
+---
+title: "readme"
+output: 
+  md_document:
+    variant: markdown_github
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = TRUE)
+df <- read_csv("data/datasets.csv")
+```
+
+**Under active development; not ready for use**
+
+# Purpose
+
+This repository contains scripts for reading, transforming and combining datasets that are relevant for analysis of behavioral health and social determinants of health (SDoH) at the local neighborhood level (using 'census tract' as a proxy for 'neighborhood') and, where necessary, county level.  
+
+The list of datasets are tracked in the `.csv` file located in the data folder, with more specific documentation found below as issues are identified.
+
+```{r}
+df %>%
+  mutate(datalink = paste0("[",dataset,"](",url,")")) %>%
+  select(topic,datalink,publisher) %>%
+  arrange(topic) %>%
+  knitr::kable()
+```
+
+
+# Level of aggregation
+
+This list includes datasets which are available at one or more of the following levels of aggregation:
+
+- Address (allows for geocoding and attribution of location to census tract)
+- Census Tract
+- County
+
+These 
+
+# Data Files
+
+## COVID Cases
+
+## Census Variables
+
+Variables from the census data (ACS 5-year estimate), including variants of:
+
+- Poverty status
+- Disability status
+- Percent population over 65
+- Health insurance coverage
+- Incarceration
+
+```{r census, echo=FALSE}
+census_vars <- 
+  tidycensus::load_variables(
+    2017, "acs5", cache = TRUE
+  )
+```
+
+## Social Vulnerability Index (CDC) 
+
+This is derived from Census Data and includes, according to the [documentation](https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf), four summary theme ranking variables:
+
+- Socioeconomic
+- Household Composition &Disability 
+- Minority Status & Language 
+- Housing Type & Transportation  
+
+## Bureau of Labor and Statistics
+
+From [here](https://www.bls.gov/lau/tables.htm):
+
+- Unemployment rate
+
+## County Health Ranking 
+
+County health ranking data includes variables such as the following, as shown in [documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf):
+
+- Premature death
+- Poor physical health days
+- Poor mental health days
+- Food environment index
+- Adult smoking
+
+Data available come from various sources, some of which may come from sources available at census tract level [here](https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures)
+
+
+## LARA AFC Homes
+
+
+## Hospitals
