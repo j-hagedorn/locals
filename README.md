@@ -12,6 +12,17 @@ county level.
 Datasets
 ========
 
+This list includes datasets which are available at one or more of the
+following levels of aggregation:
+
+-   Address (*allows for geocoding and attribution of location to census
+    tract*)
+-   Census Tract
+-   County
+
+These lower levels of aggregation can be rolled up to state level using
+FIPS codes.
+
 The list of datasets are tracked in the `.csv` file located in the data
 folder, with more specific documentation found below as issues are
 identified. Please push a commit marking the `complete` field in the
@@ -52,25 +63,55 @@ Processing and Format
 There are different output file formats for each level of aggregation in
 the data.
 
-County-level Dataset
---------------------
-
 Census Tract Dataset
 --------------------
 
-Level of aggregation
-====================
+The following fields must be included in all files:
 
-This list includes datasets which are available at one or more of the
-following levels of aggregation:
+-   `dataset`: A shortened name of the dataset, to allow for subsetting
+    when datasets are combined.
+-   `state`:
+-   `county`:
+-   `tract`: The
+-   `year`: The year of the published dataset.
+-   `race`: Should be marked as `pooled` where data is not broken out by
+    race. Should be marked as `NA` when the variable is not related to a
+    population metric, such as in a count of facilities.
+-   `gender`: Should be marked as `pooled` where data is not broken out
+    by gender. Should be marked as `NA` when the variable is not related
+    to a population metric, such as in a count of facilities.
+-   `age_range`: Should be marked as `pooled` where data is not broken
+    out by age range. Should be marked as `NA` when the variable is not
+    related to a population metric, such as in a count of facilities.
+-   `var_name`: The name of the variable/metric being reported.
+-   `value`: The numeric value of the measure identified in `var_name`
+-   `stat_type`: The type of summary statistic being reported in
+    `value`. For example: `n`, `mean`, `se`, `median`, etc.
 
--   Address (*allows for geocoding and attribution of location to census
-    tract*)
--   Census Tract
--   County
+County-level Dataset
+--------------------
 
-These lower levels of aggregation can be rolled up to state level using
-FIPS codes.
+All fields from the census tract level data should be included in all
+files, other than the `tract` variable.
+
+Address Dataset
+---------------
+
+Address-level datasets should include the following fields:
+
+-   `dataset`: A shortened name of the dataset, to allow for subsetting
+    when datasets are combined.
+-   `state`:
+-   `county`:
+-   `tract`: The census tract within which the address is located,
+    obtained by using the `TBDfun::census_tract` function.
+-   `address`:
+-   `lat`, `lon`: Geocoded latitude and longitude coordinates of
+    `address`
+-   `year`: The year of the published dataset.
+-   `...`: Other variables specific to the dataset, which may be of
+    value to retain, though these will not be aggregated in the tract or
+    county-level data.
 
 Dataset Details
 ===============
