@@ -17,9 +17,11 @@ df <- read_csv("data/datasets.csv")
 
 This repository contains scripts for reading, transforming and combining datasets that are relevant for analysis of behavioral health and social determinants of health (SDoH) at the local neighborhood level (using 'census tract' as a proxy for 'neighborhood') and, where necessary, county level.  
 
+# Datasets
+
 The list of datasets are tracked in the `.csv` file located in the data folder, with more specific documentation found below as issues are identified.
 
-```{r}
+```{r echo=FALSE}
 df %>%
   mutate(datalink = paste0("[",dataset,"](",url,")")) %>%
   select(topic,datalink,publisher) %>%

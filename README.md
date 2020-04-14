@@ -9,17 +9,12 @@ determinants of health (SDoH) at the local neighborhood level (using
 ‘census tract’ as a proxy for ‘neighborhood’) and, where necessary,
 county level.
 
+Datasets
+========
+
 The list of datasets are tracked in the `.csv` file located in the data
 folder, with more specific documentation found below as issues are
 identified.
-
-``` r
-df %>%
-  mutate(datalink = paste0("[",dataset,"](",url,")")) %>%
-  select(topic,datalink,publisher) %>%
-  arrange(topic) %>%
-  knitr::kable()
-```
 
 | topic       | datalink                                                                                                                                                            | publisher                                 |
 |:------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------|
