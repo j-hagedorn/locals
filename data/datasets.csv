@@ -1,26 +1,26 @@
-topic,dataset,publisher,docs,county,tract,block_group,address,api,api_client,zip,open_dl,status
-COVID-19,COVID-19 Cases/Deaths by US County,New York Times,https://github.com/nytimes/covid-19-data,x,,,,,,,https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv,complete
-COVID-19,COVID-19 County Projections,Columbia University,https://github.com/SenPei-CU/COVID-19_US_Projection,x,,,,,,https://github.com/SenPei-CU/COVID-19_US_Projection/blob/master/Projection_50%25transmissibility.csv.zip,,
-Social,Social Vulnerability Index,CDC,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,https://svi.cdc.gov/data-and-tools-download.html,https://svi.cdc.gov/data-and-tools-download.html,,,,https://dev.socrata.com/foundry/data.cdc.gov/48va-t53r,,,
-Health,County Health Rankings,U Wisc,https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures,https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020.csv,,,,,,,https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020.csv,
-Various,American Community Survey,US Census Bureau,https://www.census.gov/data/developers/data-sets/acs-5year.html,https://github.com/walkerke/tidycensus,https://github.com/walkerke/tidycensus,,,,https://github.com/walkerke/tidycensus,,,
-Provider,Adult Foster Care Homes,LARA,"https://www.michigan.gov/lara/0,4601,7-154-89334_63294_27717-56812--,00.html",,,,https://documents.apps.lara.state.mi.us/bchs/afc_sw.txt,,,,https://documents.apps.lara.state.mi.us/bchs/afc_sw.txt,
-Health,WONDER Database,CDC,https://wonder.cdc.gov/wonder/help/WONDER-API.html,,,,,https://wonder.cdc.gov/wonder/help/WONDER-API.html,https://github.com/hrbrmstr/wondr,,,
-Behavioral,Behavioral Risk Factor Surveillance System,CDC,https://www.cdc.gov/brfss/annual_data/annual_2018.html,x,,,,,,x,,
-Vital,National Vitality Statistics,CDC,ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NVSS/USALEEP/CSV/,x,,,,,,,,
-Provider,Area Health Resources Files,HRSA,https://data.hrsa.gov//DataDownload/AHRF/AHRF_2018-2019.ZIP,x,,,,x,,,,
-Provider,Health Professional Shortage Areas (HPSA) Mental Health,HRSA,https://data.hrsa.gov//DataDownload/DD_Files/BCD_HPSA_FCT_DET_MH.csv,x,?,,x,x,,,,
-Provider,Health Professional Shortage Areas (HPSA) Primary Care,HRSA,https://data.hrsa.gov//DataDownload/DD_Files/BCD_HPSA_FCT_DET_PC.csv,x,?,,x,x,,,,
-Provider,Medically Underserved Areas/Populations (MUA/P),HRSA,https://data.hrsa.gov//DataDownload/DD_Files/MUA_DET.csv,x,?,,x,x,,,,
-Social,Eviction Lab,Princeton U,https://evictionlab.org/get-the-data/,x,x,x,,,,,,
-Food,Food Environment Atlas,USDA,https://www.ers.usda.gov/data-products/food-environment-atlas/data-access-and-documentation-downloads.aspx#.VEXQQPnF-mE,x,,,,,,,,
-Health,500 Cities: Census Tract-level Data,CDC,https://www.opendatanetwork.com/dataset/chronicdata.cdc.gov/kucs-wizg,,x,,,,,,,
-Provider,NPPES,CMS,https://download.cms.gov/nppes/NPI_Files.html,,,,x,,,x,,
-Opportunity,Neighborhood Atlas,U Wisc,https://www.neighborhoodatlas.medicine.wisc.edu/login,,x,x,,,,x,,
-Opportunity,Opportunity Insights Data,Opportunity Insights,https://opportunityinsights.org/data/,x,x,,,,,,x,
-Healthcare,Geographic Variation Public Use File,CMS,https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Geographic-Variation/GV_PUF,x,,,,,,,,
-Economic,Location Affordability Index,Office of the Secretary of Transportation,https://catalog.data.gov/dataset/location-affordability-index-all-census-counties,,,x,,,,,,
-Economic,Low-Income Housing Tax Credit,HUD,https://www.huduser.gov/portal/datasets/qct.html,,x,,,,,x,,
-Commuting,Longitudinal Employer-Household Dynamics,US Census Bureau,https://lehd.ces.census.gov/,,,,,,,,,
-Various,National Neighborhood Data Archive,NANDA,https://www.openicpsr.org/openicpsr/search/nanda/studies;jsessionid=F2AA4AF121C2321A51D5D8294EAEA0C3,x,x,,,,,,,
-Density,Rural-Urban Commuting Area Codes,USDA,https://www.ers.usda.gov/webdocs/DataFiles/53241/ruca2010revised.xlsx?v=8632.5,x,x,,,,,,x,
+topic,dataset,publisher,docs,county,tract,block_group,address,api,api_client,zip,open_dl,complete
+COVID-19,COVID-19 Cases/Deaths by US County,New York Times,https://github.com/nytimes/covid-19-data,x,,,,,,,https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv,FALSE
+COVID-19,COVID-19 County Projections,Columbia University,https://github.com/SenPei-CU/COVID-19_US_Projection,x,,,,,,https://github.com/SenPei-CU/COVID-19_US_Projection/blob/master/Projection_50%25transmissibility.csv.zip,,FALSE
+Social,Social Vulnerability Index,CDC,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,https://svi.cdc.gov/data-and-tools-download.html,https://svi.cdc.gov/data-and-tools-download.html,,,,https://dev.socrata.com/foundry/data.cdc.gov/48va-t53r,,,FALSE
+Health,County Health Rankings,U Wisc,https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures,https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020.csv,,,,,,,https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020.csv,FALSE
+Various,American Community Survey,US Census Bureau,https://www.census.gov/data/developers/data-sets/acs-5year.html,https://github.com/walkerke/tidycensus,https://github.com/walkerke/tidycensus,,,,https://github.com/walkerke/tidycensus,,,FALSE
+Provider,Adult Foster Care Homes,LARA,"https://www.michigan.gov/lara/0,4601,7-154-89334_63294_27717-56812--,00.html",,,,https://documents.apps.lara.state.mi.us/bchs/afc_sw.txt,,,,https://documents.apps.lara.state.mi.us/bchs/afc_sw.txt,FALSE
+Health,WONDER Database,CDC,https://wonder.cdc.gov/wonder/help/WONDER-API.html,,,,,https://wonder.cdc.gov/wonder/help/WONDER-API.html,https://github.com/hrbrmstr/wondr,,,FALSE
+Behavioral,Behavioral Risk Factor Surveillance System,CDC,https://www.cdc.gov/brfss/annual_data/annual_2018.html,x,,,,,,x,,FALSE
+Vital,National Vitality Statistics,CDC,ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NVSS/USALEEP/CSV/,x,,,,,,,,FALSE
+Provider,Area Health Resources Files,HRSA,https://data.hrsa.gov//DataDownload/AHRF/AHRF_2018-2019.ZIP,x,,,,x,,,,FALSE
+Provider,Health Professional Shortage Areas (HPSA) Mental Health,HRSA,https://data.hrsa.gov//DataDownload/DD_Files/BCD_HPSA_FCT_DET_MH.csv,x,?,,x,x,,,,FALSE
+Provider,Health Professional Shortage Areas (HPSA) Primary Care,HRSA,https://data.hrsa.gov//DataDownload/DD_Files/BCD_HPSA_FCT_DET_PC.csv,x,?,,x,x,,,,FALSE
+Provider,Medically Underserved Areas/Populations (MUA/P),HRSA,https://data.hrsa.gov//DataDownload/DD_Files/MUA_DET.csv,x,?,,x,x,,,,FALSE
+Social,Eviction Lab,Princeton U,https://evictionlab.org/get-the-data/,x,x,x,,,,,,FALSE
+Food,Food Environment Atlas,USDA,https://www.ers.usda.gov/data-products/food-environment-atlas/data-access-and-documentation-downloads.aspx#.VEXQQPnF-mE,x,,,,,,,,FALSE
+Health,500 Cities: Census Tract-level Data,CDC,https://www.opendatanetwork.com/dataset/chronicdata.cdc.gov/kucs-wizg,,x,,,,,,,FALSE
+Provider,NPPES,CMS,https://download.cms.gov/nppes/NPI_Files.html,,,,x,,,x,,FALSE
+Opportunity,Neighborhood Atlas,U Wisc,https://www.neighborhoodatlas.medicine.wisc.edu/login,,x,x,,,,x,,FALSE
+Opportunity,Opportunity Insights Data,Opportunity Insights,https://opportunityinsights.org/data/,x,x,,,,,,x,FALSE
+Healthcare,Geographic Variation Public Use File,CMS,https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Geographic-Variation/GV_PUF,x,,,,,,,,FALSE
+Economic,Location Affordability Index,Office of the Secretary of Transportation,https://catalog.data.gov/dataset/location-affordability-index-all-census-counties,,,x,,,,,,FALSE
+Economic,Low-Income Housing Tax Credit,HUD,https://www.huduser.gov/portal/datasets/qct.html,,x,,,,,x,,FALSE
+Commuting,Longitudinal Employer-Household Dynamics,US Census Bureau,https://lehd.ces.census.gov/,,,,,,,,,FALSE
+Various,National Neighborhood Data Archive,NANDA,https://www.openicpsr.org/openicpsr/search/nanda/studies;jsessionid=F2AA4AF121C2321A51D5D8294EAEA0C3,x,x,,,,,,,FALSE
+Density,Rural-Urban Commuting Area Codes,USDA,https://www.ers.usda.gov/webdocs/DataFiles/53241/ruca2010revised.xlsx?v=8632.5,x,x,,,,,,x,FALSE

@@ -19,17 +19,29 @@ This repository contains scripts for reading, transforming and combining dataset
 
 # Datasets
 
-The list of datasets are tracked in the `.csv` file located in the data folder, with more specific documentation found below as issues are identified.  Please push a commit marking the `status` field in the 
+The list of datasets are tracked in the `.csv` file located in the data folder, with more specific documentation found below as issues are identified.  Please push a commit marking the `complete` field in the .csv file as `TRUE`.  There are currently `r sum(df$complete)` datasets completed for inclusion.
 
 ```{r echo=FALSE}
 df %>%
   mutate(
-    datalink = paste0("[",dataset,"](",docs,")")
+    datalink = paste0("[",dataset,"](",docs,")"),
+    county = if_else(!is.na(county),paste0("[x](",county,")"),NA_character_),
+    tract = if_else(!is.na(tract),paste0("[x](",tract,")"),NA_character_),
+    address = if_else(!is.na(address),paste0("[x](",address,")"),NA_character_),
   ) %>%
   select(topic,datalink,publisher,county,tract,address) %>%
   arrange(topic) %>%
   knitr::kable()
 ```
+
+# Processing and Format
+
+There are different output file formats for each level of aggregation in the data.
+
+## County-level Dataset
+
+## Census Tract Dataset
+
 
 
 # Level of aggregation
@@ -42,7 +54,7 @@ This list includes datasets which are available at one or more of the following 
 
 These lower levels of aggregation can be rolled up to state level using FIPS codes.
 
-# Datasets
+# Dataset Details
 
 ## Census Variables
 
