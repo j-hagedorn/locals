@@ -25,9 +25,9 @@ The list of datasets are tracked in the `.csv` file located in the data folder, 
 df %>%
   mutate(
     datalink = paste0("[",dataset,"](",docs,")"),
-    county = if_else(!is.na(county),paste0("[x](",county,")"),NA_character_),
-    tract = if_else(!is.na(tract),paste0("[x](",tract,")"),NA_character_),
-    address = if_else(!is.na(address),paste0("[x](",address,")"),NA_character_),
+    county = if_else(!is.na(county),paste0("[x](",county,")"),""),
+    tract = if_else(!is.na(tract),paste0("[x](",tract,")"),""),
+    address = if_else(!is.na(address),paste0("[x](",address,")"),""),
   ) %>%
   select(topic,datalink,publisher,county,tract,address) %>%
   arrange(topic) %>%
