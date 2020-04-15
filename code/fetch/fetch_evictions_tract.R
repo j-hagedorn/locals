@@ -24,9 +24,12 @@ fetch_evictions_tract <- function(){
     
   }
   
+  rm(i)
+  
   return(df)
   
 }
+
 
 
 
