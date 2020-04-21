@@ -1,0 +1,40 @@
+---
+title: "Available Datasets"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = TRUE)
+df <- read_csv("data/datasets.csv")
+```
+
+# Context
+
+Below is a list of public datasets which are available at county, tracts and/or address level.  While there are many more datasets available at the county level, these allow for 'zoom-in' visibility from state to county to census tract.
+
+# Datasets
+
+This list includes datasets which are available at one or more of the following levels of aggregation:
+
+- Address (*allows for geocoding and attribution of location to census tract*)
+- Census Tract
+- County
+
+These lower levels of aggregation can be rolled up to state level using FIPS codes.
+
+The list of datasets are tracked in the `.csv` file located in the data folder, with more specific documentation found below as issues are identified.  Please push a commit marking the `complete` field in the .csv file as `TRUE`.  There are currently `r sum(df$complete)` datasets completed for inclusion.
+
+```{r echo=FALSE}
+df %>%
+  mutate(
+    datalink = paste0("[",dataset,"](",docs,")"),
+    county = if_else(!is.na(county),paste0("[x](",county,")"),""),
+    tract = if_else(!is.na(tract),paste0("[x](",tract,")"),""),
+    address = if_else(!is.na(address),paste0("[x](",address,")"),""),
+  ) %>%
+  select(topic,datalink,publisher,county,tract,address) %>%
+  arrange(topic) %>%
+  knitr::kable()
+```
+
