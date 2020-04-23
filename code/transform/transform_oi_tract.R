@@ -1,16 +1,22 @@
-library(tidyverse)
+library(tidyverse); library(feather)
 
-source("code/fetch/fetch_oi_tract.R")
+# Fetch from web for initial load, using:
+# source("code/fetch/fetch_oi_tract.R")
+# oi_tract <- fetch_oi_tract()
 
-oi_tract <- fetch_oi_tract()
+oi_tract <- read_feather("data/oi_tract.feather")
+oi_covar <- read_feather("data/oi_covar_tract.feather")
 
-oe_mi <- oi_tract %>% filter(state == 26)
+# Convert tract level outcomes to long dataset
 
-oe_mi_long <- 
-  oe_mi %>% 
+oi_mi <- oi_tract %>% filter(state == 26)
+
+oi_tract_long <- 
+  oi_tract %>% 
   mutate_all(~as.character(.)) %>%
+  select(-cz,-czname) %>%
   pivot_longer(
-    cols = -one_of("state","county","tract","cz","czname")
+    cols = -one_of("state","county","tract")
   ) %>%
   mutate(
     value = as.numeric(value),
@@ -69,6 +75,7 @@ oe_mi_long <-
       str_detect(name,"_female") ~ "female",
       TRUE ~ "pooled"
     ),
+    age_range = "pooled",
     stat_type = case_when(
       str_detect(name,"_mean$") ~ "mean",
       str_detect(name,"_mean_se$") ~ "mean_se",
@@ -88,16 +95,17 @@ oe_mi_long <-
       str_detect(name,"_p75_se$") ~ "p75_se",
       str_detect(name,"_p100_se$") ~ "p100_se",
       TRUE ~ NA_character_
-    )
+    ),
+    dataset = "oi"
   ) %>%
   select(-name) %>%
-  distinct() %>%
-  pivot_wider(
-    names_from = stat_type,
-    values_from = value
-  )
+  distinct() 
 
 
 ##The michigan state has 2813 tract locations but in the tract_outcomes_early file has 2061 tract locations.
 
-feather::write_feather(oe_mi_long,"data/oe/oe_mi_long.feather")
+feather::write_feather(oe_mi_long,"data/oe_mi_long.feather")
+
+# Convert tract level covariates to long form
+
+

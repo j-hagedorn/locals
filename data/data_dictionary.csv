@@ -1,0 +1,53 @@
+dataset,var_name,description,doc_src
+all,state,Two-digit state 2010 FIPS code,NA
+all,county,Three-digit county 2010 FIPS code,NA
+all,tract,Six-digit tract 2010 FIPS code,NA
+oi,has_dad,Fraction of children who have a male claimer in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,has_mom,Fraction of children who have a female claimer in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,jail,"Fraction incarcerated on April 1st, 2010 (where incarceration is defined as residing in a federal detention center, federal prison, state prison, local jail, residential correctional facility, military jail, or juvenile correctional facility)",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kfr_stycz,"Baseline kfr measure (2014-15 income) as defined above, but restricted to children who live in one of their childhood commuting zones in adulthood",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kfr_top01,Probability of reaching the top 1% of the national household incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kfr_top20,Probability of reaching the top quintile of the national household incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kfr_24,Mean percentile rank (relative to other children in the same year) in the national distribution of household income measured at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kfr_26,Mean percentile rank (relative to other children in the same year) in the national distribution of household income measured at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kfr_29,Mean percentile rank (relative to other children in the same year) in the national distribution of household income measured at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kfr,Mean percentile rank (relative to other children born in the same year) in thenational distribution of household income (i.e. own earnings and spouse’s earnings) measured as mean earnings in 2014-2015 for the baseline sample,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kir_stycz,"Baseline kir measure (2014-15 income) as defined above, but restricted to children who live in one of their childhood commuting zones in adulthood",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kir_top01,Probability of reaching the top 1% of the national individual incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kir_top20,Probability of reaching the top quintile of the national individual incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kir_24,Mean percentile rank (relative to other children in the same year) in the national distribution of individual income measured at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kir_26,Mean percentile rank (relative to other children in the same year) in the national distribution of individual income measured at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kir_29,Mean percentile rank (relative to other children in the same year) in the national distribution of individual income measured at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kir,Mean percentile rank (relative to other children born in the same year) in thenational distribution of individual income (i.e. just own earnings) measured as mean earnings in 2014-2015 for the baseline sample,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,frac_below_median,Fraction of children with parents who have income below the national median for parents with children in the same birth cohort. Children are weighted by the total number of childhood years spent in the tract.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,frac_years_xw,Mean fraction of possible childhood years (up to age 23) children spent in this tract. This is calculated over children who spent any time in this tract.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,par_rank,Estimated standard error for par_rank_[race]_[gender]_mean,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,kid,Count of children under 18 of race [race] and gender [gender] in the tract in 2000 (from publicly available 2000 Decennial Census data),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,lpov_nbh,Fraction children who grew up in a given tract and end up living in a tract with a poverty rate of less than 10% (according to tract-level Census 2000 data) in adulthood. Tracts where children live as adults are defined as the tract of the last non-missing address observed on tax returns,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,married,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,marr_24,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,marr_26,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,marr_29,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,marr_32,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 32,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,spouse_rk,Mean individual income rank in 2014-15 for the spouses of children who grew up in the given tract. Child’s spouse refers to the person they are married to in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,stayhome,Fraction of children who live at the same address as their parents in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,staycz,Fraction of children who live in one of their childhood commuting zones in adulthood,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,staytract,Fraction of individuals who live in one of their childhood Census tracts in adulthood,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,teenbrth,Fraction of women who grew up in the given tract who ever claimed a child who was born when they were between the ages of 13 and 19 as a dependent at any point,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,two_par,Fraction of children claimed by two people in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,working,Fraction of children with positive W-2 earnings in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,work_24,Fraction of children with positive W-2 earnings at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,work_26,Fraction of children with positive W-2 earnings at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,work_29,Fraction of children with positive W-2 earnings at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,work_32,Fraction of children with positive W-2 earnings at [age] 32,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+oi,,,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
