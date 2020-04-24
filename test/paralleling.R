@@ -1,3 +1,4 @@
+
 library(tidyverse); library(foreach); library(doParallel) 
 
 # Fetch from web for initial load, using:
@@ -19,7 +20,7 @@ foreach (i = unique(oi_tract$state)) %dopar% {
   
   library(tidyverse)
   memory.limit(30000)
-  
+    
   df <-
     oi_tract %>% 
     filter(state == i) %>%
@@ -116,10 +117,10 @@ foreach (i = unique(oi_tract$state)) %dopar% {
       var_name,value,stat_type
     ) %>%
     distinct()
-  
-  # Write files 
-  feather::write_feather(df,paste0("data/oi_files/oi_tract_long_",i,".feather"))
-  
+    
+    # Write files 
+    feather::write_feather(df,paste0("data/oi_files/oi_tract_long_",i,".feather"))
+    
 }
 
 stopCluster(cl)
