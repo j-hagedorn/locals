@@ -32,7 +32,7 @@ The list of datasets are tracked in the `.csv` file located in the data folder, 
 ```{r echo=FALSE}
 df %>%
   mutate(
-    datalink = paste0("[",dataset,"](",docs,")"),
+    datalink = paste0("[",dataset_name,"](",docs,")"),
     county = if_else(!is.na(county),paste0("[x](",county,")"),""),
     tract = if_else(!is.na(tract),paste0("[x](",tract,")"),""),
     address = if_else(!is.na(address),paste0("[x](",address,")"),""),
@@ -51,9 +51,9 @@ There are different output file formats for each level of aggregation in the dat
 The following fields must be included in all files:
 
 - `dataset`: A shortened name of the dataset, to allow for subsetting when datasets are combined.
-- `state`:
-- `county`:
-- `tract`: The 
+- `state`: Two-digit state 2010 FIPS code
+- `county`: Three-digit county 2010 FIPS code
+- `tract`: Six-digit tract 2010 FIPS code 
 - `year`: The year of the published dataset.
 - `race`: Should be marked as `pooled` where data is not broken out by race.  Should be marked as `NA` when the variable is not related to a population metric, such as in a count of facilities.
 - `gender`: Should be marked as `pooled` where data is not broken out by gender.  Should be marked as `NA` when the variable is not related to a population metric, such as in a count of facilities.
@@ -109,6 +109,13 @@ This is derived from Census Data and includes, according to the [documentation](
 - Housing Type & Transportation  
 
 ## COVID Cases
+
+## Opportunity Atlas
+
+Opportunity Insights is a non-partisan, not-for-profit organization based at Harvard University.  We incorporate data from their datasets which inform *The Opportunity Atlas: Mapping the Childhood Roots of Social Mobility*, specifically the following:
+
+- [All Outcomes by Census Tract, Race, Gender and Parental Income Percentile](https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf)
+- [Neighborhood Characteristics by Census Tract](https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf)  
 
 ## Bureau of Labor and Statistics
 
