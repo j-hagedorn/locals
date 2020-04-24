@@ -1,25 +1,136 @@
 
+library(tidyverse); library(foreach); library(doParallel) 
 
-library(foreach); library(doParallel) 
+# Fetch from web for initial load, using:
+# source("code/fetch/fetch_oi_tract.R")
+# oi_tract <- fetch_oi_tract()
 
-n_cores <- detectCores()/2
-cl <- parallel::makeCluster(2,type = 'SOCK', nnodes = n_cores)
+oi_tract <- feather::read_feather("data/oi_tract.feather")
+oi_covar <- feather::read_feather("data/oi_covar_tract.feather")
+
+cl <- parallel::makeCluster(2, type = 'SOCK', nnodes = detectCores()/2)
 registerDoParallel(cl)
-# foreach(i=1:3) %dopar% sqrt(i)
+memory.limit(30000)
+# Make a new dir 
+dir.create("data/oi_files")
 
-n_states <- length(unique(oi_tract$state))
+# Transform and save each state file separately to avoid crash
 
-tst <- 
-foreach (i = 1:n_states, .combine = rbind) %dopar% {
+foreach (i = unique(oi_tract$state)) %dopar% {
+  
   library(tidyverse)
   memory.limit(30000)
-  oi_tract %>% 
+    
+  df <-
+    oi_tract %>% 
     filter(state == i) %>%
     mutate_all(~as.character(.)) %>%
     select(-cz,-czname) %>%
-    pivot_longer(
-      cols = -one_of("state","county","tract")
-    ) %>% 
+    pivot_longer(cols = -one_of("state","county","tract")) %>% 
     # Remove NA values for memory
-    filter(!is.na(value))
+    filter(!is.na(value)) %>%
+    mutate(
+      value = as.numeric(value),
+      var_name = case_when(
+        str_detect(name,"^has_dad") ~ "has_dad",
+        str_detect(name,"^has_mom") ~ "has_mom",
+        str_detect(name,"^jail") ~ "jail",
+        str_detect(name,"^kfr_stycz") ~ "kfr_stycz",
+        str_detect(name,"^kfr_top01") ~ "kfr_top01",
+        str_detect(name,"^kfr_top20") ~ "kfr_top20",
+        str_detect(name,"^kfr_24") ~ "kfr_24",
+        str_detect(name,"^kfr_26") ~ "kfr_26",
+        str_detect(name,"^kfr_29") ~ "kfr_29",
+        str_detect(name,"^kfr")    ~ "kfr",
+        str_detect(name,"^kir_stycz") ~ "kir_stycz",
+        str_detect(name,"^kir_top01") ~ "kir_top01",
+        str_detect(name,"^kir_top20") ~ "kir_top20",
+        str_detect(name,"^kir_24") ~ "kir_24",
+        str_detect(name,"^kir_26") ~ "kir_26",
+        str_detect(name,"^kir_29") ~ "kir_29",
+        str_detect(name,"^kir") ~ "kir",
+        str_detect(name,"^frac_below_median") ~ "frac_below_median",
+        str_detect(name,"^frac_years_xw") ~ "frac_years_xw",
+        str_detect(name,"^par_rank") ~ "par_rank",
+        str_detect(name,"^kid") ~ "kid",
+        str_detect(name,"^lpov_nbh") ~ "lpov_nbh",
+        str_detect(name,"^married") ~ "married",
+        str_detect(name,"^marr_24") ~ "marr_24",
+        str_detect(name,"^marr_26") ~ "marr_26",
+        str_detect(name,"^marr_29") ~ "marr_29",
+        str_detect(name,"^marr_32") ~ "marr_32",
+        str_detect(name,"^spouse_rk") ~ "spouse_rk",
+        str_detect(name,"^stayhome") ~ "stayhome",
+        str_detect(name,"^staycz") ~ "staycz",
+        str_detect(name,"^staytract") ~ "staytract",
+        str_detect(name,"^teenbrth") ~ "teenbrth",
+        str_detect(name,"^two_par") ~ "two_par",
+        str_detect(name,"^working") ~ "working",
+        str_detect(name,"^work_24") ~ "work_24",
+        str_detect(name,"^work_26") ~ "work_26",
+        str_detect(name,"^work_29") ~ "work_29",
+        str_detect(name,"^work_32") ~ "work_32",
+        TRUE ~ NA_character_
+      ),
+      race = case_when(
+        str_detect(name,"hisp_") ~ "hispanic",
+        str_detect(name,"black_") ~ "black",
+        str_detect(name,"white_") ~ "white",
+        str_detect(name,"asian_") ~ "asian",
+        str_detect(name,"natam_") ~ "natam",
+        str_detect(name,"other_") ~ "other",
+        TRUE ~ "pooled"
+      ),
+      gender = case_when(
+        str_detect(name,"_male") ~ "male",
+        str_detect(name,"_female") ~ "female",
+        TRUE ~ "pooled"
+      ),
+      age_range = "pooled",
+      year = NA_character_,
+      stat_type = case_when(
+        str_detect(name,"_mean$") ~ "mean",
+        str_detect(name,"_mean_se$") ~ "mean_se",
+        str_detect(name,"_blw_p50_n$") ~ "blw_p50_n",
+        str_detect(name,"_n$") ~ "n",
+        str_detect(name,"^frac_below_median_") ~ "frac",
+        str_detect(name,"^frac_years_xw_") ~ "frac",
+        str_detect(name,"_p1$") ~ "p1",
+        str_detect(name,"_p10$") ~ "p10",
+        str_detect(name,"_p25$") ~ "p25",
+        str_detect(name,"_p50$") ~ "p50",
+        str_detect(name,"_p75$") ~ "p75",
+        str_detect(name,"_p100$") ~ "p100",
+        str_detect(name,"_p1_se$") ~ "p1_se",
+        str_detect(name,"_p25_se$") ~ "p25_se",
+        str_detect(name,"_p50_se$") ~ "p50_se",
+        str_detect(name,"_p75_se$") ~ "p75_se",
+        str_detect(name,"_p100_se$") ~ "p100_se",
+        TRUE ~ NA_character_
+      ),
+      dataset = "oi"
+    ) %>%
+    select(-name) %>%
+    select(
+      dataset,state,county,tract,year,
+      race,gender,age_range,
+      var_name,value,stat_type
+    ) %>%
+    distinct()
+    
+    # Write files 
+    feather::write_feather(df,paste0("data/oi_files/oi_tract_long_",i,".feather"))
 }
+
+# Read each separate state file and append to database
+# This assumes the existence of a system DSN named 'locals', which points to a db 
+
+locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
+
+for (i in list.files("data/oi_files",full.names = T)){
+  df <- feather::read_feather(i) %>% mutate(value = round(value,2))
+  odbc::dbWriteTable(locals_db, "tracts", df, append = T)
+}
+
+# Remove directory
+unlink("data/oi_files", recursive = TRUE)
