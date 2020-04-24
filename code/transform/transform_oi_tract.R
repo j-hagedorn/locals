@@ -76,6 +76,7 @@ oi_tract_long <-
       TRUE ~ "pooled"
     ),
     age_range = "pooled",
+    year = NA_character_,
     stat_type = case_when(
       str_detect(name,"_mean$") ~ "mean",
       str_detect(name,"_mean_se$") ~ "mean_se",
@@ -99,6 +100,11 @@ oi_tract_long <-
     dataset = "oi"
   ) %>%
   select(-name) %>%
+  select(
+    dataset,state,county,tract,year,
+    race,gender,age_range,
+    var_name,value,stat_type
+  ) %>%
   distinct() 
 
 
