@@ -147,14 +147,14 @@ unlink("data/oi_files", recursive = TRUE)
 rm(oi_county)
 
 # Transform covariate data
-oi_covar <- feather::read_feather("data/oi_covar_tract.feather")
+oi_covar <- feather::read_feather("data/oi_covar_county.feather")
 
 df <-
   oi_covar %>% 
   # filter(state == i) %>%
   mutate_all(~as.character(.)) %>%
   select(-cz,-czname) %>%
-  pivot_longer(cols = -one_of("state","county","tract")) %>% 
+  pivot_longer(cols = -one_of("state","county")) %>% 
   # Remove NA values for memory
   filter(!is.na(value)) %>%
   mutate(
@@ -199,12 +199,12 @@ df <-
   mutate(value = round(value,2)) %>%
   select(-name) %>%
   select(
-    dataset,state,county,tract,year,
+    dataset,state,county,year,
     race,gender,age_range,
     var_name,value,stat_type
   ) %>%
   distinct()
 
-odbc::dbWriteTable(locals_db, "tracts", df, append = T)
+odbc::dbWriteTable(locals_db, "counties", df, append = T)
 
 rm(oi_covar); rm(df)
