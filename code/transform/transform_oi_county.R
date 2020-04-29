@@ -139,12 +139,12 @@ locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 
 for (i in list.files("data/oi_files",full.names = T)){
   df <- feather::read_feather(i) %>% mutate(value = round(value,2))
-  odbc::dbWriteTable(locals_db, "county", df, append = T)
+  odbc::dbWriteTable(locals_db, "counties", df, append = T)
 }
 
 # Remove directory
 unlink("data/oi_files", recursive = TRUE)
-rm(oi_tract)
+rm(oi_county)
 
 # Transform covariate data
 oi_covar <- feather::read_feather("data/oi_covar_tract.feather")
