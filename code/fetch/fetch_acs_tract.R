@@ -1,21 +1,16 @@
 
 library(tidyverse); library(tidycensus); library(lubridate); library(feather)
 
-search <- "poverty|disability|disabled|over 65|insurance|incarcerat"
-year_range
+search <- "poverty|disability|disabled|over 65|insurance|incarcerat|institutionalized|food stamps"
+year_range <- 2013:2018
 
 acs_vars <-
   for(i in year_range) {
     df <- 
-      load_variables(i, "acs5", cache = TRUE) %>%
-      filter(str_detect(Label,regex(search, ignore_case = T))) %>%
-      # Remove names with 'M' suffix since pkg includes MOE for all vars
-      filter(str_detect(Label,"M$")) %>%
-      mutate(
-        year = i,
-        # remove 'E' suffix
-        Label = str_remove(Label,"E$")
-      )
+      load_variables(year_range[6], "acs5", cache = TRUE) %>%
+      filter(str_detect(label,regex(search, ignore_case = T))) %>%
+      # mutate(year = i) %>%
+      separate()
   }
   
 
