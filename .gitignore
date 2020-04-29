@@ -3,5 +3,6 @@
 .RData
 .Ruserdata
 .RDataTmp
+.Renviron
 
 *.feather
