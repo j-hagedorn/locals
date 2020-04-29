@@ -7,4 +7,4 @@ locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 # Create local references to SWMBH tables ####
 
 tracts_db <- tbl(locals_db, "tracts")
-
+counties_db <- tbl(locals_db, "counties")
