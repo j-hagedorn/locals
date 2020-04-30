@@ -6,7 +6,7 @@ library(tidyverse); library(tidycensus); library(lubridate); library(feather)
 # to include in the dataset. The query below returns vars which match the 
 # search string and are available across the identified date range
 
-search <- "median income|below poverty|with a disability|disabled|over 65|health insurance|incarcerat|received food stamps"
+search <- "median income|below poverty|with a disability|disabled|over 65|no health insurance|incarcerat|received food stamps"
 by_vars <- "sex|age|race"
 year_range <- 2013:2018
 acs_search <- tibble()
@@ -33,8 +33,9 @@ acs_search <-
 # Explicitly list vars
 fields <- list()
 fields$below_poverty <- "^B17001[:alpha:]"
-fields$median_income <- "^B19326"
+fields$median_income <- "B19326_001|B19326_002|B19326_005"
 fields$disability    <- "^B18101|^B18101[:alpha:]"
+fields$no_insurance  <- "^B27001|^C27001[:alpha:]"
 
 # as_tibble(fields) %>% t()
 
@@ -46,17 +47,19 @@ acs_vars <-
     race = case_when(
       str_detect(concept,regex("\\(hispanic or latino\\)", ignore_case = T))              ~ "hispanic",
       str_detect(concept,regex("\\(black or african american alone\\)", ignore_case = T)) ~ "black",
-      str_detect(concept,regex("\\(white alone", ignore_case = T))                        ~ "white",
+      str_detect(concept,regex("\\(white alone\\)", ignore_case = T))                     ~ "white",
+      str_detect(concept,regex("\\(white alone, not hispanic", ignore_case = T))          ~ "white_nonhisp",
       str_detect(concept,regex("\\(asian alone\\)", ignore_case = T))                     ~ "asian",
       str_detect(concept,regex("\\(american indian", ignore_case = T))                    ~ "natam",
       str_detect(concept,regex("pacific islander", ignore_case = T))                      ~ "pacific",
-      str_detect(concept,regex("other race|two or more", ignore_case = T))                ~ "other",
-      TRUE ~ NA_character_ # "pooled"
+      str_detect(concept,regex("two or more", ignore_case = T))                           ~ "multiple",
+      str_detect(concept,regex("other race", ignore_case = T))                            ~ "other",
+      TRUE ~ "pooled"
     ),
     gender = case_when(
       str_detect(label,"Male") ~ "male",
       str_detect(label,"Female") ~ "female",
-      TRUE ~ NA_character_ # "pooled"
+      TRUE ~ "pooled"
     ),
     age_range = case_when(
       str_detect(label,"Under [:digit:]{1,2} years") ~ str_extract(label,"Under [:digit:]{1,2} years"),
@@ -64,27 +67,31 @@ acs_vars <-
       str_detect(label,"[:digit:]{1,2} and [:digit:]{1,2} years") ~ str_extract(label,"[:digit:]{1,2} and [:digit:]{1,2} years"),
       str_detect(label,"[:digit:]{1,2} years and over") ~ str_extract(label,"[:digit:]{1,2} years and over"),
       str_detect(label,"[:digit:]{1,2} years") ~ str_extract(label,"[:digit:]{1,2} years"),
-      TRUE ~ NA_character_ # "pooled"
-    ),
-    var_name = str_replace(label,"^Estimate!!Total!!|^Estimate!!",""),
-    var_name = str_replace(var_name,"!!.*","")
-  )
+      TRUE ~ "pooled"
+    )
+  ) %>%
+  fuzzyjoin::regex_left_join(
+    fields %>% as_tibble() %>% pivot_longer(cols = everything()) %>% rename(var_name = name),
+    by = c("name" = "value")
+  ) %>%
+  select(name,label,concept,race,gender,age_range,var_name)
 
+# Nake sure there are no duplicate 
+# dups <- 
+#   acs_vars %>%
+#   group_by(var_name,race,gender,age_range) %>%
+#   summarize(n_distinct(name))
 
-tst <- 
-  acs_vars %>%
-  group_by(concept,race,gender,age_range) %>%
-  summarize(n_distinct(name))
-
-%>%
-  select(Name) %>% .$Name
 
 fetch_acs_tract <- function(){
   
-  get_acs(geography = "tract", 
-          variables = vars, 
-          state = "VT", 
-          year = 2018)
+ tst <- 
+   get_acs(
+     geography = "tract", 
+     variables = acs_vars$name, 
+     state = "MI", 
+     year = 2018
+    )
   
   
   
