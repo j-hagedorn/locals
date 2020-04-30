@@ -87,10 +87,11 @@ fetch_acs_tract <- function(){
   
  tst <- 
    get_acs(
-     geography = "tract", 
+     geography = "county", 
      variables = acs_vars$name, 
      state = "MI", 
-     year = 2018
+     year = 2018,
+     summary_var = "B00001_001"
     )
   
   
