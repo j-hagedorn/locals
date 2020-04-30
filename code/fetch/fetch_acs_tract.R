@@ -1,18 +1,80 @@
 
 library(tidyverse); library(tidycensus); library(lubridate); library(feather)
 
-search <- "poverty|disability|disabled|over 65|insurance|incarcerat|institutionalized|food stamps"
+# Because different measures reference different stratification variables 
+# in different orders/formats, we need to manually select the best fields 
+# to include in the dataset. The query below returns vars which match the 
+# search string and are available across the identified date range
+
+search <- "median income|below poverty|with a disability|disabled|over 65|health insurance|incarcerat|received food stamps"
+by_vars <- "sex|age|race"
 year_range <- 2013:2018
+acs_search <- tibble()
+
+for(i in year_range) {
+  df <- 
+    load_variables(i, "acs5", cache = TRUE) %>%
+    filter(str_detect(label,regex(search, ignore_case = T))) %>%
+    filter(str_detect(concept,regex(by_vars, ignore_case = T))) %>%
+    mutate(year = i) 
+  
+  acs_search <- bind_rows(acs_search,df)
+}
+
+# Assure vars are available for all years and then reduce
+acs_search <- 
+  acs_search %>% 
+  group_by(name) %>% 
+  filter(n_distinct(year) == length(year_range)) %>%
+  group_by(name,label,concept) %>%
+  summarize() %>%
+  separate(label, c(NA,"lab1","lab2","lab3","lab4","lab5","lab6","lab7"), sep = "!!", remove = F)
+  
+# Explicitly list vars
+fields <- list()
+fields$below_poverty <- "^B17001[:alpha:]"
+fields$median_income <- "^B19326"
+fields$disability    <- "^B18101|^B18101[:alpha:]"
+
+# as_tibble(fields) %>% t()
 
 acs_vars <-
-  for(i in year_range) {
-    df <- 
-      load_variables(year_range[6], "acs5", cache = TRUE) %>%
-      filter(str_detect(label,regex(search, ignore_case = T))) %>%
-      # mutate(year = i) %>%
-      separate()
-  }
-  
+  load_variables(max(year_range), "acs5", cache = TRUE) %>%
+  filter(str_detect(name,regex(paste(fields,collapse = "|"), ignore_case = T))) %>%
+  filter(str_detect(label,regex(search, ignore_case = T))) %>%
+  mutate(
+    race = case_when(
+      str_detect(concept,regex("\\(hispanic or latino\\)", ignore_case = T))              ~ "hispanic",
+      str_detect(concept,regex("\\(black or african american alone\\)", ignore_case = T)) ~ "black",
+      str_detect(concept,regex("\\(white alone", ignore_case = T))                        ~ "white",
+      str_detect(concept,regex("\\(asian alone\\)", ignore_case = T))                     ~ "asian",
+      str_detect(concept,regex("\\(american indian", ignore_case = T))                    ~ "natam",
+      str_detect(concept,regex("pacific islander", ignore_case = T))                      ~ "pacific",
+      str_detect(concept,regex("other race|two or more", ignore_case = T))                ~ "other",
+      TRUE ~ NA_character_ # "pooled"
+    ),
+    gender = case_when(
+      str_detect(label,"Male") ~ "male",
+      str_detect(label,"Female") ~ "female",
+      TRUE ~ NA_character_ # "pooled"
+    ),
+    age_range = case_when(
+      str_detect(label,"Under [:digit:]{1,2} years") ~ str_extract(label,"Under [:digit:]{1,2} years"),
+      str_detect(label,"[:digit:]{1,2} to [:digit:]{1,2} years") ~ str_extract(label,"[:digit:]{1,2} to [:digit:]{1,2} years"),
+      str_detect(label,"[:digit:]{1,2} and [:digit:]{1,2} years") ~ str_extract(label,"[:digit:]{1,2} and [:digit:]{1,2} years"),
+      str_detect(label,"[:digit:]{1,2} years and over") ~ str_extract(label,"[:digit:]{1,2} years and over"),
+      str_detect(label,"[:digit:]{1,2} years") ~ str_extract(label,"[:digit:]{1,2} years"),
+      TRUE ~ NA_character_ # "pooled"
+    ),
+    var_name = str_replace(label,"^Estimate!!Total!!|^Estimate!!",""),
+    var_name = str_replace(var_name,"!!.*","")
+  )
+
+
+tst <- 
+  acs_vars %>%
+  group_by(concept,race,gender,age_range) %>%
+  summarize(n_distinct(name))
 
 %>%
   select(Name) %>% .$Name
