@@ -6,6 +6,7 @@ library(tidyverse); library(tidycensus); library(lubridate); library(feather)
 # to include in the dataset. The query below returns vars which match the 
 # search string and are available across the identified date range
 
+data(fips_codes)
 search <- "median income|below poverty|with a disability|disabled|over 65|no health insurance|incarcerat|received food stamps"
 by_vars <- "sex|age|race"
 year_range <- 2013:2018
@@ -32,6 +33,7 @@ acs_search <-
   
 # Explicitly list vars
 fields <- list()
+fields$total_pop     <- "B00001_001"
 fields$below_poverty <- "^B17001[:alpha:]"
 fields$median_income <- "B19326_001|B19326_002|B19326_005"
 fields$disability    <- "^B18101|^B18101[:alpha:]"
@@ -42,7 +44,7 @@ fields$no_insurance  <- "^B27001|^C27001[:alpha:]"
 acs_vars <-
   load_variables(max(year_range), "acs5", cache = TRUE) %>%
   filter(str_detect(name,regex(paste(fields,collapse = "|"), ignore_case = T))) %>%
-  filter(str_detect(label,regex(search, ignore_case = T))) %>%
+  filter(str_detect(label,regex(search, ignore_case = T)) | name == "B00001_001") %>%
   mutate(
     race = case_when(
       str_detect(concept,regex("\\(hispanic or latino\\)", ignore_case = T))              ~ "hispanic",
@@ -82,18 +84,32 @@ acs_vars <-
 #   group_by(var_name,race,gender,age_range) %>%
 #   summarize(n_distinct(name))
 
+acs5_tract <- tibble()
 
-fetch_acs_tract <- function(){
+for (i in year_range) {
   
- tst <- 
-   get_acs(
-     geography = "county", 
-     variables = acs_vars$name, 
-     state = "MI", 
-     year = 2018,
-     summary_var = "B00001_001"
-    )
+  df <- 
+    get_acs(
+      geography = "tract", 
+      variables = acs_vars$name, 
+      state = unique(fips_codes$state), 
+      year = 2018#i
+    ) %>%
+    group_by(GEOID) %>%
+    mutate(
+      # Get total pop as col
+      pop = estimate[variable == "B00001_001"],
+      frac = estimate/pop,
+      year = i
+    ) %>%
+    filter(variable != "B00001_001") %>%
+    select(-pop) %>%
+    left_join(acs_vars, by = c("variable" = "name"))
   
-  
+  acs5_tract <- bind_rows(acs5_tract,df)
   
 }
+  
+
+write_feather(acs5_tract,"data/acs5_tract.feather")
+
