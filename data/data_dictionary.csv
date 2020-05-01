@@ -83,3 +83,7 @@ oi_covar,ann_avg_job_growth_2004_2013,Average annualized job growth rate over th
 oi_covar,job_density_2013,Number of jobs per square mile in each tract. Constructed using LODES - WAC data files provided by the Census Bureau.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
 oi_covar,hhinc_mean2000,Mean household income. Obtained from 2000 Decennial Census.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
 oi_covar,mean_commutetime2000,"Mean commute time for workers over 16 years old in the tract, as measured in the 2000 Decennial Census. ",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
+acs5,below_poverty,"Income in the past 12 months below poverty level	",
+acs5,median_income,"Median income in the past 12 months (in inflation-adjusted dollars)	",
+acs5,disability,With a disability,
+acs5,no_insurance,"No health insurance coverage	",
