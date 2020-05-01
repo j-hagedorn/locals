@@ -1,9 +1,10 @@
 
 # Transform  data
 acs5_tract <- feather::read_feather("data/acs5_tract.feather")
+memory.limit(30000)
 
 df <-
-  acs5_county %>% 
+  acs5_tract %>% 
   mutate(
     state = str_sub(GEOID,1,2),
     county = str_sub(GEOID,3,5),
