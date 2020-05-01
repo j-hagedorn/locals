@@ -141,3 +141,4 @@ for (i in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','
 }
 
 write_feather(acs5_county,"data/acs5_county.feather")
+
