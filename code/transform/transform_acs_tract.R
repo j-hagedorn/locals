@@ -1,7 +1,7 @@
 
 # Transform  data
 acs5_tract <- feather::read_feather("data/acs5_tract.feather")
-memory.limit(30000)
+memory.limit(60000)
 
 df <-
   acs5_tract %>% 
@@ -53,4 +53,4 @@ df <-
 locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 odbc::dbWriteTable(locals_db, "tracts", df, append = T)
 
-rm(acs5_county); rm(df)
+rm(acs5_tract); rm(df)
