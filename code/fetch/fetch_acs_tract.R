@@ -78,49 +78,66 @@ acs_vars <-
   ) %>%
   select(name,label,concept,race,gender,age_range,var_name)
 
-# Nake sure there are no duplicate 
+# Make sure there are no duplicate 
 # dups <- 
 #   acs_vars %>%
 #   group_by(var_name,race,gender,age_range) %>%
 #   summarize(n_distinct(name))
 
-
-
-fetch_acs_tract <- function(yr = 2018){
+# fetch_acs_tract <- function(yr = 2018){
   
-  x <- tibble()
+acs5_tract <- tibble()
   
-  for (i in unique(fips_codes$state)) {
+  for (i in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','UM','VI')])) {
     
     df <- 
       get_acs(
         geography = "tract", 
         variables = acs_vars$name, 
         state = i, 
-        year = yr
+        year = max(year_range)
       ) %>%
       group_by(GEOID) %>%
       mutate(
         # Get total pop as col
         pop = estimate[variable == "B00001_001"],
         frac = estimate/pop,
-        year = yr
+        year = max(year_range)
       ) %>%
       filter(variable != "B00001_001") %>%
       select(-pop) %>%
       left_join(acs_vars, by = c("variable" = "name"))
     
-    x <- bind_rows(x,df)
+    acs5_tract <- bind_rows(acs5_tract,df)
     
-  }
+ }
   
-  return(x)
+write_feather(acs5_tract,"data/acs5_tract.feather")
+
+acs5_county <- tibble()
+
+for (i in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','UM','VI')])) {
+  
+  df <- 
+    get_acs(
+      geography = "county", 
+      variables = acs_vars$name, 
+      state = i, 
+      year = max(year_range)
+    ) %>%
+    group_by(GEOID) %>%
+    mutate(
+      # Get total pop as col
+      pop = estimate[variable == "B00001_001"],
+      frac = estimate/pop,
+      year = max(year_range)
+    ) %>%
+    filter(variable != "B00001_001") %>%
+    select(-pop) %>%
+    left_join(acs_vars, by = c("variable" = "name"))
+  
+  acs5_county <- bind_rows(acs5_county,df)
   
 }
 
-
-acs5_tract <- fetch_acs_tract()
-  
-
-write_feather(acs5_tract,"data/acs5_tract.feather")
-
+write_feather(acs5_county,"data/acs5_county.feather")
