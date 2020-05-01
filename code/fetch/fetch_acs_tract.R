@@ -84,31 +84,42 @@ acs_vars <-
 #   group_by(var_name,race,gender,age_range) %>%
 #   summarize(n_distinct(name))
 
-acs5_tract <- tibble()
 
-for (i in year_range) {
+
+fetch_acs_tract <- function(yr = 2018){
   
-  df <- 
-    get_acs(
-      geography = "tract", 
-      variables = acs_vars$name, 
-      state = unique(fips_codes$state), 
-      year = 2018#i
-    ) %>%
-    group_by(GEOID) %>%
-    mutate(
-      # Get total pop as col
-      pop = estimate[variable == "B00001_001"],
-      frac = estimate/pop,
-      year = i
-    ) %>%
-    filter(variable != "B00001_001") %>%
-    select(-pop) %>%
-    left_join(acs_vars, by = c("variable" = "name"))
+  x <- tibble()
   
-  acs5_tract <- bind_rows(acs5_tract,df)
+  for (i in unique(fips_codes$state)) {
+    
+    df <- 
+      get_acs(
+        geography = "tract", 
+        variables = acs_vars$name, 
+        state = i, 
+        year = yr
+      ) %>%
+      group_by(GEOID) %>%
+      mutate(
+        # Get total pop as col
+        pop = estimate[variable == "B00001_001"],
+        frac = estimate/pop,
+        year = yr
+      ) %>%
+      filter(variable != "B00001_001") %>%
+      select(-pop) %>%
+      left_join(acs_vars, by = c("variable" = "name"))
+    
+    x <- bind_rows(x,df)
+    
+  }
+  
+  return(x)
   
 }
+
+
+acs5_tract <- fetch_acs_tract()
   
 
 write_feather(acs5_tract,"data/acs5_tract.feather")
