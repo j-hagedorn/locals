@@ -105,7 +105,6 @@ acs5_tract <- tibble()
         year = max(year_range)
       ) %>%
       filter(variable != "B00001_001") %>%
-      select(-pop) %>%
       left_join(acs_vars, by = c("variable" = "name"))
     
     acs5_tract <- bind_rows(acs5_tract,df)

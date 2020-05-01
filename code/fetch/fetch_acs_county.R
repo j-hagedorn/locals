@@ -21,7 +21,6 @@ for (i in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','
       year = max(year_range)
     ) %>%
     filter(variable != "B00001_001") %>%
-    select(-pop) %>%
     left_join(acs_vars, by = c("variable" = "name"))
   
   acs5_county <- bind_rows(acs5_county,df)
