@@ -4,8 +4,8 @@ library(tidyverse); library(foreach); library(doParallel)
 # source("code/fetch/fetch_oi_tract.R")
 # oi_tract <- fetch_oi_tract()
 
-oi_tract <- feather::read_feather("data/oi_tract.feather")
-oi_covar <- feather::read_feather("data/oi_covar_tract.feather")
+oi_county <- feather::read_feather("data/oi_county.feather")
+oi_covar <- feather::read_feather("data/oi_covar_county.feather")
 
 cl <- parallel::makeCluster(2, type = 'SOCK', nnodes = detectCores()/2)
 registerDoParallel(cl)
@@ -15,17 +15,17 @@ dir.create("data/oi_files")
 
 # Transform and save each state file separately to avoid crash
 
-foreach (i = unique(oi_tract$state)) %dopar% {
+foreach (i = unique(oi_county$state)) %dopar% {
   
   library(tidyverse)
   memory.limit(30000)
   
   df <-
-    oi_tract %>% 
+    oi_county %>% 
     filter(state == i) %>%
     mutate_all(~as.character(.)) %>%
     select(-cz,-czname) %>%
-    pivot_longer(cols = -one_of("state","county","tract")) %>% 
+    pivot_longer(cols = -one_of("state","county")) %>% 
     # Remove NA values for memory
     filter(!is.na(value)) %>%
     mutate(
@@ -69,6 +69,15 @@ foreach (i = unique(oi_tract$state)) %dopar% {
         str_detect(name,"^work_26") ~ "work_26",
         str_detect(name,"^work_29") ~ "work_29",
         str_detect(name,"^work_32") ~ "work_32",
+        str_detect(name,"^coll") ~ "coll",
+        str_detect(name,"^comcoll") ~ "comcoll",
+        str_detect(name,"^grad") ~ "grad",
+        str_detect(name,"^hours_wk") ~ "hours_wk",
+        str_detect(name,"^hs") ~ "hs",
+        str_detect(name,"^pos_hours") ~ "pos_hours",
+        str_detect(name,"^proginc") ~ "proginc",
+        str_detect(name,"^somecoll") ~ "somecoll",
+        str_detect(name,"^wgflx_rk") ~ "wgflx_rk",
         TRUE ~ NA_character_
       ),
       race = case_when(
@@ -111,14 +120,14 @@ foreach (i = unique(oi_tract$state)) %dopar% {
     ) %>%
     select(-name) %>%
     select(
-      dataset,state,county,tract,year,
+      dataset,state,county,year,
       race,gender,age_range,
       var_name,value,stat_type
     ) %>%
     distinct()
   
   # Write files 
-  feather::write_feather(df,paste0("data/oi_files/oi_tract_long_",i,".feather"))
+  feather::write_feather(df,paste0("data/oi_files/oi_county_long_",i,".feather"))
   
 }
 
@@ -130,22 +139,22 @@ locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 
 for (i in list.files("data/oi_files",full.names = T)){
   df <- feather::read_feather(i) %>% mutate(value = round(value,2))
-  odbc::dbWriteTable(locals_db, "tracts", df, append = T)
+  odbc::dbWriteTable(locals_db, "counties", df, append = T)
 }
 
 # Remove directory
 unlink("data/oi_files", recursive = TRUE)
-rm(oi_tract)
+rm(oi_county)
 
 # Transform covariate data
-oi_covar <- feather::read_feather("data/oi_covar_tract.feather")
+oi_covar <- feather::read_feather("data/oi_covar_county.feather")
 
 df <-
   oi_covar %>% 
   # filter(state == i) %>%
   mutate_all(~as.character(.)) %>%
   select(-cz,-czname) %>%
-  pivot_longer(cols = -one_of("state","county","tract")) %>% 
+  pivot_longer(cols = -one_of("state","county")) %>% 
   # Remove NA values for memory
   filter(!is.na(value)) %>%
   mutate(
@@ -190,12 +199,12 @@ df <-
   mutate(value = round(value,2)) %>%
   select(-name) %>%
   select(
-    dataset,state,county,tract,year,
+    dataset,state,county,year,
     race,gender,age_range,
     var_name,value,stat_type
   ) %>%
   distinct()
 
-odbc::dbWriteTable(locals_db, "tracts", df, append = T)
+odbc::dbWriteTable(locals_db, "counties", df, append = T)
 
 rm(oi_covar); rm(df)
