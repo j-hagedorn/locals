@@ -110,6 +110,28 @@ This is derived from Census Data and includes, according to the [documentation](
 
 ## COVID Cases
 
+From [here](https://github.com/nytimes/covid-19-data/blob/master/README.md)
+
+- Date
+- Cases
+- Deaths
+
+## COVID Projections
+
+From [here](https://github.com/SenPei-CU/COVID-19_US_Projection/blob/master/README.md)
+
+- Date
+- Report Median
+- Report 2.5
+- Report 25
+- Report 75
+- Report 97.5
+- Total Median
+- Total 2.5
+- Total 25
+- Total 75
+- Total 97.5
+
 ## Opportunity Atlas
 
 Opportunity Insights is a non-partisan, not-for-profit organization based at Harvard University.  We incorporate data from their datasets which inform *The Opportunity Atlas: Mapping the Childhood Roots of Social Mobility*, specifically the following:
