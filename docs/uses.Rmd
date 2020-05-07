@@ -1,0 +1,70 @@
+---
+title: "Potential Use Cases"
+output: 
+  md_document:
+    variant: markdown_github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+We know that we are strongly influenced by our environment is incredibly rich and complex.  Developing a way to quantify and classify this complexity, especially as it pertains to mental wellbeing and socioeconomic issues of vulnerable populations.
+
+```{r}
+
+tribble(
+  ~`As a...`,    ~`I want to know...`,   ~`So that I can...`,
+  #--|--|----
+  "",            "",                    "",
+  "",            "",                    "",
+  "",            "",                    "",
+  "",            "",                    "",
+  "",            "",                    "",
+  "",            "",                    ""
+) %>%
+knitr::kable(caption = 'Use Case Overview')
+
+```
+
+
+# Interactive Mapping with Multiple Overlays
+
+Allow policy-makers, administrators, program directors to look at a given geographic area to understand (a) overlapping issues in a single area or (b) comparing a single issue across multiple adjacent areas
+
+visualization and hosting of application would allow for providing an open resource, or a subscription to current clients and others interested in advanced mapping techniques
+
+# Simplifying Dimensions
+
+Finding ways to more simply characterize neighborhoods across multiple dimensions.  With hundreds of variables available to characterize each neighborhood at the census-tract level, it would help to derive summary measures using the wealth of available data.  Currently, each neighborhood can be viewed based on crime rates, evictions, income, profession, and other variables, but it is a challenge to keep all of these considerations in mind while comparing neighborhoods with one another.
+
+Using dimension reduction techniques to (a) explore the common contributors to variation across different neighborhoods and (b) derive summary measurements would allow for simpler sorting and visualization of neighborhoods which combine variables which best distinguish neighborhoods from each other.
+
+The resulting 'combined' variables could serve as measures or indices to be made available to end users.  Once tested for usability, these could be provided to end users in various ways.  For instance: as part of an API which allows mapping of an address to variables about an individual's neighborhood, or through an app for use in data visualization.  
+
+# Grouping Similar Neighborhoods
+
+Interested in finding similar neighborhoods, even if they're in different states or counties?  Using clustering techniques, we could identify neigborhoods which are similar across multiple dimensions to allow for comparison and benchmarking.  We could also find neighborhoods with similar challenges, but better outcomes on a particular variable of interest, in order to give communities sample comparisons which allowed for real-world learning opportunities.
+
+# Collaboration with Research Partners
+
+Access to a combined dataset of neighborhood and county-level variables could be offered in collaboration with research partners looking to develop novel methods for characterizing program evaluation and policy interventions.
+
+# Community Needs Assessment
+
+Provide a data repository and evolving tools to allow for assessment of community needs and other related issues (e.g. provider network coverage, etc.).  A repeatable, data-informed approach to community needs analysis would allow for a sophisticated approach which could be used nationally and adjusted based on specific requirements of local stakeholders.
+
+# Deriving Neighborhood-Level Metrics from Address-Level Data  
+
+Using the Census API to map address-level data to census tract allows for the creation of new datasets which can be combined with the existing variables at the neighborhood level.  For instance, using AFC data to count the number of homes in each neighborhood would allow for an objective analysis as to whether such homes are more often placed in lower-income neighborhoods.
+
+Addresses can be mapped both within a census tract area and as a distance to a tract centroid, allowing for rough measures of distance, in order to obtain distances from particular resources.  For instance, if we wanted to calculate the distance of a census tract from scant resources (e.g. hospitals, FHQCs, etc.)
+
+# Providing Environmental Context for Clinical Assessment Data
+
+Using the address for an individual beneficiary, it would be possible to derive information about that person's neighborhood/local environment to supplement existing assessments and clinical data.  This would allow for a more complete picture of an individual, and the consideration of additional variables which may be relevant to craft interventions related to social determinants. 
+
+For instance, if neighborhood-level datasets tell us that employment rate for people of color within a given neighborhood is low, and the data which we have for an individual indicates that they live in this neighborhood, then this helps to indicate something of the context in which the person lives on a daily basis.
+
+This allows for greater precision on the 'nature/nurture' equation, supplementing individual variables with environmental ones.  Ready access to this dataset allows for an analytic 'booster-pack' which we could bring to any analysis of person-level variables.
