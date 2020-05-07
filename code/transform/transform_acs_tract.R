@@ -1,3 +1,4 @@
+library(tidyverse)
 
 # Transform  data
 acs5_tract <- feather::read_feather("data/acs5_tract.feather")
