@@ -46,3 +46,4 @@ df <-
 locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 odbc::dbWriteTable(locals_db, "tracts", df, append = T)
 
+rm(df); rm(svi_tract)

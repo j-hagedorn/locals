@@ -43,3 +43,5 @@ df <-
 # This assumes the existence of a system DSN named 'locals', which points to a db 
 locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 odbc::dbWriteTable(locals_db, "counties", df, append = T)
+
+rm(df);rm(svi_county)
