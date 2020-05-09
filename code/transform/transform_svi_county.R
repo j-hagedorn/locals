@@ -33,7 +33,7 @@ df <-
   ) %>%
   rename(var_name = name) %>%
   select(
-    dataset,state,county,tract,year,
+    dataset,state,county,year,
     race,gender,age_range,
     var_name,value,stat_type
   ) %>%
