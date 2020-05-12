@@ -3,9 +3,10 @@
 library(DBI); library(odbc);library(dbplyr);library(tidyverse);library(lubridate)
 
 # Geographic reference data stored as .rda
-
-load("data/fips_state.rda"); load("data/fips_county.rda")
-load("data/fips_tract.rda"); load("data/fips_blockgroup.rda")
+load(url('https://github.com/j-hagedorn/locals/raw/master/data/fips_state.rda'))
+load(url('https://github.com/j-hagedorn/locals/raw/master/data/fips_county.rda'))
+load(url('https://github.com/j-hagedorn/locals/raw/master/data/fips_tract.rda'))
+load(url('https://github.com/j-hagedorn/locals/raw/master/data/fips_blockgroup.rda'))
 
 # Join all geographies
 
