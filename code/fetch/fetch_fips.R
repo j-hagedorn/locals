@@ -127,29 +127,21 @@ fips_state <-
 
 save(fips_state,file = "data/fips_state.rda")
 
-# Join tract and block groups
+# save(fips,file = "data/fips.rda")
 
-fips <-
-  fips_state %>%
-  left_join(fips_county,by = c("state_id")) %>%
-  left_join(fips_tract,by = c("state_id","county_id")) %>%
-  left_join(fips_blockgroup,by = c("state_id","county_id","tract_id"))
-
-save(fips,file = "data/fips.rda")
-
-# Convert to shapefiles
-
-fips_county_shape <-
-  fips_county %>%
-  st_as_sf(sf_column_name = "geometry_county")
-  
-fips_tract_shape <- 
-  fips_tract %>%
-  st_as_sf(sf_column_name = "geometry_tract") 
-
-fips_block_shape <-
-  fips_blockgroup %>%
-  st_as_sf(sf_column_name = "geometry_blkgrp")
+# # Convert to shapefiles
+# 
+# fips_county_shape <-
+#   fips_county %>%
+#   st_as_sf(sf_column_name = "geometry_county")
+# 
+# fips_tract_shape <- 
+#   fips_tract %>%
+#   st_as_sf(sf_column_name = "geometry_tract") 
+# 
+# fips_block_shape <-
+#   fips_blockgroup %>%
+#   st_as_sf(sf_column_name = "geometry_blkgrp")
 
 
 
