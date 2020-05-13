@@ -32,8 +32,8 @@ get_geo <- function(df = fips, geo_level = "state"){
 }
 
 
-
-tst <- get_geo("state")
-
+# Example:
+# tst <- fips %>% get_geo("county")
+# class(tst)
 
 
