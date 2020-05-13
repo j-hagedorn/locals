@@ -13,7 +13,7 @@ load(url('https://github.com/j-hagedorn/locals/raw/master/data/fips_blockgroup.r
 fips <-
   fips_state %>%
   left_join(fips_county,by = c("state_id")) %>%
-  left_join(fips_tract,by = c("state_id","county_id")) %>%
+  left_join(fips_tract, by = c("state_id","county_id")) %>%
   left_join(fips_blockgroup,by = c("state_id","county_id","tract_id"))
 
 rm(list = c("fips_state","fips_county","fips_tract","fips_blockgroup"))
