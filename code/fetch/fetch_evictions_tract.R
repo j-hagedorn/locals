@@ -31,7 +31,7 @@ fetch_evictions_tract <- function(){
 }
 
 
-
+# evictions <- fetch_evictions_tract()
 
 
 
