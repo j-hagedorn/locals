@@ -1,12 +1,12 @@
 
-fetch_evictions_tract <- function(){
+fetch_evictions_county <- function(){
   
   library(tidyverse); library(aws.s3)
   
   # Get df of assets in AWS bucket
   contents <- 
     get_bucket_df(bucket = 'eviction-lab-data-downloads') %>%
-    filter(str_detect(Key,"tracts.csv"))
+    filter(str_detect(Key,"counties.csv"))
   
   # Loop and combine
   df <- tibble()
@@ -31,8 +31,4 @@ fetch_evictions_tract <- function(){
 }
 
 
-# evictions <- fetch_evictions_tract()
-
-
-
-
+# evictions_county <- fetch_evictions_county()

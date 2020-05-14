@@ -12,7 +12,7 @@ Provider,ahrf,Area Health Resources Files,HRSA,https://data.hrsa.gov//DataDownlo
 Provider,hpsa_mh,Health Professional Shortage Areas (HPSA) Mental Health,HRSA,https://data.hrsa.gov//DataDownload/DD_Files/BCD_HPSA_FCT_DET_MH.csv,x,?,,x,x,,,,FALSE
 Provider,hpsa_pc,Health Professional Shortage Areas (HPSA) Primary Care,HRSA,https://data.hrsa.gov//DataDownload/DD_Files/BCD_HPSA_FCT_DET_PC.csv,x,?,,x,x,,,,FALSE
 Provider,mua,Medically Underserved Areas/Populations (MUA/P),HRSA,https://data.hrsa.gov//DataDownload/DD_Files/MUA_DET.csv,x,?,,x,x,,,,FALSE
-Social,evict,Eviction Lab,Princeton U,https://evictionlab.org/get-the-data/,x,x,x,,,,,,FALSE
+Social,evict,Eviction Lab,Princeton U,https://data-downloads.evictionlab.org/,x,x,x,,,,,,FALSE
 Food,food,Food Environment Atlas,USDA,https://www.ers.usda.gov/data-products/food-environment-atlas/data-access-and-documentation-downloads.aspx#.VEXQQPnF-mE,x,,,,,,,,FALSE
 Health,,500 Cities: Census Tract-level Data,CDC,https://www.opendatanetwork.com/dataset/chronicdata.cdc.gov/kucs-wizg,,x,,,,,,,FALSE
 Provider,nppes,NPPES,CMS,https://download.cms.gov/nppes/NPI_Files.html,,,,x,,,x,,FALSE
