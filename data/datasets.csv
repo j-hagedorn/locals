@@ -22,7 +22,7 @@ Opportunity,oi_covar,Neighborhood Characteristics,Opportunity Insights,https://o
 Healthcare,gvpuf,Geographic Variation Public Use File,CMS,https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Geographic-Variation/GV_PUF,x,,,,,,,,FALSE
 Economic,afford,Location Affordability Index,Office of the Secretary of Transportation,https://catalog.data.gov/dataset/location-affordability-index-all-census-counties,,,x,,,,,,FALSE
 Economic,lihtc,Low-Income Housing Tax Credit,HUD,https://www.huduser.gov/portal/datasets/qct.html,,x,,,,,x,,FALSE
-Commuting,lodes_rac,Longitudinal Employer-Household Dynamics,US Census Bureau Center for Economic Studies,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,x,x,https://lehd.ces.census.gov/data/#lodes,,,https://github.com/jamgreen/lehdr,,x,FALSE
+Commuting,lodes_rac,Longitudinal Employer-Household Dynamics,US Census Bureau Center for Economic Studies,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,x,x,https://lehd.ces.census.gov/data/#lodes,,,https://github.com/jamgreen/lehdr,,x,TRUE
 Various,nanda,National Neighborhood Data Archive,NANDA,https://www.openicpsr.org/openicpsr/search/nanda/studies;jsessionid=F2AA4AF121C2321A51D5D8294EAEA0C3,x,x,,,,,,,FALSE
 Density,ruca,Rural-Urban Commuting Area Codes,USDA,https://www.ers.usda.gov/webdocs/DataFiles/53241/ruca2010revised.xlsx?v=8632.5,x,x,,,,,,x,FALSE
 Provider,ip_psy,Inpatient Psychiatric Facility Quality Measure Data by Facility,CMS,https://catalog.data.gov/dataset/inpatient-psychiatric-facility-quality-measure-data-by-facility,,,,https://data.medicare.gov/api/views/q9vs-r7wp/rows.csv?accessType=DOWNLOAD,,,,x,FALSE
