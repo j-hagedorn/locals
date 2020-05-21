@@ -315,3 +315,7 @@ lodes_rac,cns17_frac,"Percentage of jobs in NAICS sector 71 (Arts, Entertainment
 lodes_rac,cns18_frac,Percentage of jobs in NAICS sector 72 (Accommodation and Food Services) ,
 lodes_rac,cns19_frac,Percentage of jobs in NAICS sector 81 (Other Services [except Public Administration]) ,
 lodes_rac,cns20_frac,Percentage of jobs in NAICS sector 92 (Public Administration) ,
+hpsa_primary_care,designation_type,This attribute represents the geography or facility type code characterizing the Health Professional Shortage Area (HPSA).,
+hpsa_primary_care,hpsa_status,This attribute represents the textual description of the current status of the Health Professional Shortage Area (HPSA) designation.,
+hpsa_mental_health,designation_type,This attribute represents the geography or facility type code characterizing the Health Professional Shortage Area (HPSA).,
+hpsa_mental_health,hpsa_status,This attribute represents the textual description of the current status of the Health Professional Shortage Area (HPSA) designation.,
