@@ -92,7 +92,7 @@ acs_vars <-
 
 # fetch_acs_tract <- function(yr = 2018){
 
-acs5_county <- tibble()
+acs5_tract <- tibble()
 
 for (i in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','UM','VI')]))
   #c("MI"))
@@ -100,14 +100,14 @@ for (i in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','
   
   df <- 
     get_acs(
-      geography = "county", 
+      geography = "tract", 
       variables = acs_vars$name, 
       state = i, 
       year = max(year_range)
     ) %>%
     # group_by(GEOID) %>%
     #  mutate(
-    # Get total pop as col
+    #  Get total pop as col
     #    pop = estimate[variable == "B00001_001"],
     #    frac = estimate/pop,
     #    year = max(year_range)
@@ -115,7 +115,7 @@ for (i in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','
     #  filter(variable != "B00001_001") %>%
     left_join(acs_vars, by = c("variable" = "name"))
   
-  acs5_county <- bind_rows(acs5_tract,df)
+    acs5_tract <- bind_rows(acs5_tract,df)
   
 }
 

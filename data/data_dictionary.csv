@@ -93,6 +93,8 @@ acs_5,median_income_median,"Median income in the past 12 months (in inflation-ad
 acs_5,no_insurance_n,"The estimated number of individuals with no health insurance coverage	",
 acs_5,no_insurance_moe,"The margin of error for the estimated number of individuals with no health insurance coverage	",
 acs_5,no_insurance_frac,"The proportion of the population who have no health insurance coverage	",
+acs_5,medicare,The estimated number of individuals on Medicare,
+acs_5,medicaid,The estimated number of individuals on Medicaid,
 nyt_covid,cases,Cumulative count of coronavirus cases,
 nyt_covid,deaths,Cumulative count of coronavirus deaths,
 Project_5%mobility,report_2.5,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,
