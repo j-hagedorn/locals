@@ -1,5 +1,4 @@
 
-
 # Primary care 
 pc<-hpsa_primary_care%>%
     select(name = `HPSA Name`,
@@ -12,9 +11,10 @@ pc<-hpsa_primary_care%>%
           
           )%>%
           mutate(dataset = 'hpsa_primary_care',
-                 race = NA_character_,
-                 gender = NA_character_,
-                 age_range = NA_character_,
+                 county = str_sub(county,3,5),
+                 race = "pooled",
+                 gender = "pooled",
+                 age_range = "pooled",
                  stat_type = 'cat'
                  
                  
@@ -36,9 +36,10 @@ mh<-hpsa_mental_health%>%
          
   )%>%
   mutate(dataset = 'hpsa_mental_health',
-         race = NA_character_,
-         gender = NA_character_,
-         age_range = NA_character_,
+         county = str_sub(county,3,5),
+         race = "pooled",
+         gender = "pooled",
+         age_range = "pooled",
          stat_type = 'cat'
          
          
@@ -50,12 +51,13 @@ mh<-hpsa_mental_health%>%
   
 
 # Combine 
-full<-rbind(pc,mh)
+full<-rbind(pc,mh)%>%
+      mutate(state = as.character(state))
 
 #===========================
 # Append to master counties
 #===========================
-
+locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 
 dbWriteTable(locals_db, name="counties", value=full , append=T, row.names=F, overwrite=F)
 
