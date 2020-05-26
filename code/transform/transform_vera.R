@@ -1,3 +1,5 @@
+library(tidyverse)
+
 
 
 vera_df<-vera%>%
@@ -40,10 +42,22 @@ vera_df<-vera%>%
                               TRUE ~ "pooled"),
             age_range = "pooled",
             year = as.character(year),
-            value = as.character(value)
+            value = as.character(value),
+            var_name  = case_when(str_detect(var_name,"black|white|latinx|aapi|native|other_race|male|female") ==TRUE ~
+                           str_replace(var_name,"black|white|latinx|aapi|native|other_race|male|female","n_inmates"),
+                           str_detect(var_name,"total")==TRUE ~ 
+                              str_replace(var_name,"total","n_inmates"),
+                              TRUE ~ NA_character_),
+            var_name= str_remove(var_name,"_pop")
+            
+            
       )%>%
       select(dataset,state,county,year,race,gender,age_range,var_name,value,stat_type)
 
+
+#test<-vera%>%
+#      select(year,state,fips,male_jail_pop)%>%
+#      filter(fips == '46125')
 
 
 #===========================

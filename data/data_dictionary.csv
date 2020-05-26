@@ -315,23 +315,7 @@ lodes_rac,cns17_frac,"Percentage of jobs in NAICS sector 71 (Arts, Entertainment
 lodes_rac,cns18_frac,Percentage of jobs in NAICS sector 72 (Accommodation and Food Services) ,
 lodes_rac,cns19_frac,Percentage of jobs in NAICS sector 81 (Other Services [except Public Administration]) ,
 lodes_rac,cns20_frac,Percentage of jobs in NAICS sector 92 (Public Administration) ,
-vera,total_prison_pop,Total prison count ,
-vera,total_jail_pop,Total jail count,
-vera,total_jail_pretrial,Total jail count pretrial,
-vera,total_jail_from_prison,Total jail from prison count ,
-vera,black_prison_pop,Black prison count,
-vera,white_prison_pop,White prison count,
-vera,latinx_prison_pop,Latinx prison count,
-vera,aapi_prison_pop,Asian American / Pacific Islander prison count,
-vera,native_prison_pop,Native prison count,
-vera,other_race_prison_pop,Other race_prison count,
-vera,male_prison_pop,Male prison count,
-vera,female_prison_pop,Female prison count,
-vera,black_jail_pop,Black jail count,
-vera,white_jail_pop,White jail count,
-vera,latinx_jail_pop,Latinx jail count,
-vera,aapi_jail_pop,Asian American / Pacific Islander jail count,
-vera,native_jail_pop,Native jail count,
-vera,other_race_jail_pop,Other race_jail count,
-vera,male_jail_pop,Male jail count,
-vera,female_jail_pop,Female jail count,
+vera,n_inmates_prison,Est. number of inmates in prison ,http://trends.vera.org/about
+vera,n_inmates_jail,Est. number of inmates in jail ,http://trends.vera.org/about
+vera,n_inmates_jail_pretrial,Est. number of inmates in pretrail ,http://trends.vera.org/about
+vera,n_inmates_jail_from_prison,Est. number of inmates jail from prison,http://trends.vera.org/about
