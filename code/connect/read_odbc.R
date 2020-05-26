@@ -8,6 +8,8 @@ load(url('https://github.com/j-hagedorn/locals/raw/master/data/fips_county.rda')
 load(url('https://github.com/j-hagedorn/locals/raw/master/data/fips_tract.rda'))
 load(url('https://github.com/j-hagedorn/locals/raw/master/data/fips_blockgroup.rda'))
 
+# load("data/fips_blockgroup.rda");load("data/fips_tract.rda");load("data/fips_county.rda");load("data/fips_state.rda")
+
 # Join all geographies
 
 fips <-
