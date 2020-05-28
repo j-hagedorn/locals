@@ -319,3 +319,7 @@ vera,n_inmates_prison,Est. number of inmates in prison ,http://trends.vera.org/a
 vera,n_inmates_jail,Est. number of inmates in jail ,http://trends.vera.org/about
 vera,n_inmates_jail_pretrial,Est. number of inmates in pretrail ,http://trends.vera.org/about
 vera,n_inmates_jail_from_prison,Est. number of inmates jail from prison,http://trends.vera.org/about
+ahrf,economy_type,The County typology classifies all U.S. counties according to six mutually exclusive (non-overlapping) categories of economic dependence. See documentation for code mapping https://data.hrsa.gov//DataDownload/AHRF/AHRF_USER_TECH_2018-2019.zip,
+ahrf,rural_urban_cont,Category codes related to rural and urban settings continuum - See documentation for code mapping https://data.hrsa.gov//DataDownload/AHRF/AHRF_USER_TECH_2018-2019.zip,
+ahrf,metro_nonMetro,Category codes related to metropolitan and non-metropolitan areas - See documentation for code mapping https://data.hrsa.gov//DataDownload/AHRF/AHRF_USER_TECH_2018-2019.zip,
+ahrf,prvtble_hsp_stys_medcre_rte_enrles,Preventable Hospital Stays Rate for Medicare 'fee-for-service' Enrollees.2016,
