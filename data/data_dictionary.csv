@@ -319,3 +319,9 @@ hpsa_primary_care,designation_type,This attribute represents the geography or fa
 hpsa_primary_care,hpsa_status,This attribute represents the textual description of the current status of the Health Professional Shortage Area (HPSA) designation.,
 hpsa_mental_health,designation_type,This attribute represents the geography or facility type code characterizing the Health Professional Shortage Area (HPSA).,
 hpsa_mental_health,hpsa_status,This attribute represents the textual description of the current status of the Health Professional Shortage Area (HPSA) designation.,
+vera,n_inmates_prison,Est. number of inmates in prison ,http://trends.vera.org/about
+vera,n_inmates_jail,Est. number of inmates in jail ,http://trends.vera.org/about
+vera,n_inmates_jail_pretrial,Est. number of inmates in pretrail ,http://trends.vera.org/about
+vera,n_inmates_jail_from_prison,Est. number of inmates jail from prison,http://trends.vera.org/about
+samhsa,type,Type of facility ,
+samhsa,status,"If the facility is a certified opioid treatment center, buprenorphine prescriber or both ",
