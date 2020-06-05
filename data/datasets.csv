@@ -31,3 +31,4 @@ Provider,prisons,Prison Boundaries,HIFLD,https://hifld-geoplatform.opendata.arcg
 Provider,police,Local Law Enforcement Locations,HIFLD,https://hifld-geoplatform.opendata.arcgis.com/datasets/local-law-enforcement-locations,,,,https://opendata.arcgis.com/datasets/0d79b978d71b4654bddb6ca0f4b7f830_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D,,,,x,FALSE
 Provider,nursing_homes,Nursing Homes,HIFLD,https://hifld-geoplatform.opendata.arcgis.com/datasets/nursing-homes,,,,https://opendata.arcgis.com/datasets/78c58035fb3942ba82af991bb4476f13_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D,,,,x,FALSE
 Provider,vera,incarceration trends by county ,VERA,https://github.com/vera-institute/incarceration_trends,x,,,,,,,,
+Provider ,samhsa,Behavioral Health Treatment Facility Listing ,SAMHSA ,https://findtreatment.samhsa.gov/locator,x,x,x,,,,,,
