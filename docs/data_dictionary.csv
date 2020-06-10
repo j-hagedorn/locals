@@ -93,48 +93,48 @@ acs_5,median_income_median,median_income,"Median income (in inflation-adjusted d
 acs_5,no_insurance_n,no_insurance_n,"Individuals with no health insurance	","The estimated number of individuals with no health insurance coverage	",,TRUE
 acs_5,no_insurance_moe,,,"The margin of error for the estimated number of individuals with no health insurance coverage	",,FALSE
 acs_5,no_insurance_frac,no_insurance_frac,"Fraction of population with no health insurance	","The proportion of the population who have no health insurance coverage	",,TRUE
-nyt_covid,cases,covid_cases,Cumulative count of coronavirus cases,Cumulative count of coronavirus cases,,TRUE
-nyt_covid,deaths,covid_deaths,Cumulative count of coronavirus deaths,Cumulative count of coronavirus deaths,,TRUE
-Project_5%mobility,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
-Project_5%mobility,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
-Project_5%mobility,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
-Project_5%mobility,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
-Project_5%mobility,report_median,,,Projected median of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
-Project_5%mobility,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
-Project_5%mobility,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
-Project_5%mobility,total_75,covid_projection_reduced_mobility_75,Projected infections with 75% reduced cross-county mobility,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,,TRUE
-Project_5%mobility,total_97.5,covid_projection_reduced_mobility_95,Projected infections with 95% reduced cross-county mobility,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 95% reduction of cross-county mobility,,TRUE
-Project_5%mobility,total_median,,,Projected median of daily infected (both documented and undocumented) case for scenario: 95% reduction of cross-county mobility,,FALSE
-Project_50%transmissibility,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,report_median,,,Projected median of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,total_median,covid_projection_reduced_contact_50,Conservative projection of infections with moderate reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,,TRUE
-Project_75%transmissibility,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,report_median,,,Projected median of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,total_median,covid_projection_reduced_contact_75,Conservative projection of infections with minimal reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,,TRUE
-Project_nointervention,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
-Project_nointervention,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
-Project_nointervention,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
-Project_nointervention,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
-Project_nointervention,report_median,,,Projected median of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
-Project_nointervention,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,,FALSE
-Project_nointervention,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,,FALSE
-Project_nointervention,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,,FALSE
-Project_nointervention,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: No Intervention,,FALSE
-Project_nointervention,total_median,,,Projected median of daily infected (both documented and undocumented) case for scenario: No Intervention,,FALSE
+covid_nyt,cases,covid_cases,Cumulative count of coronavirus cases,Cumulative count of coronavirus cases,,TRUE
+covid_nyt,deaths,covid_deaths,Cumulative count of coronavirus deaths,Cumulative count of coronavirus deaths,,TRUE
+covid_cu,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+covid_cu,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+covid_cu,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+covid_cu,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+covid_cu,report_median,,,Projected median of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+covid_cu,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+covid_cu,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+covid_cu,total_75,covid_projection_reduced_mobility_75,Projected infections with 75% reduced cross-county mobility,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,,TRUE
+covid_cu,total_97.5,covid_projection_reduced_mobility_95,Projected infections with 95% reduced cross-county mobility,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 95% reduction of cross-county mobility,,TRUE
+covid_cu,total_median,,,Projected median of daily infected (both documented and undocumented) case for scenario: 95% reduction of cross-county mobility,,FALSE
+covid_cu,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+covid_cu,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+covid_cu,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+covid_cu,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+covid_cu,report_median,,,Projected median of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+covid_cu,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
+covid_cu,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
+covid_cu,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
+covid_cu,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,,FALSE
+covid_cu,total_median,covid_projection_reduced_contact_50,Conservative projection of infections with moderate reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,,TRUE
+covid_cu,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+covid_cu,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+covid_cu,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+covid_cu,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+covid_cu,report_median,,,Projected median of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+covid_cu,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
+covid_cu,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
+covid_cu,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
+covid_cu,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,,FALSE
+covid_cu,total_median,covid_projection_reduced_contact_75,Conservative projection of infections with minimal reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,,TRUE
+covid_cu,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+covid_cu,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+covid_cu,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+covid_cu,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+covid_cu,report_median,,,Projected median of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+covid_cu,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,,FALSE
+covid_cu,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,,FALSE
+covid_cu,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,,FALSE
+covid_cu,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: No Intervention,,FALSE
+covid_cu,total_median,,,Projected median of daily infected (both documented and undocumented) case for scenario: No Intervention,,FALSE
 svi,area_sqmi,,,Tract area in square miles,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,e_totpop,,,"Population estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,m_totpop,,,"Population estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
