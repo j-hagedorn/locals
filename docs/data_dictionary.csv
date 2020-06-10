@@ -34,8 +34,8 @@ oi,stayhome,stay_home,Fraction of children living with parents,Fraction of child
 oi,staycz,,,Fraction of children who live in one of their childhood commuting zones in adulthood,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
 oi,staytract,stay_tract,Fraction of adults living in childhood neighborhood,Fraction of individuals who live in one of their childhood Census tracts in adulthood,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
 oi,teenbrth,teen_birth,Fraction of women with child while between 13-19,Fraction of women who grew up in the given tract who ever claimed a child who was born when they were between the ages of 13 and 19 as a dependent at any point,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
-oi,two_par,two_parents,Fraction of children claimed by two parents,Fraction of children claimed by two people in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
-oi,working,positive_earnings,Fraction of children with positive W-2 earnings,Fraction of children with positive W-2 earnings in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,two_par,two_parents,Fraction of children claimed by two parents,Fraction of children claimed by two people in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,working,positive_earnings,Fraction of children with positive W-2 earnings,Fraction of children with positive W-2 earnings in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
 oi,work_24,,,Fraction of children with positive W-2 earnings at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
 oi,work_26,,,Fraction of children with positive W-2 earnings at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
 oi,work_29,,,Fraction of children with positive W-2 earnings at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
@@ -90,9 +90,9 @@ acs_5,disability_n,disability_n,Individuals in population with a disability,The 
 acs_5,disability_moe,,,The margin of error for the estimated number of individuals with a disability,,FALSE
 acs_5,disability_frac,disability_frac,Fraction of population with a disability,The proportion of the population with a disability,,TRUE
 acs_5,median_income_median,median_income,"Median income (in inflation-adjusted dollars)	","Median income in the past 12 months (in inflation-adjusted dollars)	",,TRUE
-acs_5,no_insurance_n,no_insurance_n,"Individuals with no health insurance	","The estimated number of individuals with no health insurance coverage	",,FALSE
+acs_5,no_insurance_n,no_insurance_n,"Individuals with no health insurance	","The estimated number of individuals with no health insurance coverage	",,TRUE
 acs_5,no_insurance_moe,,,"The margin of error for the estimated number of individuals with no health insurance coverage	",,FALSE
-acs_5,no_insurance_frac,no_insurance_frac,"Fraction of population with no health insurance	","The proportion of the population who have no health insurance coverage	",,FALSE
+acs_5,no_insurance_frac,no_insurance_frac,"Fraction of population with no health insurance	","The proportion of the population who have no health insurance coverage	",,TRUE
 nyt_covid,cases,covid_cases,Cumulative count of coronavirus cases,Cumulative count of coronavirus cases,,TRUE
 nyt_covid,deaths,covid_deaths,Cumulative count of coronavirus deaths,Cumulative count of coronavirus deaths,,TRUE
 Project_5%mobility,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
@@ -114,7 +114,7 @@ Project_50%transmissibility,total_2.5,,,Projected 2.5% percentile of daily infec
 Project_50%transmissibility,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
 Project_50%transmissibility,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
 Project_50%transmissibility,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,,FALSE
-Project_50%transmissibility,total_median,covid_projection_reduced_contact_50,Conservative projection of infections with moderate reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,total_median,covid_projection_reduced_contact_50,Conservative projection of infections with moderate reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,,TRUE
 Project_75%transmissibility,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
 Project_75%transmissibility,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
 Project_75%transmissibility,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
@@ -124,7 +124,7 @@ Project_75%transmissibility,total_2.5,,,Projected 2.5% percentile of daily infec
 Project_75%transmissibility,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
 Project_75%transmissibility,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
 Project_75%transmissibility,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,,FALSE
-Project_75%transmissibility,total_median,covid_projection_reduced_contact_75,Conservative projection of infections with minimal reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,total_median,covid_projection_reduced_contact_75,Conservative projection of infections with minimal reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,,TRUE
 Project_nointervention,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
 Project_nointervention,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
 Project_nointervention,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
@@ -262,13 +262,13 @@ evict,eviction_filing_rate,eviction_filing_rate,Fraction of renter-occupied hous
 evict,low_flag,,,Boolean variable indicating whether the eviction numbers are estimated to be lower than they are in reality. Based on county estimates for tracts and block groups,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,FALSE
 evict,imputed,,,Boolean variable indicating whether eviction numbers and renter-occupied-households were imputed,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,FALSE
 evict,subbed,,,Boolean variable indicating whether eviction numbers and renter-occupied-households were pulled from another source other than Eviction Lab sources,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,FALSE
-lodes_rac,c000_n,jobs_total,Total number of jobs,Total number of jobs,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,c000_n,jobs_total,Total number of jobs,Total number of jobs,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
 lodes_rac,ca01_n,,,Number of jobs for workers age 29 or younger,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,ca02_n,,,Number of jobs for workers age 30 to 54,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,ca03_n,,,Number of jobs for workers age 55 or older,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,ce01_n,jobs_low_pay_n,Number of jobs earning $1250/month or less,Number of jobs with earnings $1250/month or less,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ce01_n,jobs_low_pay_n,Number of jobs earning $1250/month or less,Number of jobs with earnings $1250/month or less,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
 lodes_rac,ce02_n,,,Number of jobs with earnings $1251/month to $3333/month,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,ce03_n,jobs_high_pay_n,Number of jobs earning greater than $3333/month,Number of jobs with earnings greater than $3333/month,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ce03_n,jobs_high_pay_n,Number of jobs earning greater than $3333/month,Number of jobs with earnings greater than $3333/month,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
 lodes_rac,cns01_n,,,"Number of jobs in NAICS sector 11 (Agriculture, Forestry, Fishing and Hunting) ",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns02_n,,,"Number of jobs in NAICS sector 21 (Mining, Quarrying, and Oil and Gas Extraction)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns03_n,,,Number of jobs in NAICS sector 22 (Utilities),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
