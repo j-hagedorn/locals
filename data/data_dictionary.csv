@@ -1,323 +1,325 @@
-dataset,var_name,description,doc_src
-all,state,Two-digit state 2010 FIPS code,NA
-all,county,Three-digit county 2010 FIPS code,NA
-all,tract,Six-digit tract 2010 FIPS code,NA
-oi,has_dad,Fraction of children who have a male claimer in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,has_mom,Fraction of children who have a female claimer in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,jail,"Fraction incarcerated on April 1st, 2010 (where incarceration is defined as residing in a federal detention center, federal prison, state prison, local jail, residential correctional facility, military jail, or juvenile correctional facility)",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kfr_stycz,"Baseline kfr measure (2014-15 income) as defined above, but restricted to children who live in one of their childhood commuting zones in adulthood",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kfr_top01,Probability of reaching the top 1% of the national household incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kfr_top20,Probability of reaching the top quintile of the national household incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kfr_24,Mean percentile rank (relative to other children in the same year) in the national distribution of household income measured at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kfr_26,Mean percentile rank (relative to other children in the same year) in the national distribution of household income measured at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kfr_29,Mean percentile rank (relative to other children in the same year) in the national distribution of household income measured at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kfr,Mean percentile rank (relative to other children born in the same year) in thenational distribution of household income (i.e. own earnings and spouse’s earnings) measured as mean earnings in 2014-2015 for the baseline sample,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kir_stycz,"Baseline kir measure (2014-15 income) as defined above, but restricted to children who live in one of their childhood commuting zones in adulthood",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kir_top01,Probability of reaching the top 1% of the national individual incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kir_top20,Probability of reaching the top quintile of the national individual incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kir_24,Mean percentile rank (relative to other children in the same year) in the national distribution of individual income measured at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kir_26,Mean percentile rank (relative to other children in the same year) in the national distribution of individual income measured at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kir_29,Mean percentile rank (relative to other children in the same year) in the national distribution of individual income measured at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kir,Mean percentile rank (relative to other children born in the same year) in thenational distribution of individual income (i.e. just own earnings) measured as mean earnings in 2014-2015 for the baseline sample,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,frac_below_median,Fraction of children with parents who have income below the national median for parents with children in the same birth cohort. Children are weighted by the total number of childhood years spent in the tract.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,frac_years_xw,Mean fraction of possible childhood years (up to age 23) children spent in this tract. This is calculated over children who spent any time in this tract.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,par_rank,Estimated standard error for par_rank_[race]_[gender]_mean,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,kid,Count of children under 18 of race [race] and gender [gender] in the tract in 2000 (from publicly available 2000 Decennial Census data),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,lpov_nbh,Fraction children who grew up in a given tract and end up living in a tract with a poverty rate of less than 10% (according to tract-level Census 2000 data) in adulthood. Tracts where children live as adults are defined as the tract of the last non-missing address observed on tax returns,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,married,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,marr_24,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,marr_26,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,marr_29,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,marr_32,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 32,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,spouse_rk,Mean individual income rank in 2014-15 for the spouses of children who grew up in the given tract. Child’s spouse refers to the person they are married to in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,stayhome,Fraction of children who live at the same address as their parents in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,staycz,Fraction of children who live in one of their childhood commuting zones in adulthood,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,staytract,Fraction of individuals who live in one of their childhood Census tracts in adulthood,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,teenbrth,Fraction of women who grew up in the given tract who ever claimed a child who was born when they were between the ages of 13 and 19 as a dependent at any point,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,two_par,Fraction of children claimed by two people in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,working,Fraction of children with positive W-2 earnings in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,work_24,Fraction of children with positive W-2 earnings at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,work_26,Fraction of children with positive W-2 earnings at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,work_29,Fraction of children with positive W-2 earnings at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,work_32,Fraction of children with positive W-2 earnings at [age] 32,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf
-oi,coll,Fraction of children who have a four yearcollege degree (among children who received ACS or 2000 Census long form at age 25+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf
-oi,comcoll,Fraction of children who have at least a community college degree (among children who received the ACS or the 2000 Census long form at age 25+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf
-oi,grad,Fraction of children who have a graduate degree (among children who received the ACS or the 2000 long form at age 30+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf
-oi,hours_wk,"Mean weekly hours child worked in the 12 months before they were surveyed (among children who received ACS at age 30+) = hours worked per week * weeks worked in [year] /  51, where 51 is the maximum “weeks” worked in the ACS (since top bin is 50-52). = 0(for those who do not work)",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf
-oi,hs,Fraction of children who completed high school or obtained a GED (among children who the ACS or 2000 long form at age 19+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf
-oi,pos_hours,Fraction of children with positive hours worked in the 12 months before being surveyed (among children who received the ACS at age 30+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf
-oi,proginc,Fraction of children who receive public assistance income (among children who received the ACS at age 30+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf
-oi,somecoll,Fraction of children having at least some college experience (among children who received the ACS or 2000 long form at age 25+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf
-oi,wgflx_rk,"Hourly wage rank, computed within child birth year and year of ACS receipt (among children who received the ACS at age 30+)= annual labor income / (weekly hours worked * weeks worked per year) = missing for those who do not work",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf
-oi_covar,frac_coll_plus,"Number of people aged 25 or older who have a bachelor's degree, master's degree, professional school degree, or doctorate degree, divided by the total number of people aged 25 or older in a tract.  We use the 2000 Census to obtain the estimate for 2000, and the 2006-2010 ACS to obtain the estimate for 2010.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,frac_coll_plus2000,"Number of people aged 25 or older who have a bachelor's degree, master's degree, professional school degree, or doctorate degree, divided by the total number of people aged 25 or older in a tract.  We use the 2000 Census to obtain the estimate for 2000, and the 2006-2010 ACS to obtain the estimate for 2010.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,frac_coll_plus2010,"Number of people aged 25 or older who have a bachelor's degree, master's degree, professional school degree, or doctorate degree, divided by the total number of people aged 25 or older in a tract.  We use the 2000 Census to obtain the estimate for 2000, and the 2006-2010 ACS to obtain the estimate for 2010.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,foreign_share2010,Number of foreign born residents in the 2010 Census divided by the sum of native and foreign born residents. Obtained from the ACS 2006-2010,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,med_hhinc1990,"Median household income. The data for 1990 is measured in the 1990 Census, while the data for 2016 comes from the 2012-2016 American Community Survey. ",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,med_hhinc2016,"Median household income. The data for 1990 is measured in the 1990 Census, while the data for 2016 comes from the 2012-2016 American Community Survey. ",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,popdensity2000,"Number of residents per square mile, calculated by dividing the total tract level population in the Decennial Census from 2000 and 2010 with tract land area given in square miles from the 2010 Census Gazetteer Files",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,popdensity2010,"Number of residents per square mile, calculated by dividing the total tract level population in the Decennial Census from 2000 and 2010 with tract land area given in square miles from the 2010 Census Gazetteer Files",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,poor_share2010,"Share of individuals in the tract below the federal poverty line, measured in the decennial Census of the relevant year for the 1990 and 2000 estimates, and measured in the 2006-2010 ACS for the 2010 estimate.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,poor_share2000,"Share of individuals in the tract below the federal poverty line, measured in the decennial Census of the relevant year for the 1990 and 2000 estimates, and measured in the 2006-2010 ACS for the 2010 estimate.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,poor_share1990,"Share of individuals in the tract below the federal poverty line, measured in the decennial Census of the relevant year for the 1990 and 2000 estimates, and measured in the 2006-2010 ACS for the 2010 estimate.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,share_white2010,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,share_black2010,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,share_hisp2010,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,share_asian2010,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,share_black2000,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,share_white2000,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,share_hisp2000,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,share_asian2000,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,gsmn_math_g3_2013,Mean 3rd grade math test scores in 2013. Obtained from the Stanford Education Data Archive and measured at the district level. We create a crosswalk from districts to tracts by weighting by the proportion of land area that a given school district covers in a tract.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,rent_twobed2015,The median gross rent for renter-occupied housing units with two bedrooms that pay cash rent (from the 2011-2015 ACS),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,singleparent_share2010,"The number of households with females heads (and no husband present) or male heads (and no wife present) with own children under 18 years old present divided by the total number of households with own children present (1990 and 2000 estimates are from the decennial Census, and the 2010 estimate is from the 2006-2010 estimate).",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,singleparent_share1990,"The number of households with females heads (and no husband present) or male heads (and no wife present) with own children under 18 years old present divided by the total number of households with own children present (1990 and 2000 estimates are from the decennial Census, and the 2010 estimate is from the 2006-2010 estimate).",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,singleparent_share2000,"The number of households with females heads (and no husband present) or male heads (and no wife present) with own children under 18 years old present divided by the total number of households with own children present (1990 and 2000 estimates are from the decennial Census, and the 2010 estimate is from the 2006-2010 estimate).",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,traveltime15_2010,Share of workers 16 years and over who do not work at home whose commute is shorter than 15 minutes. Measured in the 2006-2010 ACS.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,emp2000,The rate of employment computed as total employed population (the sum of employed females and employed males) divided by the total population 16 years and over. Obtained from 2000 Decennial Census,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,mail_return_rate2010,"The 2010 Census return rate, measured as the number of 2010 Census mail forms completed and returned over the number of valid occupied housing units where a Census form was expected to be delivered for mail return to Census. Taken from the Census planning database.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,ln_wage_growth_hs_grad,Wage growth for high school graduates. Wages are constructed by dividing the average high school graduate annual earnings by the product of overall average weekly hours worked and 52. High school graduate wage growth is then computed as the difference in logarithms between high school graduate wages in 2010-2014 and school graduate wages in 2005-2009. Wages are measured in the 2005-2009 and 2010-2014 American Community Surveys.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,jobs_total_5mi_2015,Total number of jobs in own and neighboring tracts whose centroids fall within a radius of 5 miles from own tract centroid. Constructed using information from the Workplace Area Characteristics (WAC) data files in the LEHD Origin-Destination Employment Statistics (LODES) provided by the Census Bureau. ,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,jobs_highpay_5mi_2015,"Number of jobs with earnings greater than $3,333 per month in own and neighboring tracts whose centroids fall within a radius of 5 miles from own tract centroid. Constructed using LODES - WAC data files provided by the Census Bureau. ",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,ann_avg_job_growth_2004_2013,Average annualized job growth rate over the time period 2004 to 2013. Constructed using LODES - WAC data files provided by the Census Bureau. Data unavailable for Massachusetts and Washington D.C.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,job_density_2013,Number of jobs per square mile in each tract. Constructed using LODES - WAC data files provided by the Census Bureau.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,hhinc_mean2000,Mean household income. Obtained from 2000 Decennial Census.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-oi_covar,mean_commutetime2000,"Mean commute time for workers over 16 years old in the tract, as measured in the 2000 Decennial Census. ",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf
-acs_5,below_poverty_n,"The estimated number of individuals whose income in the past 12 months was below poverty level	",
-acs_5,below_poverty_moe,"The proportion of the population whose income in the past 12 months was below poverty level	",
-acs_5,below_poverty_frac,"The margin of error of the estimated number of individuals whose income in the past 12 months was below poverty level	",
-acs_5,disability_n,The estimated number of individuals with a disability,
-acs_5,disability_moe,The margin of error for the estimated number of individuals with a disability,
-acs_5,disability_frac,The proportion of the population with a disability,
-acs_5,median_income_median,"Median income in the past 12 months (in inflation-adjusted dollars)	",
-acs_5,no_insurance_n,"The estimated number of individuals with no health insurance coverage	",
-acs_5,no_insurance_moe,"The margin of error for the estimated number of individuals with no health insurance coverage	",
-acs_5,no_insurance_frac,"The proportion of the population who have no health insurance coverage	",
-nyt_covid,cases,Cumulative count of coronavirus cases,
-nyt_covid,deaths,Cumulative count of coronavirus deaths,
-Project_5%mobility,report_2.5,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,
-Project_5%mobility,report_25,Projected 25% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,
-Project_5%mobility,report_75,Projected 75% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,
-Project_5%mobility,report_97.5,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,
-Project_5%mobility,report_median,Projected median of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,
-Project_5%mobility,total_2.5,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,
-Project_5%mobility,total_25,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,
-Project_5%mobility,total_75,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,
-Project_5%mobility,total_97.5,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 95% reduction of cross-county mobility,
-Project_5%mobility,total_median,Projected median of daily infected (both documented and undocumented) case for scenario: 95% reduction of cross-county mobility,
-Project_50%transmissibility,report_2.5,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,
-Project_50%transmissibility,report_25,Projected 25% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,
-Project_50%transmissibility,report_75,Projected 75% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,
-Project_50%transmissibility,report_97.5,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,
-Project_50%transmissibility,report_median,Projected median of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,
-Project_50%transmissibility,total_2.5,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,
-Project_50%transmissibility,total_25,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,
-Project_50%transmissibility,total_75,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,
-Project_50%transmissibility,total_97.5,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,
-Project_50%transmissibility,total_median,Projected median of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,
-Project_75%transmissibility,report_2.5,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,
-Project_75%transmissibility,report_25,Projected 25% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,
-Project_75%transmissibility,report_75,Projected 75% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,
-Project_75%transmissibility,report_97.5,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,
-Project_75%transmissibility,report_median,Projected median of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,
-Project_75%transmissibility,total_2.5,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,
-Project_75%transmissibility,total_25,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,
-Project_75%transmissibility,total_75,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,
-Project_75%transmissibility,total_97.5,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,
-Project_75%transmissibility,total_median,Projected median of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,
-Project_nointervention,report_2.5,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: No Intervention,
-Project_nointervention,report_25,Projected 25% percentile of daily confirmed (documented) cases for scenario: No Intervention,
-Project_nointervention,report_75,Projected 75% percentile of daily confirmed (documented) cases for scenario: No Intervention,
-Project_nointervention,report_97.5,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: No Intervention,
-Project_nointervention,report_median,Projected median of daily confirmed (documented) cases for scenario: No Intervention,
-Project_nointervention,total_2.5,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,
-Project_nointervention,total_25,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,
-Project_nointervention,total_75,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,
-Project_nointervention,total_97.5,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: No Intervention,
-Project_nointervention,total_median,Projected median of daily infected (both documented and undocumented) case for scenario: No Intervention,
-svi,area_sqmi,Tract area in square miles,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_totpop,"Population estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_totpop,"Population estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_hu,"Housing units estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_hu,"Housing units estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_hh,"Households estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_hh,"Households estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_pov,"Persons below poverty estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_pov,"Persons below poverty estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_unemp,"Civilian (age 16+) unemployed estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_unemp,"Civilian (age 16+) unemployed estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_pci,Per capita income estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_pci,Per capita income estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_nohsdp,Persons (age 25+) with no high school diploma estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_nohsdp,Persons (age 25+) with no high school diploma estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_age65,Persons aged 65 and older estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_age65,Persons aged 65 and older estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_age17,Persons aged 17 and younger estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_age17,Persons aged 17 and younger estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_disabl,Civilian noninstitutionalized population with a disability estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_disabl,Civilian noninstitutionalized population with a disability estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_sngpnt,Single parent household with children under 18 estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_sngpnt,Single parent household with children under 18 estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_minrty,"Minority (all persons except white, non-Hispanic) estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_minrty,"Minority (all persons except white, non-Hispanic) estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_limeng,"Persons (age 5+) who speak English ""less than well"" estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_limeng,"Persons (age 5+) who speak English ""less than well"" estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_munit,Housing in structures with 10 or more units estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_munit,Housing in structures with 10 or more units estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_mobile,Mobile homes estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_mobile,Mobile homes estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_crowd,"At household level (occupied housing units), more people than rooms estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_crowd,"At household level (occupied housing units), more people than rooms estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_noveh,Households with no vehicle available estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_noveh,Households with no vehicle available estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_groupq,Persons in institutionalized group quarters estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_groupq,Persons in institutionalized group quarters estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_pov,Percentage of persons below poverty estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_pov,Percentage of persons below poverty estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_unemp,Unemployment Rate estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_unemp,Unemployment Rate estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_pci,Per capita income estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_pci,Per capita income estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_nohsdp,Percentage of persons with no high school diploma (age 25+) estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_nohsdp,Percentage of persons with no high school diploma (25+) estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_age65,Percentage of persons aged 65 and older estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_age65,Percentage of persons aged 65 and older estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_age17,Percentage of persons aged 17 and younger estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_age17,Percentage of persons aged 17 and younger estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_disabl,Percentage of civilian noninstitutionalized population with a disability estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_disabl,Percentage of civilian noninstitutionalized population with a disability estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_sngpnt,Percentage of single parent households with children under 18 estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_sngpnt,Percentage of single parent households with children under 18 estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_minrty,"Percentage minority (all persons except white, non-Hispanic) estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_minrty,"Percentage minority (all persons except white, non-Hispanic) estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_limeng,"Percentage of persons (age 5+) who speak English ""less than well"" estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_limeng,"Percentage of persons (age 5+) who speak English ""less than well"" estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_munit,Percentage of housing in structures with 10 or more units estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_munit,Percentage of housing in structures with 10 or more units estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_mobile,Percentage of mobile homes estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_mobile,Percentage of mobile homes estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_crowd,Percentage of occupied housing units with more people than rooms estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_crowd,Percentage of occupied housing units with more people than rooms estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_noveh,Percentage of households with no vehicle available estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_noveh,Percentage of households with no vehicle available estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_groupq,Percentage of persons in institutionalized group quarters estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_groupq,Percentage of persons in institutionalized group quarters estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_pov,Percentile Percentage of persons belowpoverty estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_unemp,Percentile Percentage of civilian (age 16+) unemployed estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_pci,Percentile per capita income estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_nohsdp,Percentile Percentage of persons with no high school diploma (age 25+) estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,spl_theme1,Sum of series for Socioeconomic theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,rpl_theme1,Percentile ranking for Socioeconomic theme summary,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_age65,Percentile percentage of persons aged 65 and older estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_age17,Percentile percentage of persons aged 17 and youngerestimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_disabl,Percentile percentage of civilian noninstitutionalized population with a disability estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_sngpnt,Percentile percentage of single parent households with children under 18 estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,spl_theme2,Sum of series for Household Composition theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,rpl_theme2,Percentile ranking for Household Composition theme summary,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_minrty,"Percentile percentage minority (all persons except white, non-Hispanic) estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_limeng,"Percentile percentage of persons (age 5+) who speak English ""less than well"" estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,spl_theme3,Sum of series for Minority Status/Language theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,rpl_theme3,Percentile ranking for Minority Status/Language theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_munit,Percentile percentage housing in structures with 10 or more units estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_mobile,Percentile percentage mobile homes estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_crowd,Percentile percentage households with more people than rooms estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_noveh,Percentile percentage households with no vehicle available estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,epl_groupq,Percentile percentage of persons in institutionalized group quarters estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,spl_theme4,Sum of series for HousingType/Transportation theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,rpl_theme4,Percentile ranking for HousingType/Transportation theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,spl_themes,Sum of series themes,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,rpl_themes,Overall percentile ranking,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_pov,Flag -the percentage of persons in poverty is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_unemp,Flag -the percentage of civilian unemployed is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_pci,Flag -per capita income is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_nohsdp,Flag -the percentage of persons with no high school diploma is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_theme1,Sum of flags for Socioeconomic Status theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_age65,Flag -the percentage of persons aged 65 and older is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_age17,Flag -the percentage of persons aged 17 and younger is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_disabl,Flag -the percentage of persons with a disability is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_sngpnt,Flag -the percentage of single parent households is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_theme2,Sum of flags for Household ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_minrty,Flag -the percentage of minority is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_limeng,Flag -the percentage those with limited English is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_theme3,Sum of flags for Minority Status/Language theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_munit,Flag -the percentage of households in multi-unit housing is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_mobile,Flag -the percentage of mobile homes is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_crowd,Flag -the percentage of crowded households is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_noveh,Flag -the percentage of households with no vehicles is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_groupq,Flag -the percentage of persons in institutionalized group quarters is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_theme4,Sum of flags for HousingType/Transportation theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,f_total,Sum of flags for the four themes,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_uninsur,Adjunct variable -Uninsured in the total civilian noninstitutionalized population estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,m_uninsur,Adjunct variable -Uninsured in the total civilian noninstitutionalized population estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,ep_uninsur,Adjunct variable -Percentage uninsured in the total civilian noninstitutionalized population estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,mp_uninsur,Adjunct variable -Percentage uninsured in the total civilian noninstitutionalized population estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-svi,e_daypop,Adjunct variable -Estimated daytime population,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf
-evict,renter_occupied_households,Interpolated count of renter-occupied households. Based on Census and ESRI Business Analyst demographic estimates,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-evict,pct_renter_occupied,This is not based off of the interpolated renter-occupied-households variable.  % of occupied housing units that are renter-occupied,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-evict,rent_burden,"Median gross rent as a percentage of household income, max is 50% representing >= 50%",https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-evict,eviction_filings,"All eviction cases filed in an area, including multiple cases filed against the same address in the same year",https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-evict,evictions,Number of eviction judgments in which renters were ordered to leave in a given area and year.  Only counts a single address which received an eviction judgment per year,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-evict,eviction_rate,Ratio of the number of renter-occupied households in an area that received an eviction judgement in which renters were ordered to leave.  Only counts a single address per year which received an eviction judgment,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-evict,eviction_filing_rate,"Ratio of the number of evictions filed in an area over the number of renter-occupied homes in that area.  Counts all eviction cases filed in an area, including multiple cases filed against the same address in the same year",https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-evict,low_flag,Boolean variable indicating whether the eviction numbers are estimated to be lower than they are in reality. Based on county estimates for tracts and block groups,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-evict,imputed,Boolean variable indicating whether eviction numbers and renter-occupied-households were imputed,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-evict,subbed,Boolean variable indicating whether eviction numbers and renter-occupied-households were pulled from another source other than Eviction Lab sources,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt
-lodes_rac,c000_n,otal number of jobs,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf
-lodes_rac,ca01_n,Number of jobs for workers age 29 or younger,
-lodes_rac,ca02_n,Number of jobs for workers age 30 to 54,
-lodes_rac,ca03_n,Number of jobs for workers age 55 or older,
-lodes_rac,ce01_n,Number of jobs with earnings $1250/month or less,
-lodes_rac,ce02_n,Number of jobs with earnings $1251/month to $3333/month,
-lodes_rac,ce03_n,Number of jobs with earnings greater than $3333/month,
-lodes_rac,cns01_n,"Number of jobs in NAICS sector 11 (Agriculture, Forestry, Fishing and Hunting) ",
-lodes_rac,cns02_n,"Number of jobs in NAICS sector 21 (Mining, Quarrying, and Oil and Gas Extraction)",
-lodes_rac,cns03_n,Number of jobs in NAICS sector 22 (Utilities),
-lodes_rac,cns04_n,Number of jobs in NAICS sector 23 (Construction) ,
-lodes_rac,cns05_n,Number of jobs in NAICS sector 31-33 (Manufacturing),
-lodes_rac,cns06_n,Number of jobs in NAICS sector 42 (Wholesale Trade) ,
-lodes_rac,cns07_n,Number of jobs in NAICS sector 44-45 (Retail Trade) ,
-lodes_rac,cns08_n,Number of jobs in NAICS sector 48-49 (Transportation and Warehousing) ,
-lodes_rac,cns09_n,Number of jobs in NAICS sector 51 (Information) ,
-lodes_rac,cns10_n,Number of jobs in NAICS sector 52 (Finance and Insurance),
-lodes_rac,cns11_n,Number of jobs in NAICS sector 53 (Real Estate and Rental and Leasing),
-lodes_rac,cns12_n,"Number of jobs in NAICS sector 54 (Professional, Scientific, and Technical Services)",
-lodes_rac,cns13_n,Number of jobs in NAICS sector 55 (Management of Companies and Enterprises) ,
-lodes_rac,cns14_n,Number of jobs in NAICS sector 56 (Administrative and Support and Waste Management and Remediation Services) ,
-lodes_rac,cns15_n,Number of jobs in NAICS sector 61 (Educational Services) ,
-lodes_rac,cns16_n,Number of jobs in NAICS sector 62 (Health Care and Social Assistance) ,
-lodes_rac,cns17_n,"Number of jobs in NAICS sector 71 (Arts, Entertainment, and Recreation)",
-lodes_rac,cns18_n,Number of jobs in NAICS sector 72 (Accommodation and Food Services) ,
-lodes_rac,cns19_n,Number of jobs in NAICS sector 81 (Other Services [except Public Administration]) ,
-lodes_rac,cns20_n,Number of jobs in NAICS sector 92 (Public Administration) ,
-lodes_rac,ca01_frac,Percentage of jobs for workers age 29 or younger,
-lodes_rac,ca02_frac,Percentage of jobs for workers age 30 to 54,
-lodes_rac,ca03_frac,Percentage of jobs for workers age 55 or older,
-lodes_rac,ce01_frac,Percentage of jobs with earnings $1250/month or less,
-lodes_rac,ce02_frac,Percentage of jobs with earnings $1251/month to $3333/month,
-lodes_rac,ce03_frac,Percentage of jobs with earnings greater than $3333/month,
-lodes_rac,cns01_frac,"Percentage of jobs in NAICS sector 11 (Agriculture, Forestry, Fishing and Hunting) ",
-lodes_rac,cns02_frac,"Percentage of jobs in NAICS sector 21 (Mining, Quarrying, and Oil and Gas Extraction)",
-lodes_rac,cns03_frac,Percentage of jobs in NAICS sector 22 (Utilities),
-lodes_rac,cns04_frac,Percentage of jobs in NAICS sector 23 (Construction) ,
-lodes_rac,cns05_frac,Percentage of jobs in NAICS sector 31-33 (Manufacturing),
-lodes_rac,cns06_frac,Percentage of jobs in NAICS sector 42 (Wholesale Trade) ,
-lodes_rac,cns07_frac,Percentage of jobs in NAICS sector 44-45 (Retail Trade) ,
-lodes_rac,cns08_frac,Percentage of jobs in NAICS sector 48-49 (Transportation and Warehousing) ,
-lodes_rac,cns09_frac,Percentage of jobs in NAICS sector 51 (Information) ,
-lodes_rac,cns10_frac,Percentage of jobs in NAICS sector 52 (Finance and Insurance),
-lodes_rac,cns11_frac,Percentage of jobs in NAICS sector 53 (Real Estate and Rental and Leasing),
-lodes_rac,cns12_frac,"Percentage of jobs in NAICS sector 54 (Professional, Scientific, and Technical Services)",
-lodes_rac,cns13_frac,Percentage of jobs in NAICS sector 55 (Management of Companies and Enterprises) ,
-lodes_rac,cns14_frac,Percentage of jobs in NAICS sector 56 (Administrative and Support and Waste Management and Remediation Services) ,
-lodes_rac,cns15_frac,Percentage of jobs in NAICS sector 61 (Educational Services) ,
-lodes_rac,cns16_frac,Percentage of jobs in NAICS sector 62 (Health Care and Social Assistance) ,
-lodes_rac,cns17_frac,"Percentage of jobs in NAICS sector 71 (Arts, Entertainment, and Recreation)",
-lodes_rac,cns18_frac,Percentage of jobs in NAICS sector 72 (Accommodation and Food Services) ,
-lodes_rac,cns19_frac,Percentage of jobs in NAICS sector 81 (Other Services [except Public Administration]) ,
-lodes_rac,cns20_frac,Percentage of jobs in NAICS sector 92 (Public Administration) ,
-vera,n_inmates_prison,Est. number of inmates in prison ,http://trends.vera.org/about
-vera,n_inmates_jail,Est. number of inmates in jail ,http://trends.vera.org/about
-vera,n_inmates_jail_pretrial,Est. number of inmates in pretrail ,http://trends.vera.org/about
-vera,n_inmates_jail_from_prison,Est. number of inmates jail from prison,http://trends.vera.org/about
-samhsa,type,Type of facility ,
-samhsa,status,"If the facility is a certified opioid treatment center, buprenorphine prescriber or both ",
+dataset,var_name,short_name,short_desc,description,doc_src,app_include
+all,state,state,State FIPS code,Two-digit state 2010 FIPS code,NA,TRUE
+all,county,county,County FIPS code,Three-digit county 2010 FIPS code,NA,TRUE
+all,tract,tract,Tract FIPS code,Six-digit tract 2010 FIPS code,NA,TRUE
+oi,has_dad,has_dad,Fraction with father (male tax claimer),Fraction of children who have a male claimer in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,has_mom,has_mom,Fraction with mother (female tax claimer),Fraction of children who have a female claimer in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,jail,jail,Fraction incarcerated,"Fraction incarcerated on April 1st, 2010 (where incarceration is defined as residing in a federal detention center, federal prison, state prison, local jail, residential correctional facility, military jail, or juvenile correctional facility)",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,kfr_stycz,,,"Baseline kfr measure (2014-15 income) as defined above, but restricted to children who live in one of their childhood commuting zones in adulthood",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,kfr_top01,likely_1_pct_household,Probability of household income reaching top 1%,Probability of reaching the top 1% of the national household income distribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,kfr_top20,likely_20_pct_household,Probability of household income reaching top 20%,Probability of reaching the top quintile of the national household incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,kfr_24,,,Mean percentile rank (relative to other children in the same year) in the national distribution of household income measured at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,kfr_26,,,Mean percentile rank (relative to other children in the same year) in the national distribution of household income measured at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,kfr_29,,,Mean percentile rank (relative to other children in the same year) in the national distribution of household income measured at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,kfr,rank_household_income,Mean percentile rank of household income,Mean percentile rank (relative to other children born in the same year) in thenational distribution of household income (i.e. own earnings and spouse’s earnings) measured as mean earnings in 2014-2015 for the baseline sample,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,kir_stycz,,,"Baseline kir measure (2014-15 income) as defined above, but restricted to children who live in one of their childhood commuting zones in adulthood",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,kir_top01,likely_1_pct_individual,Probability of individual income reaching top 1%,Probability of reaching the top 1% of the national individual incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,kir_top20,likely_20_pct_individual,Probability of individual income reaching top 20%,Probability of reaching the top quintile of the national individual incomedistribution (among children born in the same year) in 2014-15,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,kir_24,,,Mean percentile rank (relative to other children in the same year) in the national distribution of individual income measured at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,kir_26,,,Mean percentile rank (relative to other children in the same year) in the national distribution of individual income measured at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,kir_29,,,Mean percentile rank (relative to other children in the same year) in the national distribution of individual income measured at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,kir,rank_individual_income,Mean percentile rank of individual income,Mean percentile rank (relative to other children born in the same year) in thenational distribution of individual income (i.e. just own earnings) measured as mean earnings in 2014-2015 for the baseline sample,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,frac_below_median,,,Fraction of children with parents who have income below the national median for parents with children in the same birth cohort. Children are weighted by the total number of childhood years spent in the tract.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,frac_years_xw,,,Mean fraction of possible childhood years (up to age 23) children spent in this tract. This is calculated over children who spent any time in this tract.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,par_rank,,,Estimated standard error for par_rank_[race]_[gender]_mean,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,kid,,,Count of children under 18 of race [race] and gender [gender] in the tract in 2000 (from publicly available 2000 Decennial Census data),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,lpov_nbh,,,Fraction children who grew up in a given tract and end up living in a tract with a poverty rate of less than 10% (according to tract-level Census 2000 data) in adulthood. Tracts where children live as adults are defined as the tract of the last non-missing address observed on tax returns,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,married,married,Fraction of children who grow up to marry,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,marr_24,,,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,marr_26,,,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,marr_29,,,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,marr_32,,,Fraction of children who file their federal income tax return as “married filing jointly” or “married filing separate” at [age] 32,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,spouse_rk,,,Mean individual income rank in 2014-15 for the spouses of children who grew up in the given tract. Child’s spouse refers to the person they are married to in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,stayhome,stay_home,Fraction of children living with parents,Fraction of children who live at the same address as their parents in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,staycz,,,Fraction of children who live in one of their childhood commuting zones in adulthood,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,staytract,stay_tract,Fraction of adults living in childhood neighborhood,Fraction of individuals who live in one of their childhood Census tracts in adulthood,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,teenbrth,teen_birth,Fraction of women with child while between 13-19,Fraction of women who grew up in the given tract who ever claimed a child who was born when they were between the ages of 13 and 19 as a dependent at any point,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,TRUE
+oi,two_par,two_parents,Fraction of children claimed by two parents,Fraction of children claimed by two people in the year they are linked to parents,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,working,positive_earnings,Fraction of children with positive W-2 earnings,Fraction of children with positive W-2 earnings in 2015,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,work_24,,,Fraction of children with positive W-2 earnings at [age] 24,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,work_26,,,Fraction of children with positive W-2 earnings at [age] 26,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,work_29,,,Fraction of children with positive W-2 earnings at [age] 29,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,work_32,,,Fraction of children with positive W-2 earnings at [age] 32,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,FALSE
+oi,coll,,,Fraction of children who have a four yearcollege degree (among children who received ACS or 2000 Census long form at age 25+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf,FALSE
+oi,comcoll,,,Fraction of children who have at least a community college degree (among children who received the ACS or the 2000 Census long form at age 25+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf,FALSE
+oi,grad,,,Fraction of children who have a graduate degree (among children who received the ACS or the 2000 long form at age 30+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf,FALSE
+oi,hours_wk,,,"Mean weekly hours child worked in the 12 months before they were surveyed (among children who received ACS at age 30+) = hours worked per week * weeks worked in [year] /  51, where 51 is the maximum “weeks” worked in the ACS (since top bin is 50-52). = 0(for those who do not work)",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf,FALSE
+oi,hs,complete_hs,Fraction of children who completed high school/GED,Fraction of children who completed high school or obtained a GED (among children who the ACS or 2000 long form at age 19+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf,TRUE
+oi,pos_hours,,,Fraction of children with positive hours worked in the 12 months before being surveyed (among children who received the ACS at age 30+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf,FALSE
+oi,proginc,,,Fraction of children who receive public assistance income (among children who received the ACS at age 30+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf,FALSE
+oi,somecoll,,,Fraction of children having at least some college experience (among children who received the ACS or 2000 long form at age 25+),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf,FALSE
+oi,wgflx_rk,,,"Hourly wage rank, computed within child birth year and year of ACS receipt (among children who received the ACS at age 30+)= annual labor income / (weekly hours worked * weeks worked per year) = missing for those who do not work",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-5.pdf,FALSE
+oi_covar,frac_coll_plus,,,"Number of people aged 25 or older who have a bachelor's degree, master's degree, professional school degree, or doctorate degree, divided by the total number of people aged 25 or older in a tract.  We use the 2000 Census to obtain the estimate for 2000, and the 2006-2010 ACS to obtain the estimate for 2010.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,frac_coll_plus2000,,,"Number of people aged 25 or older who have a bachelor's degree, master's degree, professional school degree, or doctorate degree, divided by the total number of people aged 25 or older in a tract.  We use the 2000 Census to obtain the estimate for 2000, and the 2006-2010 ACS to obtain the estimate for 2010.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,frac_coll_plus2010,,,"Number of people aged 25 or older who have a bachelor's degree, master's degree, professional school degree, or doctorate degree, divided by the total number of people aged 25 or older in a tract.  We use the 2000 Census to obtain the estimate for 2000, and the 2006-2010 ACS to obtain the estimate for 2010.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,foreign_share2010,,,Number of foreign born residents in the 2010 Census divided by the sum of native and foreign born residents. Obtained from the ACS 2006-2010,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,med_hhinc1990,,,"Median household income. The data for 1990 is measured in the 1990 Census, while the data for 2016 comes from the 2012-2016 American Community Survey. ",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,med_hhinc2016,,,"Median household income. The data for 1990 is measured in the 1990 Census, while the data for 2016 comes from the 2012-2016 American Community Survey. ",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,popdensity2000,,,"Number of residents per square mile, calculated by dividing the total tract level population in the Decennial Census from 2000 and 2010 with tract land area given in square miles from the 2010 Census Gazetteer Files",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,popdensity2010,,,"Number of residents per square mile, calculated by dividing the total tract level population in the Decennial Census from 2000 and 2010 with tract land area given in square miles from the 2010 Census Gazetteer Files",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,poor_share2010,,,"Share of individuals in the tract below the federal poverty line, measured in the decennial Census of the relevant year for the 1990 and 2000 estimates, and measured in the 2006-2010 ACS for the 2010 estimate.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,poor_share2000,,,"Share of individuals in the tract below the federal poverty line, measured in the decennial Census of the relevant year for the 1990 and 2000 estimates, and measured in the 2006-2010 ACS for the 2010 estimate.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,poor_share1990,,,"Share of individuals in the tract below the federal poverty line, measured in the decennial Census of the relevant year for the 1990 and 2000 estimates, and measured in the 2006-2010 ACS for the 2010 estimate.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,share_white2010,,,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,share_black2010,,,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,share_hisp2010,,,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,share_asian2010,,,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,share_black2000,,,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,share_white2000,,,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,share_hisp2000,,,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,share_asian2000,,,Racial Shares in the decennial Census. All races (except Hispanic) exclude Hispanics and Latinos,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,gsmn_math_g3_2013,,,Mean 3rd grade math test scores in 2013. Obtained from the Stanford Education Data Archive and measured at the district level. We create a crosswalk from districts to tracts by weighting by the proportion of land area that a given school district covers in a tract.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,rent_twobed2015,,,The median gross rent for renter-occupied housing units with two bedrooms that pay cash rent (from the 2011-2015 ACS),https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,singleparent_share2010,,,"The number of households with females heads (and no husband present) or male heads (and no wife present) with own children under 18 years old present divided by the total number of households with own children present (1990 and 2000 estimates are from the decennial Census, and the 2010 estimate is from the 2006-2010 estimate).",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,singleparent_share1990,,,"The number of households with females heads (and no husband present) or male heads (and no wife present) with own children under 18 years old present divided by the total number of households with own children present (1990 and 2000 estimates are from the decennial Census, and the 2010 estimate is from the 2006-2010 estimate).",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,singleparent_share2000,,,"The number of households with females heads (and no husband present) or male heads (and no wife present) with own children under 18 years old present divided by the total number of households with own children present (1990 and 2000 estimates are from the decennial Census, and the 2010 estimate is from the 2006-2010 estimate).",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,traveltime15_2010,,,Share of workers 16 years and over who do not work at home whose commute is shorter than 15 minutes. Measured in the 2006-2010 ACS.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,emp2000,,,The rate of employment computed as total employed population (the sum of employed females and employed males) divided by the total population 16 years and over. Obtained from 2000 Decennial Census,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,mail_return_rate2010,,,"The 2010 Census return rate, measured as the number of 2010 Census mail forms completed and returned over the number of valid occupied housing units where a Census form was expected to be delivered for mail return to Census. Taken from the Census planning database.",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,ln_wage_growth_hs_grad,,,Wage growth for high school graduates. Wages are constructed by dividing the average high school graduate annual earnings by the product of overall average weekly hours worked and 52. High school graduate wage growth is then computed as the difference in logarithms between high school graduate wages in 2010-2014 and school graduate wages in 2005-2009. Wages are measured in the 2005-2009 and 2010-2014 American Community Surveys.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,jobs_total_5mi_2015,,,Total number of jobs in own and neighboring tracts whose centroids fall within a radius of 5 miles from own tract centroid. Constructed using information from the Workplace Area Characteristics (WAC) data files in the LEHD Origin-Destination Employment Statistics (LODES) provided by the Census Bureau. ,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,jobs_highpay_5mi_2015,,,"Number of jobs with earnings greater than $3,333 per month in own and neighboring tracts whose centroids fall within a radius of 5 miles from own tract centroid. Constructed using LODES - WAC data files provided by the Census Bureau. ",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,ann_avg_job_growth_2004_2013,,,Average annualized job growth rate over the time period 2004 to 2013. Constructed using LODES - WAC data files provided by the Census Bureau. Data unavailable for Massachusetts and Washington D.C.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,job_density_2013,,,Number of jobs per square mile in each tract. Constructed using LODES - WAC data files provided by the Census Bureau.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,hhinc_mean2000,,,Mean household income. Obtained from 2000 Decennial Census.,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+oi_covar,mean_commutetime2000,,,"Mean commute time for workers over 16 years old in the tract, as measured in the 2000 Decennial Census. ",https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,FALSE
+acs_5,below_poverty_n,below_poverty_n,"Individuals with income below poverty level	","The estimated number of individuals whose income in the past 12 months was below poverty level	",,TRUE
+acs_5,below_poverty_moe,,,"The proportion of the population whose income in the past 12 months was below poverty level	",,FALSE
+acs_5,below_poverty_frac,below_poverty_frac,"Fraction of population with income below poverty level	","The margin of error of the estimated number of individuals whose income in the past 12 months was below poverty level	",,TRUE
+acs_5,disability_n,disability_n,Individuals in population with a disability,The estimated number of individuals with a disability,,TRUE
+acs_5,disability_moe,,,The margin of error for the estimated number of individuals with a disability,,FALSE
+acs_5,disability_frac,disability_frac,Fraction of population with a disability,The proportion of the population with a disability,,TRUE
+acs_5,median_income_median,median_income,"Median income (in inflation-adjusted dollars)	","Median income in the past 12 months (in inflation-adjusted dollars)	",,TRUE
+acs_5,no_insurance_n,no_insurance_n,"Individuals with no health insurance	","The estimated number of individuals with no health insurance coverage	",,FALSE
+acs_5,no_insurance_moe,,,"The margin of error for the estimated number of individuals with no health insurance coverage	",,FALSE
+acs_5,no_insurance_frac,no_insurance_frac,"Fraction of population with no health insurance	","The proportion of the population who have no health insurance coverage	",,FALSE
+nyt_covid,cases,covid_cases,Cumulative count of coronavirus cases,Cumulative count of coronavirus cases,,TRUE
+nyt_covid,deaths,covid_deaths,Cumulative count of coronavirus deaths,Cumulative count of coronavirus deaths,,TRUE
+Project_5%mobility,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+Project_5%mobility,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+Project_5%mobility,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+Project_5%mobility,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+Project_5%mobility,report_median,,,Projected median of daily confirmed (documented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+Project_5%mobility,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+Project_5%mobility,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,,FALSE
+Project_5%mobility,total_75,covid_projection_reduced_mobility_75,Projected infections with 75% reduced cross-county mobility,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 95% reduction of cross-county mobility,,TRUE
+Project_5%mobility,total_97.5,covid_projection_reduced_mobility_95,Projected infections with 95% reduced cross-county mobility,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 95% reduction of cross-county mobility,,TRUE
+Project_5%mobility,total_median,,,Projected median of daily infected (both documented and undocumented) case for scenario: 95% reduction of cross-county mobility,,FALSE
+Project_50%transmissibility,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,report_median,,,Projected median of daily confirmed (documented) cases for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,,FALSE
+Project_50%transmissibility,total_median,covid_projection_reduced_contact_50,Conservative projection of infections with moderate reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 50% reduction of contact rate,,FALSE
+Project_75%transmissibility,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,report_median,,,Projected median of daily confirmed (documented) cases for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,,FALSE
+Project_75%transmissibility,total_median,covid_projection_reduced_contact_75,Conservative projection of infections with minimal reduction of contact,Projected median of daily infected (both documented and undocumented) case for scenario: 25% reduction of contact rate,,FALSE
+Project_nointervention,report_2.5,,,Projected 2.5% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+Project_nointervention,report_25,,,Projected 25% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+Project_nointervention,report_75,,,Projected 75% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+Project_nointervention,report_97.5,,,Projected 97.5% percentile of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+Project_nointervention,report_median,,,Projected median of daily confirmed (documented) cases for scenario: No Intervention,,FALSE
+Project_nointervention,total_2.5,,,Projected 2.5% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,,FALSE
+Project_nointervention,total_25,,,Projected 25% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,,FALSE
+Project_nointervention,total_75,,,Projected 75% percentile of daily infected (both documented and undocumented) cases for scenario: No Intervention,,FALSE
+Project_nointervention,total_97.5,,,Projected 97.5% percentile of daily infected (both documented and undocumented) case for scenario: No Intervention,,FALSE
+Project_nointervention,total_median,,,Projected median of daily infected (both documented and undocumented) case for scenario: No Intervention,,FALSE
+svi,area_sqmi,,,Tract area in square miles,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_totpop,,,"Population estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_totpop,,,"Population estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_hu,,,"Housing units estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_hu,,,"Housing units estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_hh,,,"Households estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_hh,,,"Households estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_pov,,,"Persons below poverty estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_pov,,,"Persons below poverty estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_unemp,,,"Civilian (age 16+) unemployed estimate, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_unemp,,,"Civilian (age 16+) unemployed estimate MOE, 2014-2018 ACS",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_pci,,,Per capita income estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_pci,,,Per capita income estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_nohsdp,,,Persons (age 25+) with no high school diploma estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_nohsdp,,,Persons (age 25+) with no high school diploma estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_age65,,,Persons aged 65 and older estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_age65,,,Persons aged 65 and older estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_age17,,,Persons aged 17 and younger estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_age17,,,Persons aged 17 and younger estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_disabl,,,Civilian noninstitutionalized population with a disability estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_disabl,,,Civilian noninstitutionalized population with a disability estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_sngpnt,,,Single parent household with children under 18 estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_sngpnt,,,Single parent household with children under 18 estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_minrty,,,"Minority (all persons except white, non-Hispanic) estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_minrty,,,"Minority (all persons except white, non-Hispanic) estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_limeng,,,"Persons (age 5+) who speak English ""less than well"" estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_limeng,,,"Persons (age 5+) who speak English ""less than well"" estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_munit,,,Housing in structures with 10 or more units estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_munit,,,Housing in structures with 10 or more units estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_mobile,,,Mobile homes estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_mobile,,,Mobile homes estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_crowd,,,"At household level (occupied housing units), more people than rooms estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_crowd,,,"At household level (occupied housing units), more people than rooms estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_noveh,,,Households with no vehicle available estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_noveh,,,Households with no vehicle available estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_groupq,,,Persons in institutionalized group quarters estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_groupq,,,Persons in institutionalized group quarters estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_pov,,,Percentage of persons below poverty estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_pov,,,Percentage of persons below poverty estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_unemp,,,Unemployment Rate estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_unemp,,,Unemployment Rate estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_pci,,,Per capita income estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_pci,,,Per capita income estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_nohsdp,,,Percentage of persons with no high school diploma (age 25+) estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_nohsdp,,,Percentage of persons with no high school diploma (25+) estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_age65,older_adults_frac,Fraction of population aged 65 and older,Percentage of persons aged 65 and older estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,TRUE
+svi,mp_age65,,,Percentage of persons aged 65 and older estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_age17,children_frac,Fraction of persons aged 17 and younger,Percentage of persons aged 17 and younger estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,TRUE
+svi,mp_age17,,,Percentage of persons aged 17 and younger estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_disabl,,,Percentage of civilian noninstitutionalized population with a disability estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_disabl,,,Percentage of civilian noninstitutionalized population with a disability estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_sngpnt,,,Percentage of single parent households with children under 18 estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_sngpnt,,,Percentage of single parent households with children under 18 estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_minrty,,,"Percentage minority (all persons except white, non-Hispanic) estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_minrty,,,"Percentage minority (all persons except white, non-Hispanic) estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_limeng,,,"Percentage of persons (age 5+) who speak English ""less than well"" estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_limeng,,,"Percentage of persons (age 5+) who speak English ""less than well"" estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_munit,,,Percentage of housing in structures with 10 or more units estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_munit,,,Percentage of housing in structures with 10 or more units estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_mobile,,,Percentage of mobile homes estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_mobile,,,Percentage of mobile homes estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_crowd,,,Percentage of occupied housing units with more people than rooms estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_crowd,,,Percentage of occupied housing units with more people than rooms estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_noveh,,,Percentage of households with no vehicle available estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_noveh,,,Percentage of households with no vehicle available estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_groupq,,,Percentage of persons in institutionalized group quarters estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_groupq,,,Percentage of persons in institutionalized group quarters estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_pov,,,Percentile Percentage of persons belowpoverty estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_unemp,,,Percentile Percentage of civilian (age 16+) unemployed estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_pci,,,Percentile per capita income estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_nohsdp,,,Percentile Percentage of persons with no high school diploma (age 25+) estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,spl_theme1,,,Sum of series for Socioeconomic theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,rpl_theme1,svi_socioeconomic,Vulnerability rank for Socioeconomic theme,Percentile ranking for Socioeconomic theme summary,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,TRUE
+svi,epl_age65,,,Percentile percentage of persons aged 65 and older estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_age17,,,Percentile percentage of persons aged 17 and youngerestimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_disabl,,,Percentile percentage of civilian noninstitutionalized population with a disability estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_sngpnt,,,Percentile percentage of single parent households with children under 18 estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,spl_theme2,,,Sum of series for Household Composition theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,rpl_theme2,svi_household_composition,Vulnerability rank for Household Composition,Percentile ranking for Household Composition theme summary,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,TRUE
+svi,epl_minrty,,,"Percentile percentage minority (all persons except white, non-Hispanic) estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_limeng,,,"Percentile percentage of persons (age 5+) who speak English ""less than well"" estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,spl_theme3,,,Sum of series for Minority Status/Language theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,rpl_theme3,svi_minority_language,Vulnerability rank for Minority Status/Language,Percentile ranking for Minority Status/Language theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,TRUE
+svi,epl_munit,,,Percentile percentage housing in structures with 10 or more units estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_mobile,,,Percentile percentage mobile homes estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_crowd,,,Percentile percentage households with more people than rooms estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_noveh,,,Percentile percentage households with no vehicle available estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_groupq,,,Percentile percentage of persons in institutionalized group quarters estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,spl_theme4,,,Sum of series for HousingType/Transportation theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,rpl_theme4,svi_housing_transport,Vulnerability rank for HousingType/Transportation,Percentile ranking for HousingType/Transportation theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,TRUE
+svi,spl_themes,,,Sum of series themes,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,rpl_themes,svi_index_rank,Overall social vulnerability rank across themes,Overall percentile ranking,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,TRUE
+svi,f_pov,,,Flag -the percentage of persons in poverty is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_unemp,,,Flag -the percentage of civilian unemployed is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_pci,,,Flag -per capita income is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_nohsdp,,,Flag -the percentage of persons with no high school diploma is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_theme1,,,Sum of flags for Socioeconomic Status theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_age65,,,Flag -the percentage of persons aged 65 and older is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_age17,,,Flag -the percentage of persons aged 17 and younger is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_disabl,,,Flag -the percentage of persons with a disability is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_sngpnt,,,Flag -the percentage of single parent households is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_theme2,,,Sum of flags for Household ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_minrty,,,Flag -the percentage of minority is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_limeng,,,Flag -the percentage those with limited English is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_theme3,,,Sum of flags for Minority Status/Language theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_munit,,,Flag -the percentage of households in multi-unit housing is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_mobile,,,Flag -the percentage of mobile homes is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_crowd,,,Flag -the percentage of crowded households is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_noveh,,,Flag -the percentage of households with no vehicles is in the 90th percentile ,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_groupq,,,Flag -the percentage of persons in institutionalized group quarters is in the 90th percentile,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_theme4,,,Sum of flags for HousingType/Transportation theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,f_total,,,Sum of flags for the four themes,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_uninsur,,,Adjunct variable -Uninsured in the total civilian noninstitutionalized population estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,m_uninsur,,,Adjunct variable -Uninsured in the total civilian noninstitutionalized population estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_uninsur,,,Adjunct variable -Percentage uninsured in the total civilian noninstitutionalized population estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,mp_uninsur,,,Adjunct variable -Percentage uninsured in the total civilian noninstitutionalized population estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,e_daypop,,,Adjunct variable -Estimated daytime population,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+evict,renter_occupied_households,renters,Interpolated count of renter-occupied households,Interpolated count of renter-occupied households. Based on Census and ESRI Business Analyst demographic estimates,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,TRUE
+evict,pct_renter_occupied,renters_frac,% of occupied housing units that are renter-occupied,This is not based off of the interpolated renter-occupied-households variable.  % of occupied housing units that are renter-occupied,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,TRUE
+evict,rent_burden,rent_burden,,"Median gross rent as a percentage of household income, max is 50% representing >= 50%",https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,TRUE
+evict,eviction_filings,,,"All eviction cases filed in an area, including multiple cases filed against the same address in the same year",https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,FALSE
+evict,evictions,evictions,Number of eviction orders,Number of eviction judgments in which renters were ordered to leave in a given area and year.  Only counts a single address which received an eviction judgment per year,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,TRUE
+evict,eviction_rate,eviction_rate,Fraction of renter-occupied households with eviction orders,Ratio of the number of renter-occupied households in an area that received an eviction judgement in which renters were ordered to leave.  Only counts a single address per year which received an eviction judgment,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,TRUE
+evict,eviction_filing_rate,eviction_filing_rate,Fraction of renter-occupied households with eviction filings,"Ratio of the number of evictions filed in an area over the number of renter-occupied homes in that area.  Counts all eviction cases filed in an area, including multiple cases filed against the same address in the same year",https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,TRUE
+evict,low_flag,,,Boolean variable indicating whether the eviction numbers are estimated to be lower than they are in reality. Based on county estimates for tracts and block groups,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,FALSE
+evict,imputed,,,Boolean variable indicating whether eviction numbers and renter-occupied-households were imputed,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,FALSE
+evict,subbed,,,Boolean variable indicating whether eviction numbers and renter-occupied-households were pulled from another source other than Eviction Lab sources,https://eviction-lab-data-downloads.s3.amazonaws.com/DATA_DICTIONARY.txt,FALSE
+lodes_rac,c000_n,jobs_total,Total number of jobs,Total number of jobs,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ca01_n,,,Number of jobs for workers age 29 or younger,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ca02_n,,,Number of jobs for workers age 30 to 54,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ca03_n,,,Number of jobs for workers age 55 or older,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ce01_n,jobs_low_pay_n,Number of jobs earning $1250/month or less,Number of jobs with earnings $1250/month or less,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ce02_n,,,Number of jobs with earnings $1251/month to $3333/month,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ce03_n,jobs_high_pay_n,Number of jobs earning greater than $3333/month,Number of jobs with earnings greater than $3333/month,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns01_n,,,"Number of jobs in NAICS sector 11 (Agriculture, Forestry, Fishing and Hunting) ",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns02_n,,,"Number of jobs in NAICS sector 21 (Mining, Quarrying, and Oil and Gas Extraction)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns03_n,,,Number of jobs in NAICS sector 22 (Utilities),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns04_n,,,Number of jobs in NAICS sector 23 (Construction) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns05_n,,,Number of jobs in NAICS sector 31-33 (Manufacturing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns06_n,,,Number of jobs in NAICS sector 42 (Wholesale Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns07_n,,,Number of jobs in NAICS sector 44-45 (Retail Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns08_n,,,Number of jobs in NAICS sector 48-49 (Transportation and Warehousing) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns09_n,,,Number of jobs in NAICS sector 51 (Information) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns10_n,,,Number of jobs in NAICS sector 52 (Finance and Insurance),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns11_n,,,Number of jobs in NAICS sector 53 (Real Estate and Rental and Leasing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns12_n,,,"Number of jobs in NAICS sector 54 (Professional, Scientific, and Technical Services)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns13_n,,,Number of jobs in NAICS sector 55 (Management of Companies and Enterprises) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns14_n,,,Number of jobs in NAICS sector 56 (Administrative and Support and Waste Management and Remediation Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns15_n,,,Number of jobs in NAICS sector 61 (Educational Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns16_n,,,Number of jobs in NAICS sector 62 (Health Care and Social Assistance) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns17_n,,,"Number of jobs in NAICS sector 71 (Arts, Entertainment, and Recreation)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns18_n,,,Number of jobs in NAICS sector 72 (Accommodation and Food Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns19_n,,,Number of jobs in NAICS sector 81 (Other Services [except Public Administration]) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns20_n,,,Number of jobs in NAICS sector 92 (Public Administration) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ca01_frac,,,Percentage of jobs for workers age 29 or younger,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ca02_frac,,,Percentage of jobs for workers age 30 to 54,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ca03_frac,,,Percentage of jobs for workers age 55 or older,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ce01_frac,jobs_low_pay_frac,Fraction of jobs earning $1250/month or less,Percentage of jobs with earnings $1250/month or less,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
+lodes_rac,ce02_frac,,,Percentage of jobs with earnings $1251/month to $3333/month,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,ce03_frac,jobs_high_pay_frac,Fraction of jobs earning greater than $3333/month,Percentage of jobs with earnings greater than $3333/month,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
+lodes_rac,cns01_frac,,,"Percentage of jobs in NAICS sector 11 (Agriculture, Forestry, Fishing and Hunting) ",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns02_frac,,,"Percentage of jobs in NAICS sector 21 (Mining, Quarrying, and Oil and Gas Extraction)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns03_frac,jobs_utilities_frac,Fraction of jobs in utilities sector,Percentage of jobs in NAICS sector 22 (Utilities),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
+lodes_rac,cns04_frac,,,Percentage of jobs in NAICS sector 23 (Construction) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns05_frac,,,Percentage of jobs in NAICS sector 31-33 (Manufacturing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns06_frac,,,Percentage of jobs in NAICS sector 42 (Wholesale Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns07_frac,,,Percentage of jobs in NAICS sector 44-45 (Retail Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns08_frac,,,Percentage of jobs in NAICS sector 48-49 (Transportation and Warehousing) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns09_frac,,,Percentage of jobs in NAICS sector 51 (Information) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns10_frac,,,Percentage of jobs in NAICS sector 52 (Finance and Insurance),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns11_frac,,,Percentage of jobs in NAICS sector 53 (Real Estate and Rental and Leasing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns12_frac,jobs_professional_frac,"Fraction of jobs in professional, scientific, and technical sector","Percentage of jobs in NAICS sector 54 (Professional, Scientific, and Technical Services)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
+lodes_rac,cns13_frac,jobs_management_frac,Fraction of jobs in management of companies and enterprises ,Percentage of jobs in NAICS sector 55 (Management of Companies and Enterprises) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
+lodes_rac,cns14_frac,,,Percentage of jobs in NAICS sector 56 (Administrative and Support and Waste Management and Remediation Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns15_frac,jobs_education_frac,Fraction of jobs in education ,Percentage of jobs in NAICS sector 61 (Educational Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
+lodes_rac,cns16_frac,jobs_health_frac,Fraction of jobs in healthcare and social assistance ,Percentage of jobs in NAICS sector 62 (Health Care and Social Assistance) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
+lodes_rac,cns17_frac,,,"Percentage of jobs in NAICS sector 71 (Arts, Entertainment, and Recreation)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns18_frac,jobs_food_frac,Fraction of jobs in accommodation and food services ,Percentage of jobs in NAICS sector 72 (Accommodation and Food Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,TRUE
+lodes_rac,cns19_frac,,,Percentage of jobs in NAICS sector 81 (Other Services [except Public Administration]) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns20_frac,,,Percentage of jobs in NAICS sector 92 (Public Administration) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+hpsa_primary_care,designation_type,,,This attribute represents the geography or facility type code characterizing the Health Professional Shortage Area (HPSA).,,FALSE
+hpsa_primary_care,hpsa_status,,,This attribute represents the textual description of the current status of the Health Professional Shortage Area (HPSA) designation.,,FALSE
+hpsa_mental_health,designation_type,,,This attribute represents the geography or facility type code characterizing the Health Professional Shortage Area (HPSA).,,FALSE
+hpsa_mental_health,hpsa_status,,,This attribute represents the textual description of the current status of the Health Professional Shortage Area (HPSA) designation.,,FALSE
+vera,n_inmates_prison,n_inmates_prison,Estimated number of inmates in prison ,Est. number of inmates in prison ,http://trends.vera.org/about,TRUE
+vera,n_inmates_jail,n_inmates_jail,Estimated number of inmates in jail ,Est. number of inmates in jail ,http://trends.vera.org/about,TRUE
+vera,n_inmates_jail_pretrial,n_inmates_jail_pretrial,Estimated number of inmates in pretrail ,Est. number of inmates in pretrail ,http://trends.vera.org/about,TRUE
+vera,n_inmates_jail_from_prison,n_inmates_jail_from_prison,Estimated number of inmates jail from prison,Est. number of inmates jail from prison,http://trends.vera.org/about,TRUE

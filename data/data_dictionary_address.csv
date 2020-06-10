@@ -1,0 +1,13 @@
+dataset,var_name,short_name,short_desc,description,doc_src,app_include
+all,lat,lat,Latitude coordinate of address,,,TRUE
+all,lon,lon,Longitude coordinate of address,,,TRUE
+all,address,address,Location address,,,TRUE
+all,block_id,block_id,"GEOID of combined state, county, tract, and block group",,,TRUE
+all,blkgrp_id,blkgrp_id,Census block group identifier,,,TRUE
+all,name,name,Name of location,,,TRUE
+all,capacity,capacity,Capacity of location,,,TRUE
+all,type,type,Type of location,,,TRUE
+all,val_date,val_date,Valid date when information was entered,,,TRUE
+all,status,status,Includes various values depending on data source,,,TRUE
+all,website,website,URL of location website,,,TRUE
+all,contact,contact,Contact person for location,,,TRUE
