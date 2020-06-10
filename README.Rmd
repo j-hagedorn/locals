@@ -8,7 +8,7 @@ output:
 ```{r setup, include=FALSE}
 library(tidyverse)
 knitr::opts_chunk$set(echo = TRUE)
-df <- read_csv("data/datasets.csv")
+df <- read_csv("docs/datasets.csv")
 ```
 
 **Under active development; not ready for use**
@@ -79,86 +79,6 @@ Address-level datasets should include the following fields:
 - `year`: The year of the published dataset.
 - `...`: Other variables specific to the dataset, which may be of value to retain, though these will not be aggregated in the tract or county-level data.
 
+# Variables
 
-# Dataset Details
-
-## Census Variables
-
-Variables from the census data (ACS 5-year estimate), including variants of:
-
-- Poverty status
-- Disability status
-- Percent population over 65
-- Health insurance coverage
-- Incarceration
-
-```{r census, echo=FALSE}
-census_vars <- 
-  tidycensus::load_variables(
-    2017, "acs5", cache = TRUE
-  )
-```
-
-## Social Vulnerability Index (CDC) 
-
-This is derived from Census Data and includes, according to the [documentation](https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf), four summary theme ranking variables:
-
-- Socioeconomic
-- Household Composition &Disability 
-- Minority Status & Language 
-- Housing Type & Transportation  
-
-## COVID Cases
-
-From [here](https://github.com/nytimes/covid-19-data/blob/master/README.md)
-
-- Date
-- Cases
-- Deaths
-
-## COVID Projections
-
-From [here](https://github.com/SenPei-CU/COVID-19_US_Projection/blob/master/README.md)
-
-- Date
-- Report Median
-- Report 2.5
-- Report 25
-- Report 75
-- Report 97.5
-- Total Median
-- Total 2.5
-- Total 25
-- Total 75
-- Total 97.5
-
-## Opportunity Atlas
-
-Opportunity Insights is a non-partisan, not-for-profit organization based at Harvard University.  We incorporate data from their datasets which inform *The Opportunity Atlas: Mapping the Childhood Roots of Social Mobility*, specifically the following:
-
-- [All Outcomes by Census Tract, Race, Gender and Parental Income Percentile](https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf)
-- [Neighborhood Characteristics by Census Tract](https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf)  
-
-## Bureau of Labor and Statistics
-
-From [here](https://www.bls.gov/lau/tables.htm):
-
-- Unemployment rate
-
-## County Health Ranking 
-
-County health ranking data includes variables such as the following, as shown in [documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf):
-
-- Premature death
-- Poor physical health days
-- Poor mental health days
-- Food environment index
-- Adult smoking
-
-Data available come from various sources, some of which may come from sources available at census tract level [here](https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures)
-
-
-## LARA AFC Homes
-
-
-## Hospitals
+A list of available variables in the combined datasets are available in [the data dictionary](https://github.com/j-hagedorn/locals/blob/master/docs/data_dictionary.csv).

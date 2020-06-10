@@ -26,7 +26,7 @@ FIPS codes.
 The list of datasets are tracked in the `.csv` file located in the data
 folder, with more specific documentation found below as issues are
 identified. Please push a commit marking the `complete` field in the
-.csv file as `TRUE`. There are currently 6 datasets completed for
+.csv file as `TRUE`. There are currently 13 datasets completed for
 inclusion.
 
 | topic       | datalink                                                                                                                                                            | publisher                                    | county                                                                                             | tract                                                                                | address                                                                                                                                    |
@@ -57,6 +57,8 @@ inclusion.
 | Provider    | [Prison Boundaries](https://hifld-geoplatform.opendata.arcgis.com/datasets/prison-boundaries)                                                                       | HIFLD                                        |                                                                                                    |                                                                                      | [x](https://opendata.arcgis.com/datasets/2d6109d4127d458eaf0958e4c5296b67_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D) |
 | Provider    | [Local Law Enforcement Locations](https://hifld-geoplatform.opendata.arcgis.com/datasets/local-law-enforcement-locations)                                           | HIFLD                                        |                                                                                                    |                                                                                      | [x](https://opendata.arcgis.com/datasets/0d79b978d71b4654bddb6ca0f4b7f830_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D) |
 | Provider    | [Nursing Homes](https://hifld-geoplatform.opendata.arcgis.com/datasets/nursing-homes)                                                                               | HIFLD                                        |                                                                                                    |                                                                                      | [x](https://opendata.arcgis.com/datasets/78c58035fb3942ba82af991bb4476f13_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D) |
+| Provider    | [incarceration trends by county](https://github.com/vera-institute/incarceration_trends)                                                                            | VERA                                         | [x](x)                                                                                             |                                                                                      |                                                                                                                                            |
+| Provider    | [Behavioral Health Treatment Facility Listing](https://findtreatment.samhsa.gov/locator)                                                                            | SAMHSA                                       | [x](x)                                                                                             | [x](x)                                                                               |                                                                                                                                            |
 | Social      | [Social Vulnerability Index](https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf)                                                             | CDC                                          | [x](https://data.cdc.gov/api/views/48va-t53r/rows.csv?accessType=DOWNLOAD)                         | [x](https://data.cdc.gov/api/views/4d8n-kk8a/rows.csv?accessType=DOWNLOAD)           |                                                                                                                                            |
 | Social      | [Eviction Lab](https://data-downloads.evictionlab.org/)                                                                                                             | Princeton U                                  | [x](x)                                                                                             | [x](x)                                                                               |                                                                                                                                            |
 | Various     | [American Community Survey](https://www.census.gov/data/developers/data-sets/acs-5year.html)                                                                        | US Census Bureau                             | [x](https://github.com/walkerke/tidycensus)                                                        | [x](https://github.com/walkerke/tidycensus)                                          |                                                                                                                                            |
@@ -119,100 +121,9 @@ Address-level datasets should include the following fields:
     value to retain, though these will not be aggregated in the tract or
     county-level data.
 
-Dataset Details
-===============
+Variables
+=========
 
-Census Variables
-----------------
-
-Variables from the census data (ACS 5-year estimate), including variants
-of:
-
--   Poverty status
--   Disability status
--   Percent population over 65
--   Health insurance coverage
--   Incarceration
-
-Social Vulnerability Index (CDC)
---------------------------------
-
-This is derived from Census Data and includes, according to the
-[documentation](https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf),
-four summary theme ranking variables:
-
--   Socioeconomic
--   Household Composition &Disability
--   Minority Status & Language
--   Housing Type & Transportation
-
-COVID Cases
------------
-
-From
-[here](https://github.com/nytimes/covid-19-data/blob/master/README.md)
-
--   Date
--   Cases
--   Deaths
-
-COVID Projections
------------------
-
-From
-[here](https://github.com/SenPei-CU/COVID-19_US_Projection/blob/master/README.md)
-
--   Date
--   Report Median
--   Report 2.5
--   Report 25
--   Report 75
--   Report 97.5
--   Total Median
--   Total 2.5
--   Total 25
--   Total 75
--   Total 97.5
-
-Opportunity Atlas
------------------
-
-Opportunity Insights is a non-partisan, not-for-profit organization
-based at Harvard University. We incorporate data from their datasets
-which inform *The Opportunity Atlas: Mapping the Childhood Roots of
-Social Mobility*, specifically the following:
-
--   [All Outcomes by Census Tract, Race, Gender and Parental Income
-    Percentile](https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf)
--   [Neighborhood Characteristics by Census
-    Tract](https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf)
-
-Bureau of Labor and Statistics
-------------------------------
-
-From [here](https://www.bls.gov/lau/tables.htm):
-
--   Unemployment rate
-
-County Health Ranking
----------------------
-
-County health ranking data includes variables such as the following, as
-shown in
-[documentation](https://www.countyhealthrankings.org/sites/default/files/media/document/DataDictionary_2020_2.pdf):
-
--   Premature death
--   Poor physical health days
--   Poor mental health days
--   Food environment index
--   Adult smoking
-
-Data available come from various sources, some of which may come from
-sources available at census tract level
-[here](https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures)
-
-LARA AFC Homes
---------------
-
-Hospitals
----------
+A list of available variables in the combined datasets are available in
+[the data
+dictionary](https://github.com/j-hagedorn/locals/blob/master/docs/data_dictionary.csv).
