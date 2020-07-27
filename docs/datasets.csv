@@ -1,0 +1,34 @@
+topic,dataset,dataset_name,publisher,docs,county,tract,block_group,address,api,api_client,zip,open_dl,complete
+COVID-19,covid_nyt,COVID-19 Cases/Deaths by US County,New York Times,https://github.com/nytimes/covid-19-data,https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv,,,,,,,https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv,TRUE
+COVID-19,covid_cu,COVID-19 County Projections,Columbia University,https://github.com/SenPei-CU/COVID-19_US_Projection,x,,,,,,https://github.com/SenPei-CU/COVID-19_US_Projection/blob/master/Projection_50%25transmissibility.csv.zip,,TRUE
+Social,svi,Social Vulnerability Index,CDC,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,https://data.cdc.gov/api/views/48va-t53r/rows.csv?accessType=DOWNLOAD,https://data.cdc.gov/api/views/4d8n-kk8a/rows.csv?accessType=DOWNLOAD,,,,https://dev.socrata.com/foundry/data.cdc.gov/48va-t53r,,,TRUE
+Health,chr,County Health Rankings,U Wisc,https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures,https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020.csv,,,,,,,https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020.csv,FALSE
+Various,acs_5,American Community Survey,US Census Bureau,https://www.census.gov/data/developers/data-sets/acs-5year.html,https://github.com/walkerke/tidycensus,https://github.com/walkerke/tidycensus,,,,https://github.com/walkerke/tidycensus,,,TRUE
+Provider,lara_afc,Adult Foster Care Homes,LARA,"https://www.michigan.gov/lara/0,4601,7-154-89334_63294_27717-56812--,00.html",,,,https://documents.apps.lara.state.mi.us/bchs/afc_sw.txt,,,,https://documents.apps.lara.state.mi.us/bchs/afc_sw.txt,FALSE
+Health,wonder,WONDER Database,CDC,https://wonder.cdc.gov/wonder/help/WONDER-API.html,,,,,https://wonder.cdc.gov/wonder/help/WONDER-API.html,https://github.com/hrbrmstr/wondr,,,FALSE
+Behavioral,brfss,Behavioral Risk Factor Surveillance System,CDC,https://www.cdc.gov/brfss/annual_data/annual_2018.html,x,,,,,,x,,FALSE
+Vital,nvs,National Vitality Statistics,CDC,ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NVSS/USALEEP/CSV/,x,,,,,,,,FALSE
+Provider,ahrf,Area Health Resources Files,HRSA,https://data.hrsa.gov//DataDownload/AHRF/AHRF_2018-2019.ZIP,x,,,,x,,,,FALSE
+Provider,hpsa_mh,Health Professional Shortage Areas (HPSA) Mental Health,HRSA,https://data.hrsa.gov//DataDownload/DD_Files/BCD_HPSA_FCT_DET_MH.csv,x,?,,x,x,,,,FALSE
+Provider,hpsa_pc,Health Professional Shortage Areas (HPSA) Primary Care,HRSA,https://data.hrsa.gov//DataDownload/DD_Files/BCD_HPSA_FCT_DET_PC.csv,x,?,,x,x,,,,FALSE
+Provider,mua,Medically Underserved Areas/Populations (MUA/P),HRSA,https://data.hrsa.gov//DataDownload/DD_Files/MUA_DET.csv,x,?,,x,x,,,,FALSE
+Social,evict,Eviction Lab,Princeton U,https://data-downloads.evictionlab.org/,x,x,x,,,,,,TRUE
+Food,food,Food Environment Atlas,USDA,https://www.ers.usda.gov/data-products/food-environment-atlas/data-access-and-documentation-downloads.aspx#.VEXQQPnF-mE,x,,,,,,,,FALSE
+Health,,500 Cities: Census Tract-level Data,CDC,https://www.opendatanetwork.com/dataset/chronicdata.cdc.gov/kucs-wizg,,x,,,,,,,FALSE
+Provider,nppes,NPPES,CMS,https://download.cms.gov/nppes/NPI_Files.html,,,,x,,,x,,FALSE
+Opportunity,nb_atlas,Neighborhood Atlas,U Wisc,https://www.neighborhoodatlas.medicine.wisc.edu/login,x,x,x,,,,x,,FALSE
+Opportunity,oi,"All Outcomes by Race, Gender and Parental Income Percentile",Opportunity Insights,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-4.pdf,https://opportunityinsights.org/wp-content/uploads/2018/10/county_outcomes.zip,https://opportunityinsights.org/wp-content/uploads/2018/10/tract_outcomes.zip,,,,,,x,TRUE
+Opportunity,oi_covar,Neighborhood Characteristics,Opportunity Insights,https://opportunityinsights.org/wp-content/uploads/2019/07/Codebook-for-Table-9.pdf,https://opportunityinsights.org/wp-content/uploads/2018/12/cty_covariates.csv,https://opportunityinsights.org/wp-content/uploads/2018/10/tract_covariates.csv,,,,,,x,TRUE
+Healthcare,gvpuf,Geographic Variation Public Use File,CMS,https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Geographic-Variation/GV_PUF,x,,,,,,,,FALSE
+Economic,afford,Location Affordability Index,Office of the Secretary of Transportation,https://catalog.data.gov/dataset/location-affordability-index-all-census-counties,,,x,,,,,,FALSE
+Economic,lihtc,Low-Income Housing Tax Credit,HUD,https://www.huduser.gov/portal/datasets/qct.html,,x,,,,,x,,FALSE
+Commuting,lodes_rac,Longitudinal Employer-Household Dynamics,US Census Bureau Center for Economic Studies,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,x,x,https://lehd.ces.census.gov/data/#lodes,,,https://github.com/jamgreen/lehdr,,x,TRUE
+Various,nanda,National Neighborhood Data Archive,NANDA,https://www.openicpsr.org/openicpsr/search/nanda/studies;jsessionid=F2AA4AF121C2321A51D5D8294EAEA0C3,x,x,,,,,,,FALSE
+Density,ruca,Rural-Urban Commuting Area Codes,USDA,https://www.ers.usda.gov/webdocs/DataFiles/53241/ruca2010revised.xlsx?v=8632.5,x,x,,,,,,x,FALSE
+Provider,ip_psy,Inpatient Psychiatric Facility Quality Measure Data by Facility,CMS,https://catalog.data.gov/dataset/inpatient-psychiatric-facility-quality-measure-data-by-facility,,,,https://data.medicare.gov/api/views/q9vs-r7wp/rows.csv?accessType=DOWNLOAD,,,,x,TRUE
+Provider,hospitals,Hospitals,HIFLD,https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals,,,,https://opendata.arcgis.com/datasets/6ac5e325468c4cb9b905f1728d6fbf0f_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D,,,,x,TRUE
+Provider,prisons,Prison Boundaries,HIFLD,https://hifld-geoplatform.opendata.arcgis.com/datasets/prison-boundaries,,,,https://opendata.arcgis.com/datasets/2d6109d4127d458eaf0958e4c5296b67_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D,,,,x,TRUE
+Provider,police,Local Law Enforcement Locations,HIFLD,https://hifld-geoplatform.opendata.arcgis.com/datasets/local-law-enforcement-locations,,,,https://opendata.arcgis.com/datasets/0d79b978d71b4654bddb6ca0f4b7f830_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D,,,,x,TRUE
+Provider,nursing_homes,Nursing Homes,HIFLD,https://hifld-geoplatform.opendata.arcgis.com/datasets/nursing-homes,,,,https://opendata.arcgis.com/datasets/78c58035fb3942ba82af991bb4476f13_0.csv?outSR=%7B%22latestWkid%22%3A3857%2C%22wkid%22%3A102100%7D,,,,x,TRUE
+Provider,vera,Incarceration trends by county ,VERA,https://github.com/vera-institute/incarceration_trends,x,,,,,,,,TRUE
+Provider ,samhsa,Behavioral Health Treatment Facility Listing ,SAMHSA ,https://findtreatment.samhsa.gov/locator,x,x,x,,,,,,TRUE
