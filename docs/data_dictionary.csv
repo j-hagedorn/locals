@@ -323,3 +323,7 @@ hpsa_primary_care,designation_type,,,This attribute represents the geography or 
 hpsa_primary_care,hpsa_status,,,This attribute represents the textual description of the current status of the Health Professional Shortage Area (HPSA) designation.,,FALSE
 hpsa_mental_health,designation_type,,,This attribute represents the geography or facility type code characterizing the Health Professional Shortage Area (HPSA).,,FALSE
 hpsa_mental_health,hpsa_status,,,This attribute represents the textual description of the current status of the Health Professional Shortage Area (HPSA) designation.,,FALSE
+bls,lbr_force,,,Number of individuals in the labor force ,https://www.bls.gov/data/#employment,FALSE
+bls,nbr_emplyd,,,Number of labor force participants employed ,https://www.bls.gov/data/#employment,FALSE
+bls,nbr_unemplyd,,,Number of labor force paticipants unemployed ,https://www.bls.gov/data/#employment,FALSE
+bls,unemply_rate,,,Unemployment rate,https://www.bls.gov/data/#employment,FALSE
