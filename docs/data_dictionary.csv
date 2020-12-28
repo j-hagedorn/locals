@@ -310,12 +310,12 @@ lodes_rac,cns02_frac,jobs_mining_frac,,"Percentage of jobs in NAICS sector 21 (M
 lodes_rac,cns04_frac,jobs_construction_frac,,Percentage of jobs in NAICS sector 23 (Construction) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns05_frac,jobs_manuf_frac,,Percentage of jobs in NAICS sector 31-33 (Manufacturing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns06_frac,jobs_wholesale_trade_frac,,Percentage of jobs in NAICS sector 42 (Wholesale Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns07_frac,jobs_retial_frac,,Percentage of jobs in NAICS sector 44-45 (Retail Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns07_frac,jobs_retail_frac,,Percentage of jobs in NAICS sector 44-45 (Retail Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns08_frac,jobs_transp_frac,,Percentage of jobs in NAICS sector 48-49 (Transportation and Warehousing) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns09_frac,jobs_information_frac,,Percentage of jobs in NAICS sector 51 (Information) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns10_frac,jobs_finance_frac,,Percentage of jobs in NAICS sector 52 (Finance and Insurance),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns11_frac,jobs_real_est_frac,,Percentage of jobs in NAICS sector 53 (Real Estate and Rental and Leasing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns14_frac,jobs_admin_support_frac,,Percentage of jobs in NAICS sector 56 (Administrative and Support and Waste Management and Remediation Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns14_frac,jobs_wstMngt_support_remediation_frac,,Percentage of jobs in NAICS sector 56 (Administrative and Support and Waste Management and Remediation Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns17_frac,jobs_rec_entertain_frac,,"Percentage of jobs in NAICS sector 71 (Arts, Entertainment, and Recreation)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns19_frac,,,Percentage of jobs in NAICS sector 81 (Other Services [except Public Administration]) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns20_frac,,,Percentage of jobs in NAICS sector 92 (Public Administration) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
