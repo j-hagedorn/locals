@@ -1,8 +1,11 @@
 library(tidycensus)
 library(tidyverse)
 library(lubridate)
-# First run ACS tract data to get lookup vars
-# source("code/fetch/fetch_acs_tract.R")
+library(DBI)
+
+
+# The script is intended to pull variables from the census api and store in our database 
+
 
 census_api_key('2e813467b85f18e31859f48cefdd60a3ef4aa81e')
 
@@ -65,7 +68,7 @@ acs_vars_by_year<-c(
   'B27010_017', # total no health insurance under 19
   'B27010_033', # total no health insurance 19 to 34
   'B27010_050', # total no health insurance 35 to 64
-  'B27010_066'  # total no health insurance 65 and over 
+  'B27010_066', # total no health insurance 65 and over 
   'B25024_010', # total mobile home units 
   'B25024_007', # total housing with units between 10 and 19
   'B25024_008', # total housing with units 20 and over 
@@ -73,7 +76,14 @@ acs_vars_by_year<-c(
   
 )
 
-test<-data.frame(acs_vars_by_year)
+
+#================#
+# Table creation 
+#================#
+
+
+# Looping over the census api for each variable stated above for each year and 
+# for every state and storing in the acs5_county tibble 
 
 
 
@@ -81,11 +91,6 @@ acs5_county <- tibble()
 
 year_range<-2010:year(today())
 
-
-# Variable should take thr form, when possible of : 
-#  [var_name]_[by_group]_[comparitive_population]
-# for instance, below poverty estimates for latino Americans would be 
-# below_poverty_latino_pop. IF there are more than two by group
 
 #for (st in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','UM','VI')])) {
   
@@ -114,11 +119,12 @@ for (v in acs_vars_by_year){
   }
 }
  
-  
-test<-acs5_county %>%
+
+# manipulating the results and adding the variable names from the data dictionary. 
+# The data dictionary should be updated with any new variables before joining. 
+
+df<-acs5_county %>%
   left_join(census_dic, by = c("variable" = 'var_num')) %>%
-  filter( GEOID == '26163') %>%
-  filter(str_detect(var_name,"medicare"))%>%
   mutate(
     dataset = 'acs_5',
     state = substr(GEOID, 1,2),
@@ -134,7 +140,6 @@ test<-acs5_county %>%
       gender = case_when(
         str_detect(var_name,"female") ~ "female",
         str_detect(var_name,"male") ~ "male",
-   #     str_detect(var_name,"female") ~ "female",
         TRUE ~ "pooled"
       ),
       age_range = case_when(
@@ -150,17 +155,49 @@ test<-acs5_county %>%
                  TRUE ~ 'frac')
   ) %>%
   select(
-    dataset,state,county,year,race,gender,age_range,var_name,stat_type
+    dataset,state,county,year,race,gender,age_range,var_name,value,stat_type
   )
   
   
-  
-  test<-test%>%
-    filter(str_detect(var_name,"medicare"))%>%
-    filter(str_detect(var_name,"female"))
-  
-  
-  
+df%>%
+  filter(county == '26163')%>%
+  filter(var_name == 'no_health_insurance_19to34_pop')%>%
+  select(year,value)%>%
+  ggplot(aes(x = year, y = value)) + geom_point()+geom_line()
   
 
-write_feather(acs5_county,"data/acs5_county.feather")
+
+#=============================#
+# push to database ====
+#=============================#
+
+# Connect to DB
+locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
+
+
+# create sql query to delete the old data and insert the new
+vars<-census_dic%>%
+  select(var_name)%>%
+  distinct()%>%
+  pull()
+
+
+vars_sql<- noquote(paste("'",as.character(vars),"'",collapse=", ",sep=""))
+
+
+delete_query<-
+{paste("
+        delete
+        FROM [dbo].[counties]
+        where var_name in (",vars_sql,") ",sep = "")
+               
+ }
+
+
+dbSendQuery(locals_db,delete_query)
+
+# Writing updated or new variables to databasae 
+odbc::dbWriteTable(locals_db, 'counties', df, append = T)
+  
+  
+  

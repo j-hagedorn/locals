@@ -2,9 +2,9 @@ var_num,var_name ,var_deff
 B01003_001,ttl_est_pop, total population 
 B06012_002,below_poverty_pop, total below poverty 
 B02001_003,african_american_pop, total african-american 
-B02001_002,white_pop, total white 
-B03001_003,latino_pop, total latino
-B02001_005,asian_pop, total asian
+B02001_002,white_pop, total white population 
+B03001_003,latino_pop, total latino population 
+B02001_005,asian_pop, total asian population 
 B11012_015,single_dad_homes, total single dad households 
 B11012_010,single_mom_homes, total single mom households 
 B25071_001,rent_pct_of_income, rent as a percent of income 
