@@ -1,7 +1,7 @@
 var_num,var_name ,var_deff
 B01003_001,ttl_est_pop, total population 
 B06012_002,below_poverty_pop, total below poverty 
-B02001_003,african_american_pop, total african-american 
+B02001_003,african_american_pop, total african-american population 
 B02001_002,white_pop, total white population 
 B03001_003,latino_pop, total latino population 
 B02001_005,asian_pop, total asian population 
@@ -58,3 +58,4 @@ B27010_066,no_health_insurance_65over_pop,total no health insurance 65 and over
 B25024_010,mobile_homes,total mobile home units 
 B25024_007,housing_units_10to19_homes,total housing with units between 10 and 19
 B25024_008,housing_units_20over_homes,total housing with units 20 and over 
+B19013_001,median_houshold_income,median household income (inflation adjusted)
