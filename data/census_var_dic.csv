@@ -24,7 +24,7 @@ B07001_065,moved_from_diff_state_pop, total moved from different state
 B05002_013,foreign_born_pop, total foreign born 
 B23025_007,ttl_est_not_in_labor_force, total not in the labor force 
 B23025_002,ttl_est_labor_force, total labor force 
-B23025_005,employed_labor, total employed 
+B23025_005,unemployed_labor, total unemployed 
 B23007_007,two_parent_both_working_homes, total two parent working households with children 
 B23007_009,two_parent_mom_caretaker_homes, total two parent households with stay-at-home mom
 B19057_002,receiving_public_assistance_pop, total receiving public assistance income last 12 months 
@@ -36,7 +36,7 @@ B08128_004,self_employed_worker_labor, total self employed worker
 B08128_006,local_gov_worker_labor, total local government worker 
 B08128_007,state_gov_worker_labor, total state government worker 
 B08128_008,fed_gov_worker_labor, total federal government worker 
-B08128_009,self_employed_worker_labor, total self-employed contractors 
+B08128_009,contractor_worker_labor, total self-employed contractors 
 B08128_010,unpaid_family_worker_labor, total unpaid-family workers (children or family helping business)
 B11001_001,ttl_est_homes,total households including living alone 
 C27006_004,medicare_male_under19_pop,total medicare coverage for males under 19
@@ -59,3 +59,4 @@ B25024_010,mobile_homes,total mobile home units
 B25024_007,housing_units_10to19_homes,total housing with units between 10 and 19
 B25024_008,housing_units_20over_homes,total housing with units 20 and over 
 B19013_001,median_houshold_income,median household income (inflation adjusted)
+B25002_003,vacant_homes ,number of vacant housing units 

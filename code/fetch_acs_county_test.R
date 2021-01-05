@@ -72,7 +72,8 @@ acs_vars_by_year<-c(
   'B25024_010', # total mobile home units 
   'B25024_007', # total housing with units between 10 and 19
   'B25024_008', # total housing with units 20 and over 
-  'B19013_001'  # median household income (inflation adjusted)
+  'B19013_001', # median household income (inflation adjusted)
+  'B25004_008'  # Other vacant housing units (includes vacant housing such as abandoned,needs repair and others see : https://www.census.gov/housing/hvs/definitions.pdf#:~:text=A%20housing%20unit%20is%20vacant%20if%20no%20one,a%20usual%20residence%20elsewhere.%20New%20units%20not%20yet)
   
 )
 
@@ -161,7 +162,7 @@ df<-acs5_county %>%
   
 df%>%
   filter(county == '26163')%>%
-  filter(var_name == 'median_houshold_income')%>%
+  filter(var_name == 'self_employed_worker_labor')%>%
   select(year,value)%>%
   ggplot(aes(x = year, y = value)) + geom_point()+geom_line()
   
