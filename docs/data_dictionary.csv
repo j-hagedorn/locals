@@ -214,18 +214,24 @@ svi,mp_nohsdp,,,Percentage of persons with no high school diploma (25+) estimate
 svi,mp_age65,,,Percentage of persons aged 65 and older estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_age17,,,Percentage of persons aged 17 and younger estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_disabl,,,Percentage of civilian noninstitutionalized population with a disability estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
-svi,ep_sngpnt,single_parent_frac,,Percentage of single parent households with children under 18 estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_sngpnt,single_parent_frac,Percentage of single parent households estimate,Percentage of single parent households with children under 18 estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_sngpnt,,,Percentage of single parent households with children under 18 estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_minrty,,,"Percentage minority (all persons except white, non-Hispanic) estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,ep_limeng,,,"Percentage of persons (age 5+) who speak English ""less than well"" estimate",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_limeng,,,"Percentage of persons (age 5+) who speak English ""less than well"" estimate MOE",https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,ep_munit,,,Percentage of housing in structures with 10 or more units estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_munit,,,Percentage of housing in structures with 10 or more units estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
-svi,ep_mobile,mobile_homes_frac,,Percentage of mobile homes estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_mobile,mobile_homes_frac,Percentage of mobile homes estimate ,Percentage of mobile homes estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_mobile,,,Percentage of mobile homes estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
-svi,ep_crowd,homes_more_people_than_rooms_frac,,Percentage of occupied housing units with more people than rooms estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_crowd,homes_more_people_than_rooms_frac,"Percentage of
+occupied
+housing units
+with more
+people than
+rooms
+estimate",Percentage of occupied housing units with more people than rooms estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_crowd,,,Percentage of occupied housing units with more people than rooms estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
-svi,ep_noveh,no_vehicle_frac,,Percentage of households with no vehicle available estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,ep_noveh,no_vehicle_frac,Percentage of households with no vehicle estimate,Percentage of households with no vehicle available estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_noveh,,,Percentage of households with no vehicle available estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,ep_groupq,,,Percentage of persons in institutionalized group quarters estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,mp_groupq,,,Percentage of persons in institutionalized group quarters estimate MOE,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
@@ -235,7 +241,7 @@ svi,epl_pci,,,Percentile per capita income estimate,https://svi.cdc.gov/Document
 svi,epl_nohsdp,,,Percentile Percentage of persons with no high school diploma (age 25+) estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,spl_theme1,,,Sum of series for Socioeconomic theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,epl_age65,elder_frac,,Percentile percentage of persons aged 65 and older estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
-svi,epl_age17,youth_frac,,Percentile percentage of persons aged 17 and youngerestimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
+svi,epl_age17,youth_frac,Percentage of persons aged 17 and younger ,Percentile percentage of persons aged 17 and youngerestimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,epl_disabl,,,Percentile percentage of civilian noninstitutionalized population with a disability estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,epl_sngpnt,,,Percentile percentage of single parent households with children under 18 estimate,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
 svi,spl_theme2,,,Sum of series for Household Composition theme,https://svi.cdc.gov/Documents/Data/2018_SVI_Data/SVI2018Documentation.pdf,FALSE
@@ -305,18 +311,18 @@ lodes_rac,ca01_frac,,,Percentage of jobs for workers age 29 or younger,https://l
 lodes_rac,ca02_frac,,,Percentage of jobs for workers age 30 to 54,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,ca03_frac,,,Percentage of jobs for workers age 55 or older,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,ce02_frac,,,Percentage of jobs with earnings $1251/month to $3333/month,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns01_frac,jobs_agriculture_frac,,"Percentage of jobs in NAICS sector 11 (Agriculture, Forestry, Fishing and Hunting) ",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns02_frac,jobs_mining_frac,,"Percentage of jobs in NAICS sector 21 (Mining, Quarrying, and Oil and Gas Extraction)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns04_frac,jobs_construction_frac,,Percentage of jobs in NAICS sector 23 (Construction) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns05_frac,jobs_manuf_frac,,Percentage of jobs in NAICS sector 31-33 (Manufacturing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns06_frac,jobs_wholesale_trade_frac,,Percentage of jobs in NAICS sector 42 (Wholesale Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns07_frac,jobs_retail_frac,,Percentage of jobs in NAICS sector 44-45 (Retail Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns08_frac,jobs_transp_frac,,Percentage of jobs in NAICS sector 48-49 (Transportation and Warehousing) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns09_frac,jobs_information_frac,,Percentage of jobs in NAICS sector 51 (Information) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns10_frac,jobs_finance_frac,,Percentage of jobs in NAICS sector 52 (Finance and Insurance),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns11_frac,jobs_real_est_frac,,Percentage of jobs in NAICS sector 53 (Real Estate and Rental and Leasing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns14_frac,jobs_wstMngt_support_remediation_frac,,Percentage of jobs in NAICS sector 56 (Administrative and Support and Waste Management and Remediation Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
-lodes_rac,cns17_frac,jobs_rec_entertain_frac,,"Percentage of jobs in NAICS sector 71 (Arts, Entertainment, and Recreation)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns01_frac,jobs_agriculture_frac,"Number of jobs in NAICS sector 11 (Agriculture, Forestry, Fishing and Hunting)","Percentage of jobs in NAICS sector 11 (Agriculture, Forestry, Fishing and Hunting) ",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns02_frac,jobs_mining_frac,"Number of jobs in NAICS sector 21 (Mining, Quarrying, and Oil and Gas Extraction)","Percentage of jobs in NAICS sector 21 (Mining, Quarrying, and Oil and Gas Extraction)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns04_frac,jobs_construction_frac,Number of jobs in NAICS sector 23 (Construction),Percentage of jobs in NAICS sector 23 (Construction) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns05_frac,jobs_manuf_frac,Number of jobs in NAICS sector 31-33 (Manufacturing),Percentage of jobs in NAICS sector 31-33 (Manufacturing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns06_frac,jobs_wholesale_trade_frac,Number of jobs in NAICS sector 42 (Wholesale Trade),Percentage of jobs in NAICS sector 42 (Wholesale Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns07_frac,jobs_retail_frac,Number of jobs in NAICS sector 44-45 (Retail Trade),Percentage of jobs in NAICS sector 44-45 (Retail Trade) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns08_frac,jobs_transp_frac,Number of jobs in NAICS sector 48-49 (Transportation and Warehousing),Percentage of jobs in NAICS sector 48-49 (Transportation and Warehousing) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns09_frac,jobs_information_frac,Number of jobs in NAICS sector 51 (Information),Percentage of jobs in NAICS sector 51 (Information) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns10_frac,jobs_finance_frac,Number of jobs in NAICS sector 52 (Finance and Insurance),Percentage of jobs in NAICS sector 52 (Finance and Insurance),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns11_frac,jobs_real_est_frac,Number of jobs in NAICS sector 53 (Real Estate and Rental and Leasing),Percentage of jobs in NAICS sector 53 (Real Estate and Rental and Leasing),https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns14_frac,jobs_wstMngt_support_remediation_frac,Number of jobs in NAICS sector 56 (Administrative and Support and Waste Management and Remediation Services),Percentage of jobs in NAICS sector 56 (Administrative and Support and Waste Management and Remediation Services) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
+lodes_rac,cns17_frac,jobs_rec_entertain_frac,"Number of jobs in NAICS sector 71 (Arts, Entertainment, and Recreation)","Percentage of jobs in NAICS sector 71 (Arts, Entertainment, and Recreation)",https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns19_frac,,,Percentage of jobs in NAICS sector 81 (Other Services [except Public Administration]) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 lodes_rac,cns20_frac,,,Percentage of jobs in NAICS sector 92 (Public Administration) ,https://lehd.ces.census.gov/data/lodes/LODES7/LODESTechDoc7.4.pdf,FALSE
 hpsa_primary_care,designation_type,,,This attribute represents the geography or facility type code characterizing the Health Professional Shortage Area (HPSA).,,FALSE
