@@ -3,6 +3,19 @@ library(tidyverse)
 library(lubridate)
 library(DBI)
 
+census_api_key('2e813467b85f18e31859f48cefdd60a3ef4aa81e')
+
+v19 <- load_variables(2019, "acs5", cache = TRUE)
+
+census<-v19%>%
+  #  filter(str_detect(concept,'health')==T)%>%
+  filter(str_detect(name,'B01003_001')==T)%>%
+  filter(str_detect(label,regex("health",ignore_case = T)))%>%
+  # filter(str_detect(label,"Total")==T)%>%
+  filter(str_detect(label,"worker")==T) %>%
+  filter(str_detect(label,"wage")==T) %>%
+  filter(str_detect(label,"salary")==T)
+
 
 # The script is intended to pull variables from the census api and store in our database 
 
