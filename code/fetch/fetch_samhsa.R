@@ -1,10 +1,35 @@
 library(tidyverse)
+library(readxl)
 
-# data was manually downloaded from the SAMHHSA facility locator page
-# found here https://findtreatment.samhsa.gov/locator. Website only allows 
-# for exports of multiple csvs of 30,000 rows each
 
-df1 = read_csv("data/Behavioral_Health_Treament_Facility_listing_file1.csv")
+locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 
-df2 = read_csv("data/Behavioral_Health_Treament_Facility_listing_file2.csv")
+
+# The data needs to be manually pulled from the SAMHSA website facility locator. At a national 
+# level, the website only allowed a downloaded in chucks of 30,000. However, they only offer 
+# two chunks even with 92,000 datapoints. Therfore, this covers about 2/3 of the national 
+# treatment facility dictionary. 
+
+# I've place the downloaded files in the folder GitHub/locals/data/samhsa/
+
+
+df1<-
+  read_excel("C:/Users/joet/Documents/GitHub/locals/data/samhsa/facility_data_chunk1.xlsx",
+             sheet = 1)
+
+
+
+df2<-
+  read_excel("C:/Users/joet/Documents/GitHub/locals/data/samhsa/facility_data_chunk2.xlsx",
+             sheet = 1) 
+
+
+df<-bind_rows(df1,df2) 
+
+
+code_ref<-
+  read_excel("C:/Users/joet/Documents/GitHub/locals/data/samhsa/facility_data_chunk1.xlsx",sheet = 2) %>%
+  select(service_code,category_name,service_name,service_desc = service_description) %>%
+  distinct()
+
 
