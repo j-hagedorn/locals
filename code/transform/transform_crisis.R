@@ -532,6 +532,7 @@ test_match<-
     internal_crisis %>%
     filter(type %in% c('crisis residential (adult)','crisis residential (adult)',
                        'mobile crisis team','23-hour csu','Locked CSU')) %>%
+#    filter(type %in% c('private psychiatric hospital','state psychiatric hospital')) %>%
     left_join(test_fill%>%
                 mutate(
                        address_match= paste0(address," - Other" ))
@@ -547,7 +548,8 @@ test_match<-
 test <-df %>%
   filter(fk_type %in% c('323P00000X'))
 
-
+test<-df%>%
+  filter(fk_type %in% c('273R00000X','283Q00000X'))
 
 test<-df%>%
   select(dataset,everything())
