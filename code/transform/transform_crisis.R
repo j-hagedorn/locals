@@ -6,16 +6,6 @@ library(ggmap)
 
 locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 
-df1<-
-  read_excel("C:/Users/joet/Documents/GitHub/locals/data/samhsa/facility_data_chunk1.xlsx",
-             sheet = 1)
-
-df2<-
-  read_excel("C:/Users/joet/Documents/GitHub/locals/data/samhsa/facility_data_chunk2.xlsx",
-             sheet = 1)
-
-df<-bind_rows(df1,df2)
-
 
 mi_fclty<-read_excel("data/samhsa/mi_facility_data.xlsx")
 
@@ -121,6 +111,51 @@ rev_geocode_fun<-function(x){
 
 
 #=================================#
+# Address Dataset Locals Data  ====
+#=================================# 
+
+locals<-dbGetQuery(locals_db,{
+  "SELECT 
+*
+FROM [locals].[dbo].[addresses]
+where dataset in ('hospitals')
+and type in ('PSYCHIATRIC','REHABILITATION')
+
+"}) %>%
+  mutate(address1 = address) %>%
+  separate(
+    address,into = c('street','city','state_zip','country'), sep = ","
+  ) %>%
+  mutate(
+    state = substr(state_zip,1,2)) %>%
+  filter(
+    state == 'MI', 
+    status == 'OPEN') %>%
+  select(-c('street','city','state_zip','country','state'))%>%
+  rename(address = address1)
+
+# Reverse geo coding lat lons to get a Google formatted address   
+
+df_coord<-
+  locals %>%
+  select(lat,lon) %>%
+  distinct() 
+
+locals_geocoded<-rev_geocode_fun(df_coord)
+
+
+locals<-
+  locals %>%
+  left_join(df_coord, by = c('lat',"lon")) %>%
+  select(dataset,lat,lon,block_id,blkgrp_id,name,capacity,
+         type,val_date,status,website,contact,address) %>%
+  mutate(fk_type = NA_character_,
+         capacity = as.character(capacity)) %>%
+  mutate_if(is.character,str_to_lower)
+
+rm(locals_geocoded,df_coord)
+
+#=================================#
 # Formatting SAMHSA Data  ====
 #=================================# 
 
@@ -129,6 +164,7 @@ rev_geocode_fun<-function(x){
 
 df<-
   mi_fclty %>%
+  
  # filter(name1 == 'MIDMICHIGAN MEDICAL OFFICES') %>%
   mutate(
     # Removing anyone with obvious strings in thier name to determine they are a person, 
@@ -141,8 +177,10 @@ df<-
     
   
   ) %>%
-  filter(person == 0) %>%
-  select(-person) %>%
+  filter(
+    va_med_center == 0,
+    person == 0 ) %>%
+  select(-person,-va_med_center) %>%
   select(
     -c(type_facility,city,state,county,name2),
     -starts_with(c("intake","street","zip"))
@@ -151,8 +189,6 @@ df<-
          lat = latitude, lon = longitude,everything()
          ) %>%
   distinct() %>%
-  filter(va_med_center ==0) %>%
-  select(-va_med_center) %>%
   # Pivot longer to join facility types 
   pivot_longer(-c(name,phone,website,lat,lon), names_to = 'service_code') %>%
   group_by(name,phone,website,lat,lon) %>%
@@ -171,8 +207,9 @@ df<-
   left_join(code_ref, by = 'service_code' ) %>%
   # Only Including the types listed in the document 
   filter(service_name %in% c('Psychiatric emergency walk-in services',
-                             'Psychiatric hospital or psychiatric unit of a general hospital',
-                             'Psychiatric hospital','Crisis intervention team',
+                          #   'Psychiatric hospital or psychiatric unit of a general hospital',
+                          #   'Psychiatric hospital',
+                             'Crisis intervention team',
                              'Psychiatric emergency onsite services',
                              'Psychiatric emergency mobile/off-site services') )
 
@@ -226,6 +263,9 @@ samhsa_latlon<-samhsa%>%
 
 samhsa_block<-lat_lon_to_census_block_converter(samhsa_latlon)
 
+# Joining block data back and making last minute formatting changes to 
+# allow for the binding of rows later on. 
+
 samhsa<-
   samhsa%>%
   left_join(samhsa_block%>%
@@ -235,73 +275,24 @@ samhsa<-
                          )%>%
               select(-county_id), c("lat","lon")
   ) %>%
-  select(names(npi),fk_type)
+  select(names(locals),fk_type)
 
+# A single location can qualify as many types. To help reduce duplicates, I'm
+# placing all types for a location on one row separated by commas. 
+samhsa<-
+  samhsa %>%
+  group_by(lat,lon,name,block_id) %>%
+  mutate(type =  paste(type, collapse = " , "), 
+         fk_type = paste(fk_type, collapse = " , ")) %>%
+  ungroup() %>%
+  distinct()
 
-
-
-# Full list 
-# 
-# c('Transitional housing, halfway house, or sober home',
-#   'Suicide prevention services','Community mental health center',
-#   'Psychiatric hospital or psychiatric unit of a general hospital',
-#   'Psychiatric hospital','Crisis intervention team',
-#   'Psychiatric emergency onsite services',
-#   'Psychiatric emergency mobile/off-site services',
-#   'Psychiatric emergency walk-in services')
-
-
-
-#=================================#
-# Address Dataset Locals Data  ====
-#=================================# 
-
-locals<-dbGetQuery(locals_db,{
-"SELECT 
-*
-FROM [locals].[dbo].[addresses]
-where dataset in ('hospitals')
-and type in ('PSYCHIATRIC','REHABILITATION')
-
-"}) %>%
-mutate(address1 = address) %>%
-separate(
-  address,into = c('street','city','state_zip','country'), sep = ","
-  ) %>%
-mutate(
-  state = substr(state_zip,1,2)) %>%
-filter(
-  state == 'MI', 
-  status == 'OPEN') %>%
-select(-c('street','city','state_zip','country','state'))%>%
-rename(address = address1)
-  
-# Reverse geo coding lat lons to get a Google formatted address   
-
-df_coord<-
-  locals %>%
-  select(lat,lon) %>%
-  distinct() 
-  
-locals_geocoded<-rev_geocode_fun(df_coord)
-
-
-locals<-
-  locals %>%
-  left_join(df_coord, by = c('lat',"lon")) %>%
-  select(dataset,lat,lon,block_id,blkgrp_id,name,capacity,
-         type,val_date,status,website,contact,address) %>%
-  mutate(fk_type = NA_character_,
-         capacity = as.character(capacity)) %>%
-  mutate_if(is.character,str_to_lower)
-  
-  
-
+rm(samhsa_block,samhsa_latlon,rev_geodode_results)
 #==========================================#
 # Formatting Internal Crisis Database ====
 #==========================================#
 
-getwd()
+
 internal_list<-read_excel("data/samhsa/internal_crisis_list.xlsx", sheet = 2)
 
 
@@ -372,6 +363,7 @@ internal_crisis<-
   ) %>%
   select(names(samhsa))
 
+rm(internal_block,internal_cr_geocoded,internal_latlon)
 
 #============================#
 # Formatting NPI Data  ====
@@ -382,17 +374,25 @@ npi<-dbGetQuery(locals_db,{
 SELECT * 
 FROM [locals].[dbo].[npi_org_locations]
 where [state] = 'MI'
-and taxonomy in ('261QR0405X','320800000X','323P00000X','283Q00000X','261QM0855X')  
+and taxonomy in 
+(
+
+--'261QR0405X', -- Ambulatory Health Care Facilities - Clinic/Center -Rehabilitation, Substance Use Disorder
+--'320800000X', -- Community Based Residential Treatment Facility, Mental Illness
+'323P00000X', -- Psychiatric Residential Treatment Facility
+'283Q00000X', -- Psychiatric Hospital
+'261QM0855X', -- Ambulatory Health Care Facilities - Adolescent and Children Mental Health
+'273R00000X', -- Psychiatric Unit
+'261QM0801X'  -- Ambulatory Health Care Facilities - Mental Health (Including Community Mental Health Center)
+)  
+
+and provider_name not like '%PLLC%' 
+  
   
   
 "})
+  
 
-# in the meantime while the VPN is down. 
-
-npi<-
-  nppes_sub%>%
-  filter(state == 'MI',
-         taxonomy %in% c('261QR0405X','320800000X','323P00000X','283Q00000X','261QM0855X') )
 
 
 # Geocoding the addresses 
@@ -446,9 +446,9 @@ npi<-
 
 
 
-npi<-
+npi1<-
   npi %>%
- # filter(address == '1852 w grand blvd, detroit, mi 48208, usa') %>%
+  filter(address == '1852 w grand blvd, detroit, mi 48208, usa') %>%
  distinct() %>%
   group_by(address,type) %>%
   filter(name == max(name,na.rm = T)) %>%
@@ -498,7 +498,7 @@ test<-
 
 test<-
   df %>%
-  filter(name == 'Ithaca North Elementary')
+  filter(address == '1 ford pl, detroit, mi 48202, usa')
 
 
 test<-
@@ -513,23 +513,25 @@ test<-
 table(internal_crisis$type)
 
 test_fill <-df %>%
+  filter(!fk_type %in% c('261QM0801X')) %>%
   filter(!dataset == 'internal') %>%
-  select(address,type,name) %>%
+  select(address,dataset,type,name) %>%
   mutate(
     name = str_to_lower(name)
          ) %>%
   distinct() %>%
   group_by(address) %>%
-  mutate(matched_other_types =  paste(type, collapse = " , ")) %>%
+  mutate(matched_other_types =  paste(type, collapse = " , "),
+         matched_other_datasets = paste(dataset, collapse = " , ")) %>%
   ungroup() %>%
-  select(address,matched_other_types,name_other = name) %>%
+  select(address,matched_other_datasets,matched_other_types,name_other = name) %>%
   distinct()
 
   
 test_match<-
     internal_crisis %>%
     filter(type %in% c('crisis residential (adult)','crisis residential (adult)',
-                       'mobile crisis team','23-hour csu')) %>%
+                       'mobile crisis team','23-hour csu','Locked CSU')) %>%
     left_join(test_fill%>%
                 mutate(
                        address_match= paste0(address," - Other" ))
@@ -537,12 +539,13 @@ test_match<-
               ,
               by = 'address') %>%
   distinct() %>%
-  select(name,address,type,matched_other_types) %>%
+  select(name,address,type,matched_other_datasets,matched_other_types) %>%
   distinct()
 
 
-write_csv(test,'database.csv')
 
+test <-df %>%
+  filter(fk_type %in% c('323P00000X'))
 
 
 
