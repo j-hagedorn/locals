@@ -14,9 +14,11 @@ taxonomy<-read_csv("https://www.nucc.org/images/stories/CSV/nucc_taxonomy_201.cs
   distinct()
 
 
+
 #===============================================================================#
 # Taking only a subset of variables and joining tax codes and hierarchy ====
 #===============================================================================#
+
 
 nppes_sub <- 
   nppes %>%
@@ -51,6 +53,13 @@ nppes_sub <-
          npi_deactivation_date = `NPI Deactivation Date`,
          npi_reactivation_date = `NPI Reactivation Date`,
          taxonomy = `Healthcare Provider Taxonomy Code_1`,
+         taxonomy_2 = `Healthcare Provider Taxonomy Code_2`,
+         license_number = `Provider License Number_1`, 
+         license_number_2 = `Provider License Number_2`,
+         sole_proprietor = `Is Sole Proprietor`,
+         organization_subpart = `Is Organization Subpart`,
+         gender = `Provider Gender Code`,
+         other_provider_type =  `Other Provider Identifier Type Code_1`,
          contact = `Authorized Official Telephone Number`,
          vald_date = `Last Update Date`
          
@@ -117,8 +126,10 @@ nppes_sub <-
   mutate(EncAddress = str_squish(EncAddress),
          state = CA_STATE)%>%
   select(npi,provider_name,other_name,npi_assign_date,npi_deactivation_date,npi_reactivation_date,
-         taxonomy,taxonomy_group,taxonomy_classification,taxonomy_specialization,
-         taxonomy_desc,npi_practice_address = EncAddress,state,contact,vald_date)
+         taxonomy,taxonomy_2,license_number,license_number_2,taxonomy_group,sole_proprietor,organization_subpart,
+         gender,other_provider_type,
+         taxonomy_classification,taxonomy_specialization,taxonomy_desc,
+         npi_practice_address = EncAddress,state,contact,vald_date)
 
 
 

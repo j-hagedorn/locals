@@ -383,7 +383,7 @@ and taxonomy in
 '323P00000X', -- Psychiatric Residential Treatment Facility
 '283Q00000X', -- Psychiatric Hospital
 '261QM0855X', -- Ambulatory Health Care Facilities - Adolescent and Children Mental Health
-'273R00000X' -- Psychiatric Unit
+'273R00000X'  -- Psychiatric Unit
 --'261QM0801X' -- Ambulatory Health Care Facilities - Mental Health (Including Community Mental Health Center)
 --'261QM0850X'  -- Ambulatory Health Care Facilities - Adult Mental Health
 )  
