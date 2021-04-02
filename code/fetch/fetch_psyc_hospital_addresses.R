@@ -14,8 +14,17 @@ library(ggmap)
 #===============================#
 
 # Database connections
-
 locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
+
+col_names<-dbGetQuery(locals_db,{
+  "
+SELECT top 10 * 
+FROM [locals].[dbo].[addresses]
+
+  
+"})
+
+
 
 # Must have Google api registered 
 register_google(Sys.getenv('my_google_maps_api'))
@@ -39,11 +48,7 @@ lat_lon_to_census_block_converter<-function(x){
     response<-GET(request)
     
     response<-content(response,as = "text")
-    
-    # Detecting intersectional block groups.
-    # sometimes a lat/lon falls on a boundry which messes 
-    # with the format. If that happens, I take the first
-    # block number of the 4 potential and use that. 
+  
     
     response<-if(str_detect(response,'messages') == FALSE & str_detect(response,"null") == FALSE){
       
@@ -55,15 +60,41 @@ lat_lon_to_census_block_converter<-function(x){
       
     }else if(str_detect(response,'messages') == TRUE & str_detect(response,"null") == FALSE){
       
+      # When the lat lon falls on a boundry I'm shaving some digits and passing 
+      # back through. This seems to work better. 
       
-      response_data<-read.table(textConnection("{\"messages\":[\"FCC0001: The coordinate lies on the boundary of mulitple blocks.\"],\"Block\":{\"FIPS\":\"260030002001254\",\"bbox\":[-86.908021,46.347416,-86.887139,46.354747],\"intersection\":[{\"FIPF\":\"260030002001254\"},{\"FIPF\":\"260030002001248\"},{\"FIPF\":\"260030002001171\"}]},\"County\":{\"FIPS\":\"26003\",\"name\":\"Alger\"},\"State\":{\"FIPS\":\"26\",\"code\":\"MI\",\"name\":\"Michigan\"},\"status\":\"OK\",\"executionTime\":\"0\"}"),
-                                sep = ",")%>%
-        mutate(block = as.character(V2),
-               county = as.character(V10))
+      geo_data_2<- 
+        geo_data %>%
+        select(lat,lon) %>%
+        distinct()%>%
+        mutate(
+          lat = str_sub(lat,1,6),
+          lon = str_sub(lon,1,7),
+        )
       
-      response<-data.frame(Block.FIPS = substring(response_data$block,13,nchar(response_data$block)),
-                           County.FIPS = substring(response_data$county,14,nchar(response_data$county)))
       
+      request<-paste("https://geo.fcc.gov/api/census/block/find?latitude=",
+                     geo_data_2$lat,"&longitude=",
+                     geo_data_2$lon,"&showall=true&format=json",sep = "")
+      
+      response<-GET(request)
+      
+      response<-content(response,as = "text")
+      
+      response<-fromJSON(response,flatten = TRUE)
+      
+      response<-as.data.frame(response)%>%
+        dplyr::select(Block.FIPS,County.FIPS)%>%
+        dplyr::distinct()
+      
+      # response_data<-read.table(textConnection("{\"messages\":[\"FCC0001: The coordinate lies on the boundary of mulitple blocks.\"],\"Block\":{\"FIPS\":\"260030002001254\",\"bbox\":[-86.908021,46.347416,-86.887139,46.354747],\"intersection\":[{\"FIPF\":\"260030002001254\"},{\"FIPF\":\"260030002001248\"},{\"FIPF\":\"260030002001171\"}]},\"County\":{\"FIPS\":\"26003\",\"name\":\"Alger\"},\"State\":{\"FIPS\":\"26\",\"code\":\"MI\",\"name\":\"Michigan\"},\"status\":\"OK\",\"executionTime\":\"0\"}"),
+      #                           sep = ",")%>%
+      #   mutate(block = as.character(V2),
+      #          county = as.character(V10))
+      # 
+      # response<-data.frame(Block.FIPS = substring(response_data$block,13,nchar(response_data$block)),
+      #                      County.FIPS = substring(response_data$county,14,nchar(response_data$county)))
+      # 
       
     }else {response<-data.frame(Block.FIPS = NA,
                                 County.FIPS = NA)}
@@ -123,29 +154,68 @@ npi<-dbGetQuery(locals_db,{
   "
 SELECT * 
 FROM [locals].[dbo].[npi_org_locations]
-where [state] = 'MI'
-and taxonomy in 
+where taxonomy in 
 (
 
-
---'261QR0405X', -- Ambulatory Health Care Facilities - Clinic/Center -Rehabilitation, Substance Use Disorder
-'320800000X', -- Community Based Residential Treatment Facility, Mental Illness
-'323P00000X', -- Psychiatric Residential Treatment Facility
 '283Q00000X', -- Psychiatric Hospital
-'261QM0855X', -- Ambulatory Health Care Facilities - Adolescent and Children Mental Health
 '273R00000X'  -- Psychiatric Unit
---'261QM0801X' -- Ambulatory Health Care Facilities - Mental Health (Including Community Mental Health Center)
---'261QM0850X'  -- Ambulatory Health Care Facilities - Adult Mental Health
+
 )  
 
-or (taxonomy = '251E00000X' and taxonomy_2 = '323P00000X') -- Home Health primary NPI and Psychiatric Residential Treatment Facility secondary
 
-  
   
 "})
   
   
-
+  register_google(key = Sys.getenv("my_google_maps_api"))
+  
+  npi_coord<-
+    npi %>%
+    select(npi_practice_address) %>%
+    distinct()
+  
+  
+  npi_geocoded<-npi_coord%>%
+    mutate_geocode(npi_practice_address, output = "more")   
+  
+  
+  npi<-
+    npi %>%
+    left_join(npi_geocoded, by = 'npi_practice_address') %>%
+    select(-type) %>%
+    mutate(
+      dataset = 'nppes',
+      name = str_to_lower(provider_name), 
+      capacity = NA_character_,
+      type = case_when(taxonomy_classification == 'Clinic/Center' ~ 'Ambulatory Clinic/Center', 
+                       T ~ taxonomy_classification),
+      website = NA_character_,
+      fk_type = taxonomy,
+      status = "Open",
+      val_date = vald_date,
+      contact = as.character(contact)
+      
+    )
+  
+  # Obtaining the block group IDS associated with the lat/lon
+  
+  npi_latlon<-
+    npi%>%
+    select(lat, lon)%>%
+    distinct()%>%
+    drop_na()
+  
+  npi_block<-lat_lon_to_census_block_converter(npi_latlon)
+  
+  npi<-
+    npi%>%
+    left_join(npi_block%>%
+                select(-county_id), c("lat","lon")
+    ) %>%
+    select(names(col_names))
+  
+  
+  
 #===========================#
 # Formatting CMS Data  ====
 #===========================#
@@ -155,7 +225,7 @@ or (taxonomy = '251E00000X' and taxonomy_2 = '323P00000X') -- Home Health primar
   
  
 cms<-read_csv("data/samhsa/cms_inpatient_psychiatric_facility.csv") %>%
-  filter(State == 'MI') %>%
+#  filter(State == 'MI') %>%
   rename_with(tolower)%>%
   rename_with(str_squish)%>%
   rename_with(~str_replace_all(., " |-", "_")) %>%
@@ -222,6 +292,15 @@ cms<-
   left_join(cms_block%>%
               select(-county_id), c("lat","lon")
   ) %>%
-  select(names(samhsa))
+  select(names(col_names)) 
 
-rm(cms_block,cms_cr_geocoded,cms_latlon)
+#rm(cms_block,cms_cr_geocoded,cms_latlon)
+
+
+
+
+
+
+
+
+
