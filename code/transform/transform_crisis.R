@@ -14,6 +14,9 @@ code_ref<-
   read_excel("data/samhsa/mi_facility_data.xlsx",sheet = 2) %>%
   select(service_code,category_code,category_name,service_name,service_desc = service_description)
   
+# Must have google api registered 
+
+register_google(Sys.getenv('my_google_maps_api'))
 
 # Lat Long to Census Block Converter Function - Requires a dataframe of distinct lat lon
 lat_lon_to_census_block_converter<-function(x){
@@ -111,57 +114,10 @@ rev_geocode_fun<-function(x){
 
 
 #=================================#
-# Address Dataset Locals Data  ====
-#=================================# 
-
-locals<-dbGetQuery(locals_db,{
-  "SELECT 
-*
-FROM [locals].[dbo].[addresses]
-where dataset in ('hospitals')
-and type in ('PSYCHIATRIC','REHABILITATION')
-
-"}) %>%
-  mutate(address1 = address) %>%
-  separate(
-    address,into = c('street','city','state_zip','country'), sep = ","
-  ) %>%
-  mutate(
-    state = substr(state_zip,1,2)) %>%
-  filter(
-    state == 'MI', 
-    status == 'OPEN') %>%
-  select(-c('street','city','state_zip','country','state'))%>%
-  rename(address = address1)
-
-# Reverse geo coding lat lons to get a Google formatted address   
-
-df_coord<-
-  locals %>%
-  select(lat,lon) %>%
-  distinct() 
-
-locals_geocoded<-rev_geocode_fun(df_coord)
-
-
-locals<-
-  locals %>%
-  left_join(df_coord, by = c('lat',"lon")) %>%
-  select(dataset,lat,lon,block_id,blkgrp_id,name,capacity,
-         type,val_date,status,website,contact,address) %>%
-  mutate(fk_type = NA_character_,
-         capacity = as.character(capacity)) %>%
-  mutate_if(is.character,str_to_lower)
-
-rm(locals_geocoded,df_coord)
-
-#=================================#
 # Formatting SAMHSA Data  ====
 #=================================# 
 
 # Remove rows where all designations are true 
-
-
 df<-
   mi_fclty %>%
   
@@ -215,10 +171,6 @@ df<-
 
 
 # Creating loop to reverse geocode ====
-
-
-register_google(key = Sys.getenv("my_google_maps_api") )
-
 
 # The function requires two column for lat lon coordinates. 
 # these lat/lon also serve as the key to joining the data back 
@@ -394,9 +346,6 @@ or (taxonomy = '251E00000X' and taxonomy_2 = '323P00000X') -- Home Health primar
   
 "})
   
-
-
-
 # Geocoding the addresses 
 
 register_google(key = Sys.getenv("my_google_maps_api"))
@@ -469,7 +418,6 @@ cms<-read_csv("data/samhsa/cms_inpatient_psychiatric_facility.csv") %>%
 
 # Geocoding the addresses 
 
-
 cms_coord<-
   cms %>%
   select(Encaddress) %>%
@@ -526,141 +474,64 @@ rm(cms_block,cms_cr_geocoded,cms_latlon)
   
 
 
-#===========================#
-# Testing various joins =====
-#============================#
-
+#=============================#
+# Creating best-guess DF =====
+#=============================#
 
 # Union 
 
-df<-bind_rows(samhsa
-              ,npi #%>% filter(!type %in% c('Community Based Residential Treatment Facility, Mental Illness',
-                    #          'Ambulatory Clinic/Center'))
-             # ,locals
-             ,cms
-              ,internal_crisis)
+df<-bind_rows(samhsa,npi)
 
 
+candidate_crisis_facilities <-
+  df %>%
+  filter(
+  !fk_type %in% c('261QM0801X'),
+  !dataset == 'internal',
+   str_detect(type,'Psychiatric Residential Treatment Facility|Crisis intervention team|Home Health|Psychiatric emergency walk-in services|Psychiatric emergency onsite services|Psychiatric emergency mobile/off-site services'),
+  !str_detect(type,'Psychiatric hospital or psychiatric unit of a general hospital|Psychiatric Unit|Psychiatric Hospital|psychiatric_inpatient_hsptl')               
 
-# left joins 
-
-
-test_fill <-df %>%
-  filter(!fk_type %in% c('261QM0801X')) %>%
-  filter(!dataset == 'internal') %>%
-  filter(type %in% c( 'psychiatric_inpatient_hsptl'
-                      #   ,'Crisis intervention team'
-                      ,'Psychiatric Unit'
-                      
-                      ,'Psychiatric Hospital'
-  )) %>%
+  ) %>%
   select(address,dataset,type,name) %>%
-  mutate(
-    name = str_to_lower(name)
-         ) %>%
+  mutate( name = str_to_lower(name)) %>%
   distinct() %>%
   group_by(address) %>%
-  mutate(matched_other_types =  paste(type, collapse = " , "),
-         matched_other_datasets = paste(dataset, collapse = " , ")) %>%
+  mutate(
+    matched_other_types =  paste(type, collapse = " , "),
+    matched_other_datasets = paste(dataset, collapse = " , ")
+    ) %>%
   ungroup() %>%
   select(address,matched_other_datasets,matched_other_types,name_other = name) %>%
-  distinct()
+  distinct() %>%
+  filter(!str_detect(name_other, "cls|behavioral|behavioral health|network|services|unit|vamc|treatmint|healthcare|mh|center|community mental health|community health|community mh authority|cmh|health system|counseling|pllc|associates|llc|plc|christ|Church|hospital|county|country|health care|clinic|advance|medical|consultants|psychiatric|psychology|recovery"), 
+         !str_detect(name_other, pattern = paste(state.name%>%str_to_lower(),collapse = "|"))) %>%
+  select(name = name_other,address,type = matched_other_types,dataset = matched_other_datasets) %>%
+  group_by(address) %>%
+  mutate(row_n = row_number()) %>%
+  filter(row_n == 1) %>%
+  ungroup() %>%
+  select(-row_n)
+
+
+# Send output of candidate crisis facilities to Patrick or Travis. 
 
   
-test_match<-
-    internal_crisis %>%
-#    filter(type %in% c('crisis residential (adult)','crisis residential (youth)',
-#                       'mobile crisis team','23-hour csu','Locked CSU')) %>%
-    filter(type %in% c('private psychiatric hospital','state psychiatric hospital')) %>%
-    left_join(test_fill%>%
-                mutate(
-                       address_match= paste0(address," - Other" ))
-              
-              ,
-              by = 'address') %>%
-  distinct() %>%
-  select(name,address,type,matched_other_datasets,matched_other_types) %>%
-  distinct()
 
-
-
-test <-df %>%
-  filter(fk_type %in% c('323P00000X'))
-
-test<-df%>%
-  filter(fk_type %in% c('273R00000X','283Q00000X'))
-
-#residential programs, 
-
-test<-
-  df %>%
-  filter(type %in% c( 'Psychiatric Residential Treatment Facility'
-                 #   ,'Crisis intervention team'
-                 ,'Ambulatory Clinic/Center'
-                 
-                     ,'Psychiatric emergency walk-in services'
-                     ,'Psychiatric emergency onsite services'
-                     ,'Community Based Residential Treatment Facility, Mental Illness'
-                     )) %>%
- # select(name,address,type) %>%
-  distinct()
-
-
-
-test<-
-  df %>%
-  filter(type %in% c( 'psychiatric_inpatient_hsptl'
-                      #   ,'Crisis intervention team'
-                      ,'Psychiatric Unit'
-                      
-                      ,'Psychiatric Hospital'
-  )) %>%
-  # select(name,address,type) %>%
-  distinct()
-
-table(test$type)
-
-
-
-write_csv(test,"Crisis_Residential_Adult.csv")
-
-# Match Catch 
-
-test1<-
-  nppes_sub  %>%
-  filter(npi == '1538341359' )
-
-
-
-
-test<-
-  nppes %>%
-  filter(NPI == '1548402126' )
-
-
-test<-
-  nppes_sub %>%
-  filter(#taxonomy == '251E00000X', 
-         state == 'MI'),
-         taxonomy_2 == '323P00000X')
-
-
-test<-
-  nppes_sub %>%
-  filter(
-    #taxonomy == '251E00000X', 
-    state == 'MI',
-    taxonomy_2 == '323P00000X')
-
-
-# '273R00000X' -- hospitals 
-# '283Q00000X'
-
-
-table(test$classification)
-
-
-
-
+# test_match<-
+#     internal_crisis %>%
+#     filter(type %in% c('crisis residential (adult)','crisis residential (youth)',
+#                        'mobile crisis team','23-hour csu','Locked CSU')) %>%
+#     # filter(type %in% c('private psychiatric hospital','state psychiatric hospital')) %>%
+#     left_join(test_fill%>%
+#                 mutate(
+#                        address_match= paste0(address," - Other" ))
+# 
+#               ,
+#               by = 'address') %>%
+#   distinct() %>%
+#   select(name,name_other,address,type,matched_other_datasets,matched_other_types) %>%
+#   distinct() %>%
+#   filter(is.na(matched_other_datasets)==F)
+# 
 
 
