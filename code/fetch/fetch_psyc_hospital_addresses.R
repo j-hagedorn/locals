@@ -35,7 +35,7 @@ lat_lon_to_census_block_converter<-function(x){
   library(httr)
   library(jsonlite)
   
-  df<-data.frame()  
+  df<-as_tibble()  
   
   for(i in 1:nrow(x)){
     
@@ -60,41 +60,42 @@ lat_lon_to_census_block_converter<-function(x){
       
     }else if(str_detect(response,'messages') == TRUE & str_detect(response,"null") == FALSE){
       
-      # When the lat lon falls on a boundry I'm shaving some digits and passing 
+      # When the lat lon falls on a boundary I'm shaving some digits and passing 
       # back through. This seems to work better. 
       
-      geo_data_2<- 
-        geo_data %>%
-        select(lat,lon) %>%
-        distinct()%>%
-        mutate(
-          lat = str_sub(lat,1,6),
-          lon = str_sub(lon,1,7),
-        )
-      
-      
-      request<-paste("https://geo.fcc.gov/api/census/block/find?latitude=",
-                     geo_data_2$lat,"&longitude=",
-                     geo_data_2$lon,"&showall=true&format=json",sep = "")
-      
-      response<-GET(request)
-      
-      response<-content(response,as = "text")
-      
-      response<-fromJSON(response,flatten = TRUE)
-      
-      response<-as.data.frame(response)%>%
-        dplyr::select(Block.FIPS,County.FIPS)%>%
-        dplyr::distinct()
-      
-      # response_data<-read.table(textConnection("{\"messages\":[\"FCC0001: The coordinate lies on the boundary of mulitple blocks.\"],\"Block\":{\"FIPS\":\"260030002001254\",\"bbox\":[-86.908021,46.347416,-86.887139,46.354747],\"intersection\":[{\"FIPF\":\"260030002001254\"},{\"FIPF\":\"260030002001248\"},{\"FIPF\":\"260030002001171\"}]},\"County\":{\"FIPS\":\"26003\",\"name\":\"Alger\"},\"State\":{\"FIPS\":\"26\",\"code\":\"MI\",\"name\":\"Michigan\"},\"status\":\"OK\",\"executionTime\":\"0\"}"),
-      #                           sep = ",")%>%
-      #   mutate(block = as.character(V2),
-      #          county = as.character(V10))
+
+      # geo_data_2<-
+      #   geo_data %>%
+      #   select(lat,lon) %>%
+      #   distinct()%>%
+      #   mutate(
+      #     lat = round(lat,3),
+      #     lon = round(lon,3)
+      #   )
       # 
-      # response<-data.frame(Block.FIPS = substring(response_data$block,13,nchar(response_data$block)),
-      #                      County.FIPS = substring(response_data$county,14,nchar(response_data$county)))
       # 
+      # request<-paste("https://geo.fcc.gov/api/census/block/find?latitude=",
+      #                geo_data_2$lat,"&longitude=",
+      #                geo_data_2$lon,"&showall=true&format=json",sep = "")
+      # 
+      # response<-GET(request)
+      # 
+      # response<-content(response,as = "text")
+      # 
+      # response<-fromJSON(response,flatten = TRUE)
+      # 
+      # response<-as.data.frame(response)%>%
+      #   dplyr::select(Block.FIPS,County.FIPS)%>%
+      #   dplyr::distinct()
+      
+      response_data<-read.table(textConnection("{\"messages\":[\"FCC0001: The coordinate lies on the boundary of mulitple blocks.\"],\"Block\":{\"FIPS\":\"260030002001254\",\"bbox\":[-86.908021,46.347416,-86.887139,46.354747],\"intersection\":[{\"FIPF\":\"260030002001254\"},{\"FIPF\":\"260030002001248\"},{\"FIPF\":\"260030002001171\"}]},\"County\":{\"FIPS\":\"26003\",\"name\":\"Alger\"},\"State\":{\"FIPS\":\"26\",\"code\":\"MI\",\"name\":\"Michigan\"},\"status\":\"OK\",\"executionTime\":\"0\"}"),
+                                sep = ",")%>%
+        mutate(block = as.character(V2),
+               county = as.character(V10))
+
+      response<-data.frame(Block.FIPS = substring(response_data$block,13,nchar(response_data$block)),
+                           County.FIPS = substring(response_data$county,14,nchar(response_data$county)))
+
       
     }else {response<-data.frame(Block.FIPS = NA,
                                 County.FIPS = NA)}

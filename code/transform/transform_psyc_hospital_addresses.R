@@ -36,6 +36,8 @@ pysc_impatient<-
 # Appending to Locals Addresses Dataset  ====
 #=============================================#
 
+# Database connections
+locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 
 # Writing updated or new variables to data base 
 odbc::dbWriteTable(locals_db, 'addresses', pysc_impatient, append = T)

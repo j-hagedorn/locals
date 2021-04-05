@@ -123,8 +123,8 @@ df<-
   
  # filter(name1 == 'MIDMICHIGAN MEDICAL OFFICES') %>%
   mutate(
-    # Removing anyone with obvious strings in thier name to determine they are a person, 
-    # not an orginization.
+    # Removing anyone with obvious strings in their name to determine they are a person, 
+    # not an organization.
     person = case_when(str_detect(name1,"Dr.|dr.|MD|M.D.|DO|D.O.|NP") ~ 1, 
                        T ~ 0), 
     # Removing anyone flagged as a VA medical center 
