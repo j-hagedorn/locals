@@ -47,14 +47,16 @@ C27006_017,medicare_female_19to64_pop,total medicare coverage for females 19 to 
 C27006_020,medicare_female_over65_pop,total medicare coverage for females 65 and over
 C27007_004,medicaid_male_under19_pop,total medicaid coverage for males under 19
 C27007_007,medicaid_male_19to64_pop,total medicaid coverage for males 19 to 64
-C27007_010,medicaid_male_65over_pop,total medicaid coverage for males 65 and over 
+C27007_010,medicaid_male_over65_pop,total medicaid coverage for males 65 and over 
 C27007_014,medicaid_female_under19_pop,total medicaid coverage for females under 19
 C27007_017,medicaid_female_19to64_pop,total medicaid coverage for females 19 to 64
-C27007_020,medicaid_female_65over_pop,total medicaid coverage for females 65 and over 
+C27007_020,medicaid_female_over65_pop,total medicaid coverage for females 65 and over 
 B27010_017,no_health_insurance_under19_pop,total no health insurance under 19
 B27010_033,no_health_insurance_19to34_pop,total no health insurance 19 to 34
 B27010_050,no_health_insurance_35to64_pop,total no health insurance 35 to 64
-B27010_066,no_health_insurance_65over_pop,total no health insurance 65 and over 
+B27010_066,no_health_insurance_over65_pop,total no health insurance 65 and over 
 B25024_010,mobile_homes,total mobile home units 
 B25024_007,housing_units_10to19_homes,total housing with units between 10 and 19
 B25024_008,housing_units_20over_homes,total housing with units 20 and over 
+B25004_008,other_vacant_homes,"vacan homes from forclosure, extended absence or abandoned "
+B19013_001,median_household_income,median household income (inflation adjusted)

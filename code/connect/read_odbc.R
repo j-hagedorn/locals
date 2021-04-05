@@ -29,8 +29,12 @@ locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 tracts_db <- tbl(locals_db, "tracts")
 counties_db <- tbl(locals_db, "counties")
 covid_db <- tbl(locals_db, "covid")
+bh_tx <- tbl(locals_db, "samhsa_treatment_addresses")
 
 tracts_db %>%
   group_by(dataset) %>%
   summarize(n = n())
+
+bh_tx %>%
+  distinct()
 
