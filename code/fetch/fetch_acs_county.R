@@ -31,25 +31,27 @@ library(DBI)
 census_api_key(Sys.getenv("CENSUS_API_KEY"))
 
 
-v <- load_variables(2019, "acs5", cache = TRUE)
+v <- load_variables(2020, "acs5", cache = TRUE)
 
-census<-v%>%
-  #  filter(str_detect(concept,'SEX BY AGE BY DISABILITY STATUS')==T)%>%
-  #filter(str_detect(concept,'health')==T)%>%
-  filter(str_detect(name,'B19057')==T)%>%
-  filter(str_detect(label,"Private for-profit wage and salary workers")==T)
+# census <- v %>%
+  # filter(str_detect(concept,'SEX BY AGE BY DISABILITY STATUS')==T)%>%
+  # filter(str_detect(concept,'health')==T)%>%
+  # filter(str_detect(name,'B19057')==T)%>%
+  # filter(str_detect(label,"Private for-profit wage and salary workers")==T)
 
 
 #======================================#
 # Variable List & Data Dictionary  ==== 
 #======================================#
 
-census_dic<-read_csv('docs/data_dictionary.csv')  %>%
-  filter(dataset =='acs_5',
-         !is.na(var_num))
+census_dic <- read_csv('docs/data_dictionary.csv')  %>%
+  filter(
+    dataset =='acs_5',
+    !is.na(var_num)
+  )
 
 
-acs_vars_by_year<-c(
+acs_vars_by_year <- c(
   'B01003_001', # total population 
   'B11001_001', # total homes 
   'B23025_002', # total labor force 
@@ -141,14 +143,14 @@ acs_vars_by_year<-c(
 acs5_county <- tibble()
 
 # use when getting data longitudinal 
-year_range<-2010:year(today())
+year_range <- 2010:year(today())
 
 
 for (st in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','UM','VI')])) {
   
   for (v in acs_vars_by_year){ 
     
-    # for( y in year_range){ 
+    # for( y in year_range){
     
     tryCatch(
       
@@ -158,9 +160,9 @@ for (st in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR',
             geography = "county", 
             variables = v, # Variable list
             state = st , # State list
-            year = 2019 
+            year = 2020
           ) %>%
-          mutate( year = "2019")
+          mutate( year = "2020")
         
         
         acs5_county <- bind_rows(acs5_county,df)
@@ -168,7 +170,7 @@ for (st in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR',
       }, 
       error =  function(e){})
     
-    #  } Year loop
+     # } # Year loop
   }
 }
 
@@ -176,7 +178,7 @@ for (st in unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR',
 # manipulating the results and adding the variable names from the data dictionary. 
 # The data dictionary should be updated with any new variables before joining. 
 
-df<-acs5_county %>%
+df <- acs5_county %>%
   left_join(census_dic, by = c("variable" = 'var_num')) %>%
   mutate(
     dataset = 'acs_5',
@@ -217,8 +219,6 @@ df<-acs5_county %>%
   ) %>%
   distinct()
 
-
-
 #==========================#
 # Insert into database ====
 #==========================#
@@ -228,9 +228,7 @@ locals_db <- DBI::dbConnect(odbc::odbc(), "locals")
 
 
 # create sql query to delete the old data and insert the new
-
-
-vars<-
+vars <-
   read_csv('docs/data_dictionary.csv')  %>%
   filter(dataset =='acs_5') %>%
   select(var_name)%>%
@@ -238,14 +236,14 @@ vars<-
   pull()
 
 
-vars_sql<- noquote(paste("'",as.character(vars),"'",collapse=", ",sep=""))
+vars_sql <- noquote(paste("'", as.character(vars),"'", collapse=", ", sep=""))
 
 
-delete_query<-
+delete_query <-
   {paste("
         delete
         FROM [dbo].[counties]
-        where var_name in (",vars_sql,") ",sep = "")
+        where var_name in (",vars_sql,") ", sep = "")
     
   }
 
