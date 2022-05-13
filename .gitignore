@@ -10,3 +10,4 @@
 *.xlsx
 *.zip
 .RDataTmp1
+*.rda
