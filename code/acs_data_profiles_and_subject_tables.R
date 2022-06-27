@@ -2,6 +2,9 @@ library(tidycensus)
 library(tidyverse)
 library(lubridate)
 library(DBI)
+library(xlsx)
+library(data.table)
+library(bcputility)
 
 
 #================================#
@@ -21,168 +24,248 @@ v_profile <- load_variables(2020, "acs5/profile", cache = TRUE) %>%
 v_subject<- load_variables(2020, "acs5/subject", cache = TRUE) %>% 
   separate(label, into = paste0("label", 1:9), sep = "!!", fill = "right", remove = FALSE)
 
+profile_acs_variables <-
+c(
+  'DP05_0001' # Total population 
+  ,'DP02_0062P' # % 25 or over with HS diploma
+  ,'DP02_0062'
+  ,'DP02_0065P' # % 25 or over with Bachelor's
+  ,'DP02_0065'
+  ,'DP02_0070P' # % Veteran
+  ,'DP02_0070'
+  ,'DP02_0074P' # % Children Disabled under 18
+  ,'DP02_0074'
+  ,'DP02_0072P' # % Disabled total
+  ,'DP02_0072P'
+  ,'DP02_0094P' # % Foreign Born 
+  ,'DP02_0094P'
+  ,'DP03_0099P' # % no health insurance, non-inst.,18-64
+  ,'DP03_0099P'
+  ,'DP05_0037P' # % White 
+  ,'DP05_0037'
+  ,'DP05_0038P' # % Black
+  ,'DP05_0038'
+  ,'DP05_0044P' # % Asian
+  ,'DP05_0044'
+  ,'DP05_0039P' # % Ntv. American or Alaskan native
+  ,'DP05_0039'
+  ,'DP05_0071P' # % Hispanic or Latino 
+  ,'DP05_0071'
+  ,'DP05_0035P' # % Two or more races 
+  ,'DP05_0035' 
+  ,'DP05_0052P' # % Pacific Islander
+  ,'DP05_0052'
+  ,"DP04_0047P" # % Renter occupied homes
+  ,"DP04_0047"
+  ,'DP04_0046P' # % Owner occupied homes 
+  ,'DP04_0046'
+  ,"DP04_0014P" # % Mobile Homes 
+  ,"DP04_0014" 
+  ,'DP03_0072P' # % of households with public assistance income
+  ,'DP03_0072'
+  ,'DP04_0058P' # % Occupied housing with no vehicle
+  ,'DP04_0058'
+  ,'DP03_0009P' # Unemployment Rate
+  ,'DP03_0009'
+  ,'DP02_0045P' # % Grandparents responsible for grandchildren
+  ,'DP02_0045'
+  ,'DP03_0062'  # Median Household Income 
+  ,'DP03_0047P' # % Private salary or wage earners
+  ,'DP03_0047'
+  ,'DP03_0049P' # % Self employed worker
+  ,'DP03_0049'
+  ,'DP03_0048P' # % Goverment Worker
+  ,'DP03_0048'
+)
 
-#===========================#
-# ACS Data Profile ====
-#===========================#
-
-df_acs<- tibble()
-
-for(i in 2018:2020){
-
+#================================#
+# ACS Data Counties Profile ====
+#================================#
 
 profile_acs<-
   get_acs(geography = 'county'
-          ,state = 'MI'
-          ,variables  = c(
-                           'DP02_0062P' # % 25 or over with HS diploma
-                          ,'DP02_0065P' # % 25 or over with Bachelor's
-                          ,'DP02_0070P' # % Veteran
-                          ,'DP02_0074P' # % Children Disabled under 18
-                          ,'DP02_0072P' # % Disabled total
-                          ,'DP02_0094P' # % Foreign Born 
-                          ,'DP03_0099P' # % no health insurance, non-inst.,18-64
-                          ,'DP05_0037P' # % White 
-                          ,'DP05_0038P' # % Black
-                          ,'DP05_0044P' # % Asian
-                          ,'DP05_0039P' # % Ntv. American or Alaskan native
-                          ,'DP05_0071P' # % Hispanic or Latino 
-                          ,'DP05_0035P' # % Two or more races 
-                          ,'DP05_0052P' # % Pacific Islander
-                          ,"DP04_0047P" # % Renter occupied homes
-                          ,'DP04_0046P' # % Owner occupied homes 
-                          ,"DP04_0014P" # % Mobile Homes 
-                          ,'DP03_0072P' # % of households with public assistance income
-                          ,'DP04_0058P' # % Occupied housing with no vehicle
-                          ,'DP03_0009P' # Unemployment Rate
-          )
-          ,year = i
+          #  ,state = 'MI'
+          ,variables = profile_acs_variables  
+          ,year = 2020
           ,show_call = F) %>% 
   left_join(v_profile, by = c('variable' = 'name')) %>% 
- # filter(GEOID == '26081') %>% 
+  mutate_all(as.character)
+
+profile_acs[is.na(profile_acs)]<-""
+
+profile_acs<-
+  profile_acs %>% 
   mutate(
     label5 = coalesce(label5,""),
     var_name = str_to_lower(paste(label1,label3,label4,label5,sep = " ")),
     dataset = 'acs_5',
-    state = 26,
+    state = substr(GEOID,1,2),
     county = GEOID,
     value = estimate,
-    stat_type = 'frac',
-    year = i) %>% 
-  select(dataset,state,county,year,var_name,value,stat_type)
-  
+    stat_type = case_when(label1 == "Percent" ~ 'frac',
+                          T ~ 'n'),
+    year = 2020) %>% 
+  select(dataset,state,county,year,var_name,value,stat_type) %>% 
+  mutate_all(as.character)
+
 #=======================#
 # Subject tables =====
 #=======================#
 
-
 subject_acs<-
   get_acs(geography = 'county'
-          ,state = 'MI'
+          #   ,state = 'MI'
           ,variables  = c(
-             'S2704_C03_006' # % Medicaid
+            'S2704_C03_006' # % Medicaid
             ,'S2704_C03_002' # % Medicare
             ,'S1701_C03_001' # % Poverty
           )
-          ,year = i
+          ,year = 2020
           ,show_call = F) %>% 
   left_join(v_subject, by = c('variable' = 'name')) %>% 
-#  filter(GEOID == '26081') %>% 
   mutate(
     label4 = coalesce(label4,""),
     var_name = str_to_lower(paste(label2,label4,sep = " ")),
     dataset = 'acs_5',
-    state = 26,
+    state = substr(GEOID,1,2),
     county = GEOID,
     value = estimate,
     stat_type = 'frac',
-    year = i) %>% 
-  select(dataset,state,county,year,var_name,value,stat_type)
-
-#====================#
-# ACS Variables ====
-#====================#
+    year = 2020) %>% 
+  select(dataset,state,county,year,var_name,value,stat_type) %>% 
+  mutate_all(as.character)
 
 
-acs_population_vars_n<-
-  get_acs(geography = 'county'
-          ,state = 'MI'
-          ,variables  = c(
-            'B01003_001', # total population 
-            'B25010_001', # average household size 
-            'B19013_001' #Median household income
-          )
-          ,year = i) %>% 
-  left_join(v, by = c('variable' = 'name')) %>% 
-#  filter(GEOID == '26081') %>% 
-  mutate(
-    label4 = coalesce(label4,""),
-    var_name = case_when(variable %in% c('B01003_001') ~ "estimate total population",
-                         T ~ label2),
-    dataset = 'acs_5',
-    state = 26,
-    county = GEOID,
-    value = estimate,
-    stat_type = 'n',
-    year = i) %>% 
-  select(dataset,state,county,year,var_name,value,stat_type)
-
-
-
-
-tryCatch(
-expr = {
-  
-acs_population_vars_frac<-
-  get_acs(geography = 'county'
-          ,state = 'MI'
-          ,variables  = c(
-            'B11012_003', # total married couples family w/children households
-            'B11012_010', # total single mom households
-            'B25071_001'  # rent as a percent of income 
-          )
-          ,year = i
-          ,summary_var = 'B11001_001'
-          ,show_call = F) %>% 
-  left_join(v, by = c('variable' = 'name')) %>% 
-#  filter(GEOID == '26081') %>% 
-  mutate(
-    value = case_when(variable %in% c('B11012_010') ~ round((estimate/summary_est)*100,1),
-                      T ~ estimate),
-    label4 = coalesce(label4,""),
-    label3 = coalesce(label3,label2),
-    var_name = paste(label3,label4,sep = " "),
-    dataset = 'acs_5',
-    state = 26,
-    county = GEOID,
-    stat_type = 'frac',
-    year = i) %>% 
-  select(dataset,state,county,year,var_name,value,stat_type)
-
-},
-error = function(e)
-finally = print("No data, sorry!")
-
-)
 
 #==================================#
-# Binding all ACS Data Frames ====
+# Uploading to Database ====
 #==================================#
-
 
 df_acs<-
-  bind_rows(df_acs,profile_acs,subject_acs,acs_population_vars_frac,acs_population_vars_n) 
-
-
-}
-
-
+  bind_rows(profile_acs,subject_acs) %>% 
+  mutate(value = case_when(str_count(value)==0 ~ NA_character_,
+                            T ~ value))
 
 
 
+# You will need to specify the exact path to the BCP utility tool 
+# It will likely be very similar to this path, but you should double-check. 
+options(bcputility.bcp.path = "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/bcp.exe")
+
+start<-Sys.time()
+
+bcpImport(
+  df_acs, # The data frame you wish to upload
+  trustedconnection = TRUE, # If TRUE, this will Windows authenticate. Be sure you are connected to the VPN. 
+  driver = "ODBC Driver 17 for SQL Server",
+  server = Sys.getenv('SERVER'),
+  database = 'locals',
+  table  = 'counties', # Name of the table to store the data frame you wish to upload
+  batchsize = 50000, # Feel free to mess around with figure. This was a recommendation. 
+  overwrite = T, # Will overwrite the table or create a table if one dosen't exist
+  
+)
+
+stop <-Sys.time()
+stop-start
 
 
 
+#================================#
+# ACS Data Tract Profile ====
+#================================#
+
+state_list =  unique(fips_codes$state[!fips_codes$state %in% c('AS','GU','MP','PR','UM','VI')])
+
+
+profile_acs<-
+  get_acs(geography = 'tract'
+          ,state = state_list
+         # ,state = 'mi'
+          ,variables = profile_acs_variables
+          ,year = 2020
+          ,show_call = F) %>% 
+  left_join(v_profile, by = c('variable' = 'name')) %>% 
+  mutate_all(as.character)
+
+profile_acs[is.na(profile_acs)]<-""
+
+profile_acs<-
+  profile_acs %>% 
+  mutate(
+    label5 = coalesce(label5,""),
+    var_name = str_to_lower(paste(label1,label3,label4,label5,sep = " ")),
+    dataset = 'acs_5',
+    state = substr(GEOID,1,2),
+    county = substr(GEOID,1,5),
+    tract = GEOID,
+    value = estimate,
+    stat_type = case_when(label1 == "Percent" ~ 'frac',
+                          T ~ 'n'),
+    year = 2020) %>% 
+  select(dataset,state,county,tract,year,var_name,value,stat_type) %>% 
+  mutate_all(as.character)
+
+#=======================#
+# Subject tables =====
+#=======================#
+
+subject_acs<-
+  get_acs(geography = 'tract'
+         # ,state = state_list
+          , state = 'mi'
+          ,variables  = c(
+            'S2704_C03_006' # % Medicaid
+            ,'S2704_C03_002' # % Medicare
+            ,'S1701_C03_001' # % Poverty
+          )
+          ,year = 2020
+          ,show_call = F) %>% 
+  left_join(v_subject, by = c('variable' = 'name')) %>% 
+  mutate(
+    label4 = coalesce(label4,""),
+    var_name = str_to_lower(paste(label2,label4,sep = " ")),
+    dataset = 'acs_5',
+    state = substr(GEOID,1,2),
+    county = substr(GEOID,1,5),
+    tract = GEOID,
+    value = estimate,
+    stat_type = 'frac',
+    year = 2020) %>% 
+  select(dataset,state,county,tract,year,var_name,value,stat_type) %>% 
+  mutate_all(as.character)
 
 
 
+#==================================#
+# Uploading to Database ====
+#==================================#
+
+df_acs<-
+  bind_rows(profile_acs,subject_acs)  %>% 
+  mutate(value = case_when(str_count(value)==0 ~ NA_character_,
+                           T ~ value))
+
+# You will need to specify the exact path to the BCP utility tool 
+# It will likely be very similar to this path, but you should double-check. 
+options(bcputility.bcp.path = "C:/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/bcp.exe")
+
+start<-Sys.time()
+
+bcpImport(
+  df_acs, # The data frame you wish to upload
+  trustedconnection = TRUE, # If TRUE, this will Windows authenticate. Be sure you are connected to the VPN. 
+  driver = "ODBC Driver 17 for SQL Server",
+  server = Sys.getenv('SERVER'),
+  database = 'locals',
+  table  = 'tracts', # Name of the table to store the data frame you wish to upload
+  batchsize = 50000, # Feel free to mess around with figure. This was a recommendation. 
+  overwrite = T, # Will overwrite the table or create a table if one dosen't exist
+  
+)
+
+stop <-Sys.time()
+stop-start
+
+rm(stop,start,state_list,profile_acs_variables,v_subject,v_profile,v,test,df_acs,
+   profile_acs,subject_acs)
