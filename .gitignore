@@ -4,6 +4,7 @@
 .RDataTmp
 .Ruserdata
 .Renviron
+*.env
 
 # Data files
 *.feather
