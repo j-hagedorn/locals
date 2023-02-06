@@ -22,11 +22,15 @@ curl::curl_download(url, destfile = paste(path_zip, destfile, sep = "/"))
 unzip(zipfile = paste(path_zip, destfile, sep = "/"), exdir = path_unzip)
 
 # list all files and grab the file with NPI addresses 
-outcomes = read_csv("temp/tract_outcomes_early.csv")
-
+outcomes = read_csv("temp/tract_outcomes_early.csv",
+                    col_select = c("state",
+                                   "county",
+                                   "tract",
+                                   "jail_pooled_pooled_mean",
+                                   'teenbrth_pooled_female_mean'))
 
 outcomes = 
-  read_csv("temp/tract_outcomes_early.csv") %>% 
+  outcomes %>% 
   mutate(
     tract = paste0(
       str_pad(state,width = 2,pad = 0),
@@ -34,7 +38,6 @@ outcomes =
       str_pad(tract,width = 6,pad = 0)),
     
   ) %>% 
-  select(tract,jail_pooled_pooled_mean,teenbrth_pooled_female_mean)  %>% 
   pivot_longer(cols = c(jail_pooled_pooled_mean,teenbrth_pooled_female_mean), 
                names_to = 'variable',values_to = 'value') %>% 
   mutate(
@@ -42,16 +45,17 @@ outcomes =
     year = '2010',
     var_short_name = case_when(variable == 'jail_pooled_pooled_mean' ~ 'Incarceration Rate', 
                                T ~ 'Teen Birth Rate'),
-    var_name = case_when(variable == 'jail_pooled_pooled_mean' ~ 'Fraction incarcerated on April 1st, 2010', 
-                         T ~ 'Teen Birth Rate'), 
+    var_name = case_when(variable == 'jail_pooled_pooled_mean' ~ 'Fraction incarcerated on April 1st, 2010 per 1K of the Population', 
+                         T ~ 'Teen Birth Rate per 1K of the Population'), 
+    value = round(value * 1000,0),
+    value = if_else(as.numeric(value)<0,0,as.numeric(value))
   ) %>% 
   select(source,year,tract,var_short_name,value,var_name,variable) %>% 
   mutate_all(as.character)
 
-
 # Remove temp directory 
 unlink(path_unzip,recursive = T)
-rm(web_address,url,path_unzip,path_zip,destfile,memory)
+#rm(web_address,url,path_unzip,path_zip,destfile,memory)
 
 
 #==============================#
