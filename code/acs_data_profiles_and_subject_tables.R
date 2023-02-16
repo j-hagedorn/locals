@@ -82,60 +82,82 @@ c(
 # ACS Data Counties Profile ====
 #================================#
 
-profile_acs<-
-  get_acs(geography = 'county'
-          #  ,state = 'MI'
-          ,variables = profile_acs_variables  
-          ,year = 2020
-          ,show_call = F) %>% 
-  left_join(v_profile, by = c('variable' = 'name')) %>% 
-  mutate_all(as.character)
 
-profile_acs[is.na(profile_acs)]<-""
+profile_acs = data.frame()
 
-profile_acs<-
-  profile_acs %>% 
-  mutate(
-    label5 = coalesce(label5,""),
-    var_name = str_to_lower(paste(label1,label3,label4,label5,sep = " ")),
-    dataset = 'acs_5',
-    state = substr(GEOID,1,2),
-    county = GEOID,
-    value = estimate,
-    stat_type = case_when(label1 == "Percent" ~ 'frac',
-                          T ~ 'n'),
-    year = 2020) %>% 
-  select(dataset,state,county,year,var_name,value,stat_type) %>% 
-  mutate_all(as.character)
+# latest 4 years
+for(y in 2018:2021){
+
+
+    iter_df<-
+      get_acs(geography = 'county'
+              ,variables = profile_acs_variables  
+              ,year = y
+              ,show_call = F) %>% 
+      left_join(v_profile, by = c('variable' = 'name')) %>% 
+      mutate_all(as.character)
+    
+    iter_df[is.na(iter_df)]<-""
+    
+    iter_df<-
+      iter_df %>% 
+      mutate(
+        label5 = coalesce(label5,""),
+        var_name = str_to_lower(paste(label1,label3,label4,label5,sep = " ")),
+        dataset = 'acs_5',
+        state = substr(GEOID,1,2),
+        county = GEOID,
+        value = estimate,
+        var = variable,
+        stat_type = case_when(label1 == "Percent" ~ 'frac',
+                              T ~ 'n'),
+        year = y) %>% 
+      select(dataset,state,county,year,var,var_name,value,stat_type) %>% 
+      mutate_all(as.character)
+    
+    
+    profile_acs = bind_rows(profile_acs,iter_df)
+
+}
+
 
 #=======================#
 # Subject tables =====
 #=======================#
 
-subject_acs<-
-  get_acs(geography = 'county'
-          #   ,state = 'MI'
-          ,variables  = c(
-            'S2704_C03_006' # % Medicaid
-            ,'S2704_C03_002' # % Medicare
-            ,'S1701_C03_001' # % Poverty
-          )
-          ,year = 2020
-          ,show_call = F) %>% 
-  left_join(v_subject, by = c('variable' = 'name')) %>% 
-  mutate(
-    label4 = coalesce(label4,""),
-    var_name = str_to_lower(paste(label2,label4,sep = " ")),
-    dataset = 'acs_5',
-    state = substr(GEOID,1,2),
-    county = GEOID,
-    value = estimate,
-    stat_type = 'frac',
-    year = 2020) %>% 
-  select(dataset,state,county,year,var_name,value,stat_type) %>% 
-  mutate_all(as.character)
+subject_acs = data.frame()
 
+# latest 4 years
+for(y in 2018:2021){
+  
+    iter_df <-
+      get_acs(geography = 'county'
+              #   ,state = 'MI'
+                ,variables  = c(
+                'S2704_C03_006' # % Medicaid
+                ,'S2704_C03_002' # % Medicare
+                ,'S1701_C03_001' # % Poverty
+              )
+              ,year = y
+              ,show_call = F) %>% 
+      left_join(v_subject, by = c('variable' = 'name')) %>% 
+      mutate(
+        label4 = coalesce(label4,""),
+        var_name = str_to_lower(paste(label2,label4,sep = " ")),
+        dataset = 'acs_5',
+        state = substr(GEOID,1,2),
+        county = GEOID,
+        value = estimate,
+        var = variable,
+        stat_type = 'frac',
+        year = 2020) %>% 
+      select(dataset,state,county,year,var,var_name,value,stat_type) %>% 
+      mutate_all(as.character)
+    
+    
+    subject_acs = bind_rows(subject_acs,iter_df)
 
+}
 
 #==================================#
 # Uploading to Database ====
@@ -156,14 +178,16 @@ start<-Sys.time()
 
 bcpImport(
   df_acs, # The data frame you wish to upload
-  trustedconnection = TRUE, # If TRUE, this will Windows authenticate. Be sure you are connected to the VPN. 
-  driver = "ODBC Driver 17 for SQL Server",
-  server = Sys.getenv('SERVER'),
-  database = 'locals',
+  # SQL Connections
+  connectargs = makeConnectArgs(
+                    server = 'TBDS-SQL01',
+                    database = 'locals',
+                    trustedconnection = TRUE
+                    ), # If TRUE, this will Windows authenticate. Be sure you are connected to the VPN. 
   table  = 'counties', # Name of the table to store the data frame you wish to upload
-  batchsize = 50000, # Feel free to mess around with figure. This was a recommendation. 
   overwrite = T, # Will overwrite the table or create a table if one dosen't exist
-  
+  bcpOptions = c('-b 50000') # This refers to the batch size of the number of rows sent at a time.Feel free to mess around with figure. This was a recommendation. 
+
 )
 
 stop <-Sys.time()
