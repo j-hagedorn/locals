@@ -12,3 +12,4 @@
 *.zip
 .RDataTmp1
 *.csv
+.env
